@@ -1,5 +1,11 @@
 import React from 'react';
 
 export default function Footer() {
-  return <footer>Footer</footer>;
+  return (
+    <footer>
+      <div className="container mx-auto">
+        Footer
+      </div>
+    </footer>
+  );
 }

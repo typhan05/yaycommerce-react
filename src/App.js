@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <Layout>
         <Routes>
-          <Route exact path="/" element={<Home/>}/>
-          <Route exact path="/shops" element={<Shops/>}/>
+          <Route exact path="/yaycommerce-react/" element={<Home/>}/>
+          <Route exact path="/yaycommerce-react/shops" element={<Shops/>}/>
         </Routes>
       </Layout>
     </div>

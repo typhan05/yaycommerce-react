@@ -34,21 +34,21 @@ export default function Header() {
       </div>
       <div className="py-6">
         <div className="container mx-auto flex flex-wrap items-center justify-between">
-          <a href="/"><img src={Logo} alt="logo"/></a>
+          <a href="/yaycommerce-react/"><img src={Logo} alt="logo"/></a>
           <ul className={"flex"}>
-            <li className="px-5"><NavLink to='/' className={({isActive}) =>
+            <li className="px-5"><NavLink to='/yaycommerce-react/' className={({isActive}) =>
               isActive ? 'border-b border-solid border-black2 py-2' : 'py-2'
             }>Home</NavLink></li>
-            <li className="px-5"><NavLink to='/shops' className={({isActive}) =>
+            <li className="px-5"><NavLink to='/yaycommerce-react/shops' className={({isActive}) =>
               isActive ? 'border-b border-solid border-black2 py-2' : 'py-2'
             }>Shops</NavLink></li>
-            <li className="px-5"><NavLink to='/products' className={({isActive}) =>
+            <li className="px-5"><NavLink to='/yaycommerce-react/products' className={({isActive}) =>
               isActive ? 'border-b border-solid border-black2 py-2' : 'py-2'
             }>Products</NavLink></li>
-            <li className="px-5"><NavLink to='/blog' className={({isActive}) =>
+            <li className="px-5"><NavLink to='/yaycommerce-react/blog' className={({isActive}) =>
               isActive ? 'border-b border-solid border-black2 py-2' : 'py-2'
             }>Blog</NavLink></li>
-            <li className="px-5"><NavLink to='/pages' className={({isActive}) =>
+            <li className="px-5"><NavLink to='/yaycommerce-react/pages' className={({isActive}) =>
               isActive ? 'border-b border-solid border-black2 py-2' : 'py-2'
             }>Pages</NavLink></li>
           </ul>
