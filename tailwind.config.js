@@ -17,6 +17,7 @@ module.exports = {
         light3: '#ECF2F8',
         light4: '#FAFAFA',
         light5: '#F5F5F5',
+        light6: '#F3F8FC',
       },
       'green': {
         light: '#7FD59C',

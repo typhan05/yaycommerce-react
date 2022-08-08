@@ -17,7 +17,7 @@ const languages = [
 
 export default function Header() {
   return (
-    <header>
+    <header className="text-black2">
       <div className="bg-gray-light4 py-3 text-sm">
         <div className="container mx-auto flex flex-wrap justify-between items-center">
           <ul className="grid gap-x-3 grid-cols-3">
