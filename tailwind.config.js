@@ -18,12 +18,16 @@ module.exports = {
         light4: '#FAFAFA',
         light5: '#F5F5F5',
         light6: '#F3F8FC',
+        light7: '#DBEAF9',
       },
       'green': {
         light: '#7FD59C',
         DEFAULT: '#377E62',
       },
-      'orange': '#FFAC70'
+      'orange': '#FFAC70',
+      'orange2': '#FFF5F0',
+      'orange3': '#FFEDE4',
+      'pink': '#FF7979',
     },
     screens: {
       sm: '480px',
