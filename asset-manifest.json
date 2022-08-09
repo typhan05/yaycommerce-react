@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/yaycommerce-react/static/css/main.a04934f0.css",
-    "main.js": "/yaycommerce-react/static/js/main.7a7247a7.js",
+    "main.css": "/yaycommerce-react/static/css/main.054d4517.css",
+    "main.js": "/yaycommerce-react/static/js/main.754c085c.js",
     "static/js/787.93facbbb.chunk.js": "/yaycommerce-react/static/js/787.93facbbb.chunk.js",
     "static/media/SFUIDisplay-Bold.svg": "/yaycommerce-react/static/media/SFUIDisplay-Bold.51df48b08db7ee250b8b.svg",
     "static/media/SFUIDisplay-Semibold.svg": "/yaycommerce-react/static/media/SFUIDisplay-Semibold.0d0e7fc9d4e823c83126.svg",
@@ -20,9 +20,14 @@
     "static/media/SFUIDisplay-Medium.woff": "/yaycommerce-react/static/media/SFUIDisplay-Medium.6b81e06b029d32bdb844.woff",
     "static/media/SFUIDisplay-Bold.woff": "/yaycommerce-react/static/media/SFUIDisplay-Bold.9bd9e7559dc2b2c52acd.woff",
     "static/media/SFUIDisplay-Regular.woff": "/yaycommerce-react/static/media/SFUIDisplay-Regular.1ae83e93e284abc350d8.woff",
+    "static/media/img-deal-of-2.png": "/yaycommerce-react/static/media/img-deal-of-2.32c40c697064e4520afb.png",
+    "static/media/img-deal-of-1.png": "/yaycommerce-react/static/media/img-deal-of-1.e8afffeba3b5fbd50eec.png",
+    "static/media/img-our-blog-1.jpg": "/yaycommerce-react/static/media/img-our-blog-1.61126d8cf52085b57c5c.jpg",
+    "static/media/img-our-blog-2.jpg": "/yaycommerce-react/static/media/img-our-blog-2.c233559405f4ba70b66d.jpg",
     "static/media/SFUIDisplay-Semibold.woff2": "/yaycommerce-react/static/media/SFUIDisplay-Semibold.8392d4cc9356e1dd1330.woff2",
     "static/media/SFUIDisplay-Medium.woff2": "/yaycommerce-react/static/media/SFUIDisplay-Medium.fe76cc1848d5fbaa823f.woff2",
     "static/media/SFUIDisplay-Bold.woff2": "/yaycommerce-react/static/media/SFUIDisplay-Bold.1ef2aede2897f20f1ff1.woff2",
+    "static/media/img-our-blog-3.jpg": "/yaycommerce-react/static/media/img-our-blog-3.34a6f8bf489cd8cefa8f.jpg",
     "static/media/SFUIDisplay-Regular.woff2": "/yaycommerce-react/static/media/SFUIDisplay-Regular.ec61a29280ddc3a11408.woff2",
     "static/media/img-introduce-1.png": "/yaycommerce-react/static/media/img-introduce-1.83a4ac9f76c4243fd79f.png",
     "static/media/img-product-3.png": "/yaycommerce-react/static/media/img-product-3.6e213624cb014eafa19f.png",
@@ -31,17 +36,21 @@
     "static/media/img-product-4.png": "/yaycommerce-react/static/media/img-product-4.b7110073e846b6a5a711.png",
     "static/media/img-product-2.png": "/yaycommerce-react/static/media/img-product-2.d848a7b6d648a3920299.png",
     "static/media/logo.svg": "/yaycommerce-react/static/media/logo.ccc2f75a886c3927bad7e3dee0e061b0.svg",
+    "static/media/tracking-icon.svg": "/yaycommerce-react/static/media/tracking-icon.4f0c5cc92a9de32ece55.svg",
+    "static/media/delivery-icon.svg": "/yaycommerce-react/static/media/delivery-icon.15aa4259a713b1662d04.svg",
     "static/media/slick.svg": "/yaycommerce-react/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/refund-icon.svg": "/yaycommerce-react/static/media/refund-icon.7cc2c95bf7308a5d0054.svg",
     "static/media/slick.eot": "/yaycommerce-react/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/support-icon.svg": "/yaycommerce-react/static/media/support-icon.2665259a3250a27852c4.svg",
     "static/media/slick.ttf": "/yaycommerce-react/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/yaycommerce-react/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/yaycommerce-react/index.html",
-    "main.a04934f0.css.map": "/yaycommerce-react/static/css/main.a04934f0.css.map",
-    "main.7a7247a7.js.map": "/yaycommerce-react/static/js/main.7a7247a7.js.map",
+    "main.054d4517.css.map": "/yaycommerce-react/static/css/main.054d4517.css.map",
+    "main.754c085c.js.map": "/yaycommerce-react/static/js/main.754c085c.js.map",
     "787.93facbbb.chunk.js.map": "/yaycommerce-react/static/js/787.93facbbb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a04934f0.css",
-    "static/js/main.7a7247a7.js"
+    "static/css/main.054d4517.css",
+    "static/js/main.754c085c.js"
   ]
 }
