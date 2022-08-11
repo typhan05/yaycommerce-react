@@ -14,7 +14,7 @@ export default class FeaturedCardSlider extends Component {
 
   render() {
     const itemSlider = this.props.content.lists.map((item) =>
-        <SwiperSlide key={item.id} className="group relative pb-8">
+        <SwiperSlide key={`slider-item`+item.id} className="group relative pb-8">
           <a href="#/"
              className="relative flex justify-center items-center mb-3 h-80 bg-gray-light5 ease-in-out duration-300 rounded-xl overflow-hidden group-hover:bg-[rgba(90,109,128,0.1)] sm:aspect-w-2 sm:aspect-h-1 sm:h-80 lg:aspect-w-1 lg:aspect-h-1">
             <span
@@ -29,7 +29,7 @@ export default class FeaturedCardSlider extends Component {
             {Array.from(Array(item.rate), (e, i) => {
               return (
                 <svg
-                  key={i}
+                  key={`select-`+i}
                   xmlns="http://www.w3.org/2000/svg"
                   width="14"
                   height="12"
@@ -45,55 +45,56 @@ export default class FeaturedCardSlider extends Component {
               )
             })}
             {Array.from(Array(5), (e, i) => {
-              return (
-                <>
-                {i >= item.rate && !item.rate_haft && <svg
-                  key={i}
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="12"
-                  fill="none"
-                  viewBox="0 0 14 12"
-                  className="mr-[2px]"
-                >
-                  <path
-                    fill="#D3DCE5"
-                    d="M6.596.49c.217-.653 1.162-.653 1.38 0l1.02 3.063c.097.291.376.489.69.489h3.301c.703 0 .995.877.427 1.28l-2.671 1.893c-.254.18-.36.5-.264.792l1.02 3.063c.218.652-.547 1.195-1.116.792l-2.67-1.894a.74.74 0 00-.854 0l-2.67 1.894c-.57.403-1.334-.14-1.117-.792l1.02-3.063a.698.698 0 00-.263-.792L1.158 5.322c-.569-.403-.277-1.28.426-1.28h3.302a.724.724 0 00.69-.49L6.596.49z"
-                  ></path>
-                </svg>}
-                </>
-              )
+              if(i >= item.rate && !item.rate_haft) {
+                return (
+                  <svg
+                    key={`no_select-`+i}
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="12"
+                    fill="none"
+                    viewBox="0 0 14 12"
+                    className="mr-[2px]"
+                  >
+                    <path
+                      fill="#D3DCE5"
+                      d="M6.596.49c.217-.653 1.162-.653 1.38 0l1.02 3.063c.097.291.376.489.69.489h3.301c.703 0 .995.877.427 1.28l-2.671 1.893c-.254.18-.36.5-.264.792l1.02 3.063c.218.652-.547 1.195-1.116.792l-2.67-1.894a.74.74 0 00-.854 0l-2.67 1.894c-.57.403-1.334-.14-1.117-.792l1.02-3.063a.698.698 0 00-.263-.792L1.158 5.322c-.569-.403-.277-1.28.426-1.28h3.302a.724.724 0 00.69-.49L6.596.49z"
+                    ></path>
+                  </svg>
+                )
+              }
+              return false
             })}
             {item.rate_haft && item.rate <= 5 &&
-              <svg xmlns="http://www.w3.org/2000/svg"
-              width="13"
-              height="12"
-              fill="none"
-              viewBox="0 0 13 12"
-              className="mr-[2px]"
-              >
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="13"
+                 height="12"
+                 fill="none"
+                 viewBox="0 0 13 12"
+                 className="mr-[2px]"
+            >
               <path
-              fill="#FFAC70"
-              d="M5.69.49c.216-.653 1.154-.653 1.37 0l1.01 3.063c.097.291.373.489.685.489h3.274c.697 0 .987.877.423 1.28L9.803 7.215a.701.701 0 00-.261.792l1.012 3.063c.215.652-.544 1.195-1.107.792l-2.65-1.894a.729.729 0 00-.845 0l-2.649 1.894c-.563.403-1.322-.14-1.107-.792l1.012-3.063a.701.701 0 00-.261-.792L.297 5.322c-.563-.403-.273-1.28.424-1.28h3.274a.718.718 0 00.684-.49L5.691.49z"
+                fill="#FFAC70"
+                d="M5.69.49c.216-.653 1.154-.653 1.37 0l1.01 3.063c.097.291.373.489.685.489h3.274c.697 0 .987.877.423 1.28L9.803 7.215a.701.701 0 00-.261.792l1.012 3.063c.215.652-.544 1.195-1.107.792l-2.65-1.894a.729.729 0 00-.845 0l-2.649 1.894c-.563.403-1.322-.14-1.107-.792l1.012-3.063a.701.701 0 00-.261-.792L.297 5.322c-.563-.403-.273-1.28.424-1.28h3.274a.718.718 0 00.684-.49L5.691.49z"
               ></path>
               <mask
-              id="mask0_2993_656"
-              style={{ maskType: "alpha" }}
-              width="13"
-              height="12"
-              x="0"
-              y="0"
-              maskUnits="userSpaceOnUse"
+                id="mask0_2993_656"
+                style={{ maskType: "alpha" }}
+                width="13"
+                height="12"
+                x="0"
+                y="0"
+                maskUnits="userSpaceOnUse"
               >
-              <path
-              fill="#FFAC70"
-              d="M5.739.49c.217-.653 1.162-.653 1.38 0l1.02 3.063c.097.291.375.489.69.489h3.301c.703 0 .995.877.427 1.28L9.886 7.215c-.255.18-.361.5-.264.792l1.02 3.063c.218.652-.547 1.195-1.116.792L6.855 9.968a.74.74 0 00-.853 0l-2.67 1.894c-.57.403-1.334-.14-1.117-.792l1.02-3.063a.698.698 0 00-.264-.792L.301 5.322c-.57-.403-.277-1.28.426-1.28h3.301a.724.724 0 00.69-.49L5.738.49z"
-              ></path>
+                <path
+                  fill="#FFAC70"
+                  d="M5.739.49c.217-.653 1.162-.653 1.38 0l1.02 3.063c.097.291.375.489.69.489h3.301c.703 0 .995.877.427 1.28L9.886 7.215c-.255.18-.361.5-.264.792l1.02 3.063c.218.652-.547 1.195-1.116.792L6.855 9.968a.74.74 0 00-.853 0l-2.67 1.894c-.57.403-1.334-.14-1.117-.792l1.02-3.063a.698.698 0 00-.264-.792L.301 5.322c-.57-.403-.277-1.28.426-1.28h3.301a.724.724 0 00.69-.49L5.738.49z"
+                ></path>
               </mask>
               <g mask="url(#mask0_2993_656)">
-              <path fill="#D3DCE5" d="M8.471 -2H17.747999999999998V14H8.471z"></path>
+                <path fill="#D3DCE5" d="M8.471 -2H17.747999999999998V14H8.471z"></path>
               </g>
-              </svg>
+            </svg>
             }
           </span>{`(${item.comment})`}
           </p>
@@ -116,6 +117,7 @@ export default class FeaturedCardSlider extends Component {
             <Swiper
               slidesPerView={4}
               spaceBetween={30}
+              slidesPerGroup={4}
               loop={true}
               ref={this.swiperRef}
             >

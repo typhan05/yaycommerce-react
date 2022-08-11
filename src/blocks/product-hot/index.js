@@ -16,7 +16,7 @@ export default function ProductHot(props) {
             {Array.from(Array(item.rate), (e, i) => {
               return (
                 <svg
-                  key={i}
+                  key={`select-`+i}
                   xmlns="http://www.w3.org/2000/svg"
                   width="14"
                   height="12"
@@ -32,24 +32,25 @@ export default function ProductHot(props) {
               )
             })}
             {Array.from(Array(5), (e, i) => {
-              return (
-                <>
-                  {i >= item.rate && !item.rate_haft && <svg
-                    key={i}
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="12"
-                    fill="none"
-                    viewBox="0 0 14 12"
-                    className="mr-[2px]"
-                  >
-                    <path
+              if(i >= item.rate && !item.rate_haft) {
+                return (
+                  <svg
+                    key={`no_select-`+i}
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="12"
+                      fill="none"
+                      viewBox="0 0 14 12"
+                      className="mr-[2px]"
+                      >
+                      <path
                       fill="#D3DCE5"
                       d="M6.596.49c.217-.653 1.162-.653 1.38 0l1.02 3.063c.097.291.376.489.69.489h3.301c.703 0 .995.877.427 1.28l-2.671 1.893c-.254.18-.36.5-.264.792l1.02 3.063c.218.652-.547 1.195-1.116.792l-2.67-1.894a.74.74 0 00-.854 0l-2.67 1.894c-.57.403-1.334-.14-1.117-.792l1.02-3.063a.698.698 0 00-.263-.792L1.158 5.322c-.569-.403-.277-1.28.426-1.28h3.302a.724.724 0 00.69-.49L6.596.49z"
-                    ></path>
-                  </svg>}
-                </>
-              )
+                      ></path>
+                  </svg>
+                )
+              }
+              return false
             })}
             {item.rate_haft && item.rate <= 5 &&
             <svg xmlns="http://www.w3.org/2000/svg"

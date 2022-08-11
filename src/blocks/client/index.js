@@ -23,6 +23,7 @@ export default class Client extends Component {
           <div className="relative swiper-custom">
             <Swiper
               slidesPerView={3}
+              slidesPerGroup={3}
               spaceBetween={30}
               modules={[Pagination]}
               pagination={{

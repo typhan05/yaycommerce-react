@@ -111,6 +111,127 @@ export const data = {
           'classes': '',
         }
       },
+      {
+        'id': '6',
+        'sale': {
+          'number': 'NEW',
+          'color': 'green-light',
+        },
+        'image': 'img-product-4.png',
+        'rate': 4,
+        'rate_haft': true,
+        'comment': '21',
+        'tag': 'Accessories',
+        'title': 'Belt',
+        'price': 'USD$15.00',
+        'price_old': '',
+        'button': {
+          'text': 'Add to card',
+          'classes': '',
+        }
+      },
+      {
+        'id': '7',
+        'sale': '',
+        'image': 'img-product-3.png',
+        'rate': 5,
+        'comment': '21',
+        'tag': 'Accessories',
+        'title': 'Beanie with Logo',
+        'price': 'USD$15.00',
+        'price_old': '',
+        'button': {
+          'text': 'Add to card',
+          'classes': '',
+        }
+      },
+      {
+        'id': '8',
+        'sale': {
+          'number': 'NEW',
+          'color': 'green-light',
+        },
+        'image': 'img-product-4.png',
+        'rate': 4,
+        'rate_haft': true,
+        'comment': '21',
+        'tag': 'Accessories',
+        'title': 'Belt',
+        'price': 'USD$15.00',
+        'price_old': '',
+        'button': {
+          'text': 'Add to card',
+          'classes': '',
+        }
+      },
+      {
+        'id': '9',
+        'sale': {
+          'number': 'NEW',
+          'color': 'green-light',
+        },
+        'image': 'img-product-4.png',
+        'rate': 4,
+        'rate_haft': true,
+        'comment': '21',
+        'tag': 'Accessories',
+        'title': 'Belt',
+        'price': 'USD$15.00',
+        'price_old': '',
+        'button': {
+          'text': 'Add to card',
+          'classes': '',
+        }
+      },
+      {
+        'id': '10',
+        'sale': '',
+        'image': 'img-product-2.png',
+        'rate': 5,
+        'comment': '21',
+        'tag': 'Accessories',
+        'title': 'Album',
+        'price': 'USD$15.00',
+        'price_old': '',
+        'button': {
+          'text': 'Add to card',
+          'classes': '',
+        }
+      },
+      {
+        'id': '11',
+        'sale': {
+          'number': 'NEW',
+          'color': 'green-light',
+        },
+        'image': 'img-product-4.png',
+        'rate': 4,
+        'rate_haft': true,
+        'comment': '21',
+        'tag': 'Accessories',
+        'title': 'Belt',
+        'price': 'USD$15.00',
+        'price_old': '',
+        'button': {
+          'text': 'Add to card',
+          'classes': '',
+        }
+      },
+      {
+        'id': '12',
+        'sale': '',
+        'image': 'img-product-2.png',
+        'rate': 5,
+        'comment': '21',
+        'tag': 'Accessories',
+        'title': 'Album',
+        'price': 'USD$15.00',
+        'price_old': '',
+        'button': {
+          'text': 'Add to card',
+          'classes': '',
+        }
+      },
     ]
   },
   'product_hot': {
@@ -255,16 +376,19 @@ export const data = {
     "title": "Discover dressing tips from our blog",
     "lists": [
       {
+        "id": "1",
         "image": "img-our-blog-1.jpg",
         "date": "May 10, 2022",
         "title": "To dress well, modern men need to have the following 8 savings items"
       },
       {
+        "id": "2",
         "image": "img-our-blog-2.jpg",
         "date": "May 8, 2022",
         "title": "Sneakers that ruled the NBA in season 2022-2023"
       },
       {
+        "id": "3",
         "image": "img-our-blog-3.jpg",
         "date": "May 8, 2022",
         "title": "Looking for \"standard style\" for modern women of May, 2022"
