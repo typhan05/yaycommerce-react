@@ -7,6 +7,7 @@ import OurBlog from "../../blocks/our-blog";
 import Countdown from "../../blocks/countdown-date";
 import ProductHot from "../../blocks/product-hot";
 import Client from "../../blocks/client";
+import PreFooter from "../../blocks/pre-footer";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Client />
       <ProductHot content={data.product_hot} />
       <OurBlog content={data.our_blog} />
+      <PreFooter/>
     </>
   );
 }

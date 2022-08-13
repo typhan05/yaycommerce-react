@@ -1,7 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: [
+    './src/**/*.{js,jsx,ts,tsx}'
+  ],
   theme: {
     colors: {
       transparent: 'transparent',
@@ -19,6 +21,8 @@ module.exports = {
         light5: '#F5F5F5',
         light6: '#F3F8FC',
         light7: '#DBEAF9',
+        light8: '#F2F2F2',
+        light9: '#D3DCE5',
       },
       'green': {
         light: '#7FD59C',
@@ -41,5 +45,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: []
 }

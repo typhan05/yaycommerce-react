@@ -2,6 +2,8 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 import Logo from "../../assets/images/logo.svg"
 import Dropdown from "../../components/Dropdown";
+import DrawerSearch from "../../components/Drawer/Search";
+import useSearch from "../../components/Drawer/Search/useSearch";
 
 const units = [
   {id: 1, name: 'USD'},
@@ -15,7 +17,8 @@ const languages = [
   {id: 3, name: 'Spanish'},
 ];
 
-export default function Header() {
+export default function Header(props) {
+  const {isSearchShowing, toggleSearch} = useSearch();
   return (
     <header className="text-black2">
       <div className="bg-gray-light4 py-3 text-sm">
@@ -54,7 +57,7 @@ export default function Header() {
           </ul>
           <ul className="grid gap-x-5 grid-cols-4">
             <li>
-              <a href="#/">
+              <button type="button" onClick={toggleSearch}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -81,7 +84,7 @@ export default function Header() {
                     d="M15.62 15.709L19 19"
                   ></path>
                 </svg>
-              </a>
+              </button>
             </li>
             <li>
               <a href="#/">
@@ -101,7 +104,7 @@ export default function Header() {
               </a>
             </li>
             <li>
-              <a href="#/">
+              <button type="button" onClick={props.buttonCart}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -133,7 +136,7 @@ export default function Header() {
                     d="M13.101 9.55h-.044M5.943 9.55H5.9"
                   ></path>
                 </svg>
-              </a>
+              </button>
             </li>
             <li>
               <a href="#/">
@@ -154,6 +157,7 @@ export default function Header() {
             </li>
           </ul>
         </div>
+        <DrawerSearch isSearchShowing={isSearchShowing} hide={toggleSearch} />
       </div>
     </header>
   );
