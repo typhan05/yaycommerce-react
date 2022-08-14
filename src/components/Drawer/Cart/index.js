@@ -70,7 +70,7 @@ export default function DrawerCart({isShowing, hide}) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-black2 bg-opacity-50 transition-opacity" />
+          <div className="fixed inset-0 bg-black2 bg-opacity-50 transition-opacity"/>
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-hidden">
@@ -97,7 +97,7 @@ export default function DrawerCart({isShowing, hide}) {
                             onClick={hide}
                           >
                             <span className="sr-only">Close panel</span>
-                            <XIcon className="h-6 w-6" aria-hidden="true" />
+                            <XIcon className="h-6 w-6" aria-hidden="true"/>
                           </button>
                         </div>
                       </div>
@@ -107,7 +107,8 @@ export default function DrawerCart({isShowing, hide}) {
                           <ul className="divide-y divide-gray-light2 border-y border-gray-light2">
                             {products.map((product) => (
                               <li key={product.id} className="flex py-5">
-                                <div className="h-[100px] w-[75px] bg-gray-light5 flex-shrink-0 overflow-hidden rounded-lg">
+                                <div
+                                  className="h-[100px] w-[75px] bg-gray-light5 flex-shrink-0 overflow-hidden rounded-lg">
                                   <img src={require('../../../assets/images/' + product.imageSrc)}
                                        alt={product.name}
                                        className="h-full w-full object-cover object-center"/>
@@ -117,7 +118,8 @@ export default function DrawerCart({isShowing, hide}) {
                                   <h3 className="text-black2">
                                     <a href={product.href}> {product.name} </a>
                                   </h3>
-                                  <p className="mt-2 text-sm text-gray">Color: {product.color} <span className="mx-1">{'//'}</span> Size: {product.size}</p>
+                                  <p className="mt-2 text-sm text-gray">Color: {product.color} <span
+                                    className="mx-1">{'//'}</span> Size: {product.size}</p>
                                   <div className="mt-3 flex flex-1 items-center justify-between text-sm">
                                     <div className="flex items-center">
                                       <Count number={product.quantity}/>
@@ -141,7 +143,8 @@ export default function DrawerCart({isShowing, hide}) {
                                             strokeLinejoin="round"
                                             strokeWidth="1.7"
                                           >
-                                            <path d="M13.721 6.92c0 6.942 1 10.08-5.73 10.08s-5.71-3.138-5.71-10.08M15 4.26H1M10.97 4.26S11.43 1 8 1C4.575 1 5.033 4.26 5.033 4.26"></path>
+                                            <path
+                                              d="M13.721 6.92c0 6.942 1 10.08-5.73 10.08s-5.71-3.138-5.71-10.08M15 4.26H1M10.97 4.26S11.43 1 8 1C4.575 1 5.033 4.26 5.033 4.26"></path>
                                           </g>
                                         </svg>
                                       </button>
@@ -171,10 +174,13 @@ export default function DrawerCart({isShowing, hide}) {
                       <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                         <button
                           type="button"
-                          className="link-underline-show link-underline-black text-base"
+                          className="group transition-all duration-300 ease-in-out text-base"
                           onClick={hide}
                         >
-                          View Cart
+                          <span
+                            className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
+                            View Cart
+                          </span>
                         </button>
                       </div>
                     </div>

@@ -36,21 +36,41 @@ export default function Header(props) {
         <div className="container mx-auto flex flex-wrap items-center justify-between">
           <a href="/yaycommerce-react/"><img src={Logo} alt="logo"/></a>
           <ul className={"flex"}>
-            <li className="px-5"><NavLink to='/yaycommerce-react/' className={({isActive}) =>
-              isActive ? 'border-b border-solid border-black2 py-2' : 'py-2'
-            }>Home</NavLink></li>
-            <li className="px-5"><NavLink to='/yaycommerce-react/shops' className={({isActive}) =>
-              isActive ? 'border-b border-solid border-black2 py-2' : 'py-2'
-            }>Shops</NavLink></li>
-            <li className="px-5"><NavLink to='/yaycommerce-react/products' className={({isActive}) =>
-              isActive ? 'border-b border-solid border-black2 py-2' : 'py-2'
-            }>Products</NavLink></li>
-            <li className="px-5"><NavLink to='/yaycommerce-react/blog' className={({isActive}) =>
-              isActive ? 'border-b border-solid border-black2 py-2' : 'py-2'
-            }>Blog</NavLink></li>
-            <li className="px-5"><NavLink to='/yaycommerce-react/pages' className={({isActive}) =>
-              isActive ? 'border-b border-solid border-black2 py-2' : 'py-2'
-            }>Pages</NavLink></li>
+            <li className="px-5">
+              <NavLink to='/yaycommerce-react/' className="group transition-all duration-300 ease-in-out">
+                {({ isActive }) => (
+                  <span className={ isActive ? 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-no-repeat bg-[length:100%_2px] pb-2' : 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out pb-2'}>Home</span>
+                )}
+              </NavLink>
+            </li>
+            <li className="px-5">
+              <NavLink to='/yaycommerce-react/shops' className="group transition-all duration-300 ease-in-out">
+                {({ isActive }) => (
+                  <span className={ isActive ? 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-no-repeat bg-[length:100%_2px] pb-2' : 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out pb-2'}>Shops</span>
+                )}
+              </NavLink>
+            </li>
+            <li className="px-5">
+              <NavLink to='/yaycommerce-react/products' className="group transition-all duration-300 ease-in-out">
+                {({ isActive }) => (
+                  <span className={ isActive ? 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-no-repeat bg-[length:100%_2px] pb-2' : 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out pb-2'}>Products</span>
+                )}
+              </NavLink>
+            </li>
+            <li className="px-5">
+              <NavLink to='/yaycommerce-react/blog' className="group transition-all duration-300 ease-in-out">
+                {({ isActive }) => (
+                  <span className={ isActive ? 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-no-repeat bg-[length:100%_2px] pb-2' : 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out pb-2'}>Blog</span>
+                )}
+              </NavLink>
+            </li>
+            <li className="px-5">
+              <NavLink to='/yaycommerce-react/pages' className="group transition-all duration-300 ease-in-out">
+                {({ isActive }) => (
+                  <span className={ isActive ? 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-no-repeat bg-[length:100%_2px] pb-2' : 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out pb-2'}>Pages</span>
+                )}
+              </NavLink>
+            </li>
           </ul>
           <ul className="grid gap-x-5 grid-cols-4 items-center">
             <li>
