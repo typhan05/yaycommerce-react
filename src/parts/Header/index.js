@@ -2,8 +2,6 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 import Logo from "../../assets/images/logo.svg"
 import Dropdown from "../../components/Dropdown";
-import DrawerSearch from "../../components/Drawer/Search";
-import useSearch from "../../components/Drawer/Search/useSearch";
 
 const units = [
   {id: 1, name: 'USD'},
@@ -18,7 +16,6 @@ const languages = [
 ];
 
 export default function Header(props) {
-  const {isSearchShowing, toggleSearch} = useSearch();
   return (
     <header className="text-black2">
       <div className="bg-gray-light4 py-3 text-sm">
@@ -55,9 +52,9 @@ export default function Header(props) {
               isActive ? 'border-b border-solid border-black2 py-2' : 'py-2'
             }>Pages</NavLink></li>
           </ul>
-          <ul className="grid gap-x-5 grid-cols-4">
+          <ul className="grid gap-x-5 grid-cols-4 items-center">
             <li>
-              <button type="button" onClick={toggleSearch}>
+              <button className="block text-black2" type="button" onClick={props.buttonSearch}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -69,7 +66,7 @@ export default function Header(props) {
                   <ellipse
                     cx="9.622"
                     cy="9.417"
-                    stroke="#122940"
+                    stroke="currentColor"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
@@ -77,7 +74,7 @@ export default function Header(props) {
                     ry="8.417"
                   ></ellipse>
                   <path
-                    stroke="#122940"
+                    stroke="currentColor"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
@@ -104,7 +101,7 @@ export default function Header(props) {
               </a>
             </li>
             <li>
-              <button type="button" onClick={props.buttonCart}>
+              <button className="block text-black2" type="button" onClick={props.buttonCart}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -114,7 +111,7 @@ export default function Header(props) {
                   className="hover:scale-110"
                 >
                   <path
-                    stroke="#122940"
+                    stroke="currentColor"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
@@ -122,14 +119,14 @@ export default function Header(props) {
                     clipRule="evenodd"
                   ></path>
                   <path
-                    stroke="#122940"
+                    stroke="currentColor"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"
                     d="M13.547 5.046A4.053 4.053 0 009.488 1v0a4.069 4.069 0 00-2.883 1.179A4.038 4.038 0 005.41 5.046h0"
                   ></path>
                   <path
-                    stroke="#122940"
+                    stroke="currentColor"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2.5"
@@ -157,7 +154,6 @@ export default function Header(props) {
             </li>
           </ul>
         </div>
-        <DrawerSearch isSearchShowing={isSearchShowing} hide={toggleSearch} />
       </div>
     </header>
   );

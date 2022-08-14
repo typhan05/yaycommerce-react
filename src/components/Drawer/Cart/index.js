@@ -163,7 +163,7 @@ export default function DrawerCart({isShowing, hide}) {
                       <div className="mt-6">
                         <a
                           href="#/"
-                          className="flex items-center justify-center rounded-xl border border-transparent shadow-[0_7px_25px_rgba(55,126,98,0.2)] bg-green px-6 py-3 text-lg font-semibold text-white hover:bg-indigo-700"
+                          className="flex items-center justify-center rounded-xl border border-transparent shadow-[0_7px_25px_rgba(55,126,98,0.2)] bg-green px-6 py-3 text-lg font-semibold text-white hover:bg-indigo-700 hover:bg-black2 hover:shadow-[0_7px_35px_rgba(0,0,0,0.1)"
                         >
                           Checkout
                         </a>
@@ -172,7 +172,7 @@ export default function DrawerCart({isShowing, hide}) {
                         <button
                           type="button"
                           className="link-underline-show link-underline-black text-base"
-                          onClick={isShowing}
+                          onClick={hide}
                         >
                           View Cart
                         </button>
