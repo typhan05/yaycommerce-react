@@ -178,7 +178,7 @@ export default function DrawerCart({isShowing, hide}) {
                           onClick={hide}
                         >
                           <span
-                            className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
+                            className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:100%_1px] bg-no-repeat group-hover:bg-[length:0%_1px] transition-all duration-300 ease-out'>
                             View Cart
                           </span>
                         </button>
