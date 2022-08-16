@@ -12,7 +12,7 @@ export default function Footer() {
               <p className="mb-2">102 Washington Square South <br/>New York, NY 10012</p>
               <p className="mb-2"><a href="tel:+91-80-6156-1999" className="hover:underline">+91-80-6156-1999</a></p>
               <p><a href="mailto:support@remitstore.com" className="hover:underline">support@remitstore.com</a></p>
-              <div className="hidden xl:flex items-start w-full space-x-5 mt-[18px]">
+              <div className="hidden xl:flex items-center w-full space-x-5 mt-[18px]">
                 <a className="max-w-max" target="_blank" href="#/">
                   <title>Facebook icon</title>
                   <div className="text-gray hover:text-black2">

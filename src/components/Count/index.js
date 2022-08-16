@@ -14,7 +14,7 @@ export default function Count({number}) {
   }
 
   return (
-    <div className="flex justify-between items-center p-[6px] rounded-lg bg-gray-light8">
+    <div className="flex justify-between items-center p-[6px] rounded-lg bg-gray-light8 h-full">
       <button className="text-gray hover:text-black2" onClick={decrementCount}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

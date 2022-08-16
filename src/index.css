@@ -111,3 +111,11 @@ html, body {
 .swiper-custom .swiper-pagination-bullet-active {
     background-color: #122940;
 }
+
+.swiper-thumbnail .swiper-slide > div {
+    border: 2px solid transparent;
+}
+
+.swiper-thumbnail .swiper-slide-thumb-active > div {
+    border-color: #122940;
+}
