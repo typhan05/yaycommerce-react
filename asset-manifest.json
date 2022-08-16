@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/yaycommerce-react/static/css/main.d3ac43b8.css",
-    "main.js": "/yaycommerce-react/static/js/main.828f4168.js",
+    "main.css": "/yaycommerce-react/static/css/main.a59552b2.css",
+    "main.js": "/yaycommerce-react/static/js/main.74e42c8c.js",
     "static/js/787.93facbbb.chunk.js": "/yaycommerce-react/static/js/787.93facbbb.chunk.js",
     "static/media/SFUIDisplay-Bold.svg": "/yaycommerce-react/static/media/SFUIDisplay-Bold.51df48b08db7ee250b8b.svg",
     "static/media/SFUIDisplay-Semibold.svg": "/yaycommerce-react/static/media/SFUIDisplay-Semibold.0d0e7fc9d4e823c83126.svg",
@@ -30,11 +30,16 @@
     "static/media/img-our-blog-3.jpg": "/yaycommerce-react/static/media/img-our-blog-3.34a6f8bf489cd8cefa8f.jpg",
     "static/media/SFUIDisplay-Regular.woff2": "/yaycommerce-react/static/media/SFUIDisplay-Regular.ec61a29280ddc3a11408.woff2",
     "static/media/img-introduce-1.png": "/yaycommerce-react/static/media/img-introduce-1.83a4ac9f76c4243fd79f.png",
+    "static/media/img-product-03.png": "/yaycommerce-react/static/media/img-product-03.895d749820c09cb29493.png",
+    "static/media/img-product-01.png": "/yaycommerce-react/static/media/img-product-01.2c192feb882c5bbf5aea.png",
     "static/media/img-product-3.png": "/yaycommerce-react/static/media/img-product-3.6e213624cb014eafa19f.png",
+    "static/media/img-product-02.png": "/yaycommerce-react/static/media/img-product-02.5afb7839d105df8c1c5e.png",
     "static/media/img-product-1.png": "/yaycommerce-react/static/media/img-product-1.47c40ef6364138750bfb.png",
     "static/media/img-introduce-2.png": "/yaycommerce-react/static/media/img-introduce-2.b92153f627d8fcc4d0af.png",
     "static/media/img-product-4.png": "/yaycommerce-react/static/media/img-product-4.b7110073e846b6a5a711.png",
+    "static/media/img-product-04.png": "/yaycommerce-react/static/media/img-product-04.dcec4e498cd3536859a2.png",
     "static/media/img-product-2.png": "/yaycommerce-react/static/media/img-product-2.d848a7b6d648a3920299.png",
+    "static/media/img-product-05.png": "/yaycommerce-react/static/media/img-product-05.7cbb465ac1fee665e773.png",
     "static/media/logo.svg": "/yaycommerce-react/static/media/logo.ccc2f75a886c3927bad7e3dee0e061b0.svg",
     "static/media/tracking-icon.svg": "/yaycommerce-react/static/media/tracking-icon.4f0c5cc92a9de32ece55.svg",
     "static/media/delivery-icon.svg": "/yaycommerce-react/static/media/delivery-icon.15aa4259a713b1662d04.svg",
@@ -42,12 +47,12 @@
     "static/media/support-icon.svg": "/yaycommerce-react/static/media/support-icon.2665259a3250a27852c4.svg",
     "static/media/star.svg": "/yaycommerce-react/static/media/star.d25d8ea5d8fa326432e9.svg",
     "index.html": "/yaycommerce-react/index.html",
-    "main.d3ac43b8.css.map": "/yaycommerce-react/static/css/main.d3ac43b8.css.map",
-    "main.828f4168.js.map": "/yaycommerce-react/static/js/main.828f4168.js.map",
+    "main.a59552b2.css.map": "/yaycommerce-react/static/css/main.a59552b2.css.map",
+    "main.74e42c8c.js.map": "/yaycommerce-react/static/js/main.74e42c8c.js.map",
     "787.93facbbb.chunk.js.map": "/yaycommerce-react/static/js/787.93facbbb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d3ac43b8.css",
-    "static/js/main.828f4168.js"
+    "static/css/main.a59552b2.css",
+    "static/js/main.74e42c8c.js"
   ]
 }
