@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Shops from "./pages/Shops";
 import Products from "./pages/Products";
 import Categories from "./pages/Categories";
+import Search from "./pages/Search";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="/yaycommerce-react/shops" element={<Shops/>}/>
           <Route exact path="/yaycommerce-react/products" element={<Products/>}/>
           <Route exact path="/yaycommerce-react/categories" element={<Categories/>}/>
+          <Route exact path="/yaycommerce-react/search" element={<Search/>}/>
         </Routes>
       </Layout>
     </div>

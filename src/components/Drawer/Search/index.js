@@ -1,6 +1,7 @@
 import {Fragment, useState} from 'react'
 import {Dialog, Transition} from '@headlessui/react'
 import {XIcon} from '@heroicons/react/outline'
+import {useNavigate} from "react-router-dom";
 
 const trends = [
   { id: 1, name: 'T-shirt' },
@@ -26,6 +27,15 @@ export default function DrawerSearch({isSearchShowing, hide}) {
       setItemActive(null);
     }
     setName(keyword);
+  };
+
+  const navigate = useNavigate();
+
+  const handleSubmit = event => {
+    event.preventDefault();
+
+    // 👇️ redirect to /search
+    navigate('/yaycommerce-react/search');
   };
 
   return (
@@ -59,41 +69,43 @@ export default function DrawerSearch({isSearchShowing, hide}) {
                   <div className="flex items-center justify-between w-full px-[145px] mb-5">
                     <div className="flex flex-1 flex-col">
                       <div className="relative">
-                        <div
-                          className="flex items-center relative mx-auto text-gray-600 border border-gray-light9 bg-white rounded-[9px] overflow-hidden w-full h-[55px]">
-                          <input
-                            className="px-5 w-full text-base focus:outline-none"
-                            type="search"
-                            value={name}
-                            onChange={filter} name="search" placeholder="Search"/>
-                          <button type="submit" className="text-gray mr-4 hover:text-black2">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="20"
-                              height="20"
-                              fill="none"
-                              viewBox="0 0 20 20"
-                            >
-                              <ellipse
-                                cx="9.622"
-                                cy="9.417"
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                rx="8.622"
-                                ry="8.417"
-                              ></ellipse>
-                              <path
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M15.62 15.709L19 19"
-                              ></path>
-                            </svg>
-                          </button>
-                        </div>
+                        <form onSubmit={handleSubmit}>
+                          <div
+                            className="flex items-center relative mx-auto text-gray-600 border border-gray-light9 bg-white rounded-[9px] overflow-hidden w-full h-[55px]">
+                            <input
+                              className="px-5 w-full text-base focus:outline-none"
+                              type="search"
+                              value={name}
+                              onChange={filter} name="search" placeholder="Search"/>
+                            <button type="submit" onClick={hide} className="text-gray mr-4 hover:text-black2">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                fill="none"
+                                viewBox="0 0 20 20"
+                              >
+                                <ellipse
+                                  cx="9.622"
+                                  cy="9.417"
+                                  stroke="currentColor"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
+                                  rx="8.622"
+                                  ry="8.417"
+                                ></ellipse>
+                                <path
+                                  stroke="currentColor"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
+                                  d="M15.62 15.709L19 19"
+                                ></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </form>
                       </div>
                     </div>
                     <div className="flex flex-shrink-0 w-10">
