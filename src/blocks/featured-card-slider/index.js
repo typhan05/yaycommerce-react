@@ -20,7 +20,7 @@ export default class FeaturedCardSlider extends Component {
         </SwiperSlide>
     )
     return (
-      <section className="mb-[120px]">
+      <section className="mb-[100px]">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold mb-10 text-center">{this.props.content.title}</h2>
           <div className="relative">

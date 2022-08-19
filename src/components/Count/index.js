@@ -35,7 +35,7 @@ export default function Count({number}) {
           ></rect>
         </svg>
       </button>
-      <div className="w-12 text-center text-black2 text-base font-medium">{count}</div>
+      <div className="w-12 text-center text-base font-medium">{count}</div>
       <button className="text-gray hover:text-black2" onClick={incrementCount}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

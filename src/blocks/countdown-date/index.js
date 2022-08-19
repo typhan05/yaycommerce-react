@@ -80,7 +80,7 @@ export default class Countdown extends React.Component {
               </div>
               <div className="text-center">
                 <button type="button"
-                        className="font-semibold text-black2 hover:text-white border-2 border-black2 hover:bg-black2 rounded-xl px-5 py-2.5 text-center">Shop Now
+                        className="font-semibold hover:text-white border-2 border-black2 hover:bg-black2 rounded-xl px-5 py-2.5 text-center">Shop Now
                 </button>
               </div>
             </div>

@@ -36,7 +36,7 @@ export default function PreFooter() {
              className="object-center"/>
       </div>
       <div>
-        <h4 className="text-lg text-black2 font-semibold">{item.title}</h4>
+        <h4 className="text-lg font-semibold">{item.title}</h4>
         <p className="text-gray">{item.description}</p>
       </div>
     </div>

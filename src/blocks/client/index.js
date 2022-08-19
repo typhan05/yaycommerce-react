@@ -41,7 +41,7 @@ export default class Client extends Component {
                         <img src={require('../../assets/images/slide2-human-1.png')} alt="avatar"
                              className="flex-shrink-0 w-[62px] h-[62px] rounded-[31px] mr-4"/>
                         <div>
-                          <h4 className="text-lg font-semibold text-black2 mb-1">William Hallen</h4>
+                          <h4 className="text-lg font-semibold mb-1">William Hallen</h4>
                           <div className="flex">
                             {Array.from(Array(5), (e, i) => {
                               return (

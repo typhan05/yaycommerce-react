@@ -5,7 +5,7 @@ export default function Introduce(props) {
     <div key={item.id} style={{ backgroundImage: `url(${require('../../assets/images/'+item.bg+'')})` }}
          className="py-10 px-12 rounded-[10px] bg-gray-light2">
       <div className="max-w-sm">
-        <h2 className="text-4xl text-black2 font-bold mb-2">{item.title}</h2>
+        <h2 className="text-4xl font-bold mb-2">{item.title}</h2>
         <p className="text-gray">{item.description}</p>
         <div className="mt-8">
           <a href="#/"

@@ -128,7 +128,7 @@ export default function DrawerCart({isShowing, hide}) {
                                     <div className="flex">
                                       <button
                                         type="button"
-                                        className="font-medium text-gray opacity-50 hover:text-black2 hover:opacity-100"
+                                        className="font-medium text-gray opacity-50 hover:hover:opacity-100"
                                       >
                                         <svg
                                           xmlns="http://www.w3.org/2000/svg"

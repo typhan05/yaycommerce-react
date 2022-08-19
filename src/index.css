@@ -58,6 +58,10 @@ html, body {
     overflow-x: hidden;
 }
 
+body {
+    color: #122940;
+}
+
 .container {
     padding: 0 20px;
     width: 100%;
@@ -118,4 +122,30 @@ html, body {
 
 .swiper-thumbnail .swiper-slide-thumb-active > div {
     border-color: #122940;
+}
+
+.react-tabs .react-tabs__tab-list {
+    margin-bottom: 0;
+    border-color: #EDF3F9;
+}
+
+.react-tabs .react-tabs__tab {
+    border-radius: 0;
+    border-bottom: 2px solid transparent;
+    padding: 12px 0;
+    margin-right: 40px;
+}
+
+.react-tabs .react-tabs__tab:last-child {
+    margin-right: 0;
+}
+
+.react-tabs .react-tabs__tab:focus:after {
+    display: none;
+}
+
+.react-tabs .react-tabs__tab--selected {
+    bottom: 0;
+    border: 0;
+    border-bottom: 2px solid #122940;
 }

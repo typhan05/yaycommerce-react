@@ -24,13 +24,13 @@ export default function OurBlog(props) {
   return (
     <section className="mb-[150px]">
       <div className="container mx-auto">
-        <h2 className="text-4xl text-black2 text-center font-bold mb-9">{props.content.title}</h2>
+        <h2 className="text-4xl text-center font-bold mb-9">{props.content.title}</h2>
         <div className="grid grid-cols-3 gap-8 mb-10">
           {content}
         </div>
         <div className="text-center">
           <button type="button"
-                  className="font-semibold text-black2 hover:text-white border-2 border-black2 hover:bg-black2 rounded-xl px-5 py-2.5 text-center">View
+                  className="font-semibold hover:text-white border-2 border-black2 hover:bg-black2 rounded-xl px-5 py-2.5 text-center">View
             More
           </button>
         </div>
