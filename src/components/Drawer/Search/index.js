@@ -66,7 +66,7 @@ export default function DrawerSearch({isSearchShowing, hide}) {
                             type="search"
                             value={name}
                             onChange={filter} name="search" placeholder="Search"/>
-                          <button type="submit" className="text-gray hover:mr-4">
+                          <button type="submit" className="text-gray mr-4 hover:text-black2">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="20"
@@ -99,7 +99,7 @@ export default function DrawerSearch({isSearchShowing, hide}) {
                     <div className="flex flex-shrink-0 w-10">
                       <button
                         type="button"
-                        className="ml-5 rounded-md text-gray hover:focus:outline-none focus:ring-2 focus:ring-white"
+                        className="ml-5 rounded-md text-gray hover:text-black2 focus:outline-none focus:ring-2 focus:ring-white"
                         onClick={hide}
                       >
                         <span className="sr-only">Close panel</span>
