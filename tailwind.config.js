@@ -23,6 +23,7 @@ module.exports = {
         light7: '#DBEAF9',
         light8: '#F2F2F2',
         light9: '#D3DCE5',
+        light10: '#F2F7FF',
       },
       'green': {
         light: '#7FD59C',

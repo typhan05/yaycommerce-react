@@ -11,7 +11,12 @@ export const breadcrumbs = [
   },
   {
     'id': 3,
-    'text': 'Clothing',
+    'text': 'Categories',
+    'link': '/yaycommerce-react/categories'
+  },
+  {
+    'id': 4,
+    'text': 'Activewear',
     'link': ''
   },
 ]
