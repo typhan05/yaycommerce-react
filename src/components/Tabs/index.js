@@ -16,6 +16,17 @@ const star_options = [
   {value: '3-star', label: 'Show 3 star only'}
 ];
 
+const customStyles = {
+  control: (base) => ({
+    ...base,
+    height: '40px',
+    'min-height': '40px',
+    borderRadius: '7px',
+    borderColor: '#D3DCE5',
+    padding: '0 5px'
+  }),
+};
+
 const Tabs = ({data}) => (
   <TabsComponent>
     <TabList>
@@ -76,8 +87,8 @@ const Tabs = ({data}) => (
           <div>
             <h3 className="text-2xl font-bold mb-5">Customer reviews</h3>
             <div className="grid grid-cols-2 gap-[14px] mb-[47px] max-w-[480px]">
-              <Select options={review_options} components={{IndicatorSeparator: () => null}}/>
-              <Select options={star_options} components={{IndicatorSeparator: () => null}}/>
+              <Select options={review_options} styles={customStyles} components={{IndicatorSeparator: () => null}}/>
+              <Select options={star_options} styles={customStyles} components={{IndicatorSeparator: () => null}}/>
             </div>
             <div className="mb-10">
               <div className="mb-[30px] pb-[18px] border-b border-solid border-gray-light2">

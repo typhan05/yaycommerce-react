@@ -8,6 +8,17 @@ import PreFooter from "../../blocks/pre-footer";
 import Pagination from "../../components/Pagination";
 
 export default function Search() {
+  const customStyles = {
+    control: (base) => ({
+      ...base,
+      height: '44px',
+      'min-height': '44px',
+      borderRadius: '9px',
+      borderColor: '#D3DCE5',
+      padding: '0 5px',
+    }),
+  };
+  
   return (
     <>
       <BreadCrumb content={breadcrumbs}/>
@@ -16,7 +27,7 @@ export default function Search() {
           <h1 className="text-4xl font-bold mb-5">Search results for: "dresses women"</h1>
           <div className="flex justify-between items-center mb-[30px]">
             <div className="w-[245px]">
-              <Select options={options} defaultValue={options[0]} components={{IndicatorSeparator: () => null}} />
+              <Select options={options} styles={customStyles} components={{IndicatorSeparator: () => null}} placeholder={'Defaulf sorting'} />
             </div>
             <p className="text-gray">Showing 1 - 20 of 89 results</p>
           </div>

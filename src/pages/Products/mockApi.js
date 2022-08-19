@@ -272,8 +272,15 @@ export const sliderProducts = [
   },
 ];
 
-export const options = [
-  {value: 'chocolate', label: 'Chocolate'},
-  {value: 'strawberry', label: 'Strawberry'},
-  {value: 'vanilla', label: 'Vanilla'}
+export const optionsSize = [
+  {value: 'S', label: 'S'},
+  {value: 'XS', label: 'XS'},
+  {value: 'XL', label: 'XL'},
+  {value: '2XL', label: '2XL'},
+];
+
+export const optionsColor = [
+  {value: 'Red', label: 'Red'},
+  {value: 'Yellow', label: 'Yellow'},
+  {value: 'Green', label: 'Green'}
 ];

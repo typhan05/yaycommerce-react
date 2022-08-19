@@ -16,10 +16,21 @@ import FeaturedCardSlider from "../../blocks/featured-card-slider";
 import Select from "react-select";
 import Count from "../../components/Count";
 import PreFooter from "../../blocks/pre-footer";
-import {breadcrumbs, data, featuredCard, options, sliderProducts} from "./mockApi";
+import {breadcrumbs, data, featuredCard, optionsColor, optionsSize, sliderProducts} from "./mockApi";
 
 export default function Products() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
+  const customStyles = {
+    control: (base) => ({
+      ...base,
+      height: '54px',
+      'min-height': '54px',
+      borderRadius: '12px',
+      borderColor: '#D3DCE5',
+      padding: '0 5px'
+    }),
+  };
 
   return (
     <>
@@ -95,11 +106,11 @@ export default function Products() {
             <div className="max-w-[490px]">
               <div className="mb-6">
                 <label className="inline-block text-base font-medium mb-2">Size</label>
-                <Select options={options} components={{IndicatorSeparator: () => null}} placeholder={'Select your size'}/>
+                <Select options={optionsSize} styles={customStyles} components={{IndicatorSeparator: () => null}} placeholder={'Select your size'} />
               </div>
               <div>
                 <label className="inline-block text-base font-medium mb-2">Color</label>
-                <Select options={options} components={{IndicatorSeparator: () => null}}
+                <Select options={optionsColor} styles={customStyles} components={{IndicatorSeparator: () => null}}
                         placeholder={'Select favorite color'}/>
               </div>
               <div className="flex mt-[30px]">

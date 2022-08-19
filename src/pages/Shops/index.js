@@ -8,6 +8,17 @@ import PreFooter from "../../blocks/pre-footer";
 import Pagination from "../../components/Pagination";
 
 export default function Shops() {
+  const customStyles = {
+    control: (base) => ({
+      ...base,
+      height: '44px',
+      'min-height': '44px',
+      borderRadius: '9px',
+      borderColor: '#D3DCE5',
+      padding: '0 5px',
+    }),
+  };
+
   return (
     <>
       <BreadCrumb content={breadcrumbs}/>
@@ -23,7 +34,7 @@ export default function Shops() {
           <div className="flex justify-between items-center mb-[30px]">
             <p className="text-gray">Showing 1 - 20 of 89 results</p>
             <div className="w-[245px]">
-              <Select options={options} defaultValue={options[0]} components={{IndicatorSeparator: () => null}} />
+              <Select options={options} styles={customStyles} components={{IndicatorSeparator: () => null}} placeholder={'Defaulf sorting'} />
             </div>
           </div>
           <div className="grid grid-cols-4 gap-8 pb-5 mb-7 border-b border-solid border-gray-light2">

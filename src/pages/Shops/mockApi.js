@@ -365,7 +365,7 @@ export const featuredCard = {
 };
 
 export const options = [
-  {value: 'default', label: 'Defaulf sorting'},
-  {value: 'strawberry', label: 'Strawberry'},
-  {value: 'vanilla', label: 'Vanilla'}
+  {value: 'New Product', label: 'New Product'},
+  {value: 'Best selling', label: 'Best selling'},
+  {value: 'New arrivals', label: 'New arrivals'}
 ];
