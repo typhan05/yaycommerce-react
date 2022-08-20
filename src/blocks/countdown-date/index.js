@@ -74,7 +74,7 @@ export default class Countdown extends React.Component {
                 {seconds && (
                   <div
                     className="flex items-center justify-center flex-col h-[90px] w-[90px] rounded-[10px] bg-orange3 text-gray">
-                    <span className="block text-5xl text-black2">{seconds}</span>seconds
+                    <span className="block text-5xl text-black2">{seconds}</span>Seconds
                   </div>
                 )}
               </div>
