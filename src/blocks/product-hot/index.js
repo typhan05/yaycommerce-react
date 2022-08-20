@@ -13,7 +13,7 @@ export default function ProductHot(props) {
           {props.content.tags.map((item, i) =>
             <li key={item.id}
                 className={item?.active && `text-black2`}>{item.text} {props.content.tags.length - 1 !== i ?
-              <span className="mx-3 text-gray">//</span> : ''}</li>
+              <span className="mx-3 text-gray">{`//`}</span> : ''}</li>
           )}
         </ul>
         <div className="grid gap-x-8 grid-cols-4">

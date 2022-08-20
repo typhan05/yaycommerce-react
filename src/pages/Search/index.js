@@ -1,11 +1,9 @@
 import React from 'react';
 import BreadCrumb from "../../components/Breadcrumb";
-import {breadcrumbs, featuredCard} from "./mockApi";
-import {options} from "./mockApi";
+import {breadcrumbs, featuredCard, options} from "./mockApi";
 import Select from "react-select";
 import Card from "../../components/Card";
 import PreFooter from "../../blocks/pre-footer";
-import Pagination from "../../components/Pagination";
 
 export default function Search() {
   const customStyles = {
