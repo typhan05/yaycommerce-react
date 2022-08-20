@@ -131,6 +131,8 @@ body {
 
 .react-tabs .react-tabs__tab {
     border-radius: 0;
+    bottom: 0;
+    border: 0;
     border-bottom: 2px solid transparent;
     padding: 12px 0;
     margin-right: 40px;
@@ -145,7 +147,5 @@ body {
 }
 
 .react-tabs .react-tabs__tab--selected {
-    bottom: 0;
-    border: 0;
     border-bottom: 2px solid #122940;
 }

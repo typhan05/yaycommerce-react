@@ -121,7 +121,8 @@ export default function Header(props) {
               </a>
             </li>
             <li>
-              <button className="block text-black2" type="button" onClick={props.buttonCart}>
+              <button className="relative block text-black2" type="button" onClick={props.buttonCart}>
+                <span className="absolute -top-[4px] -right-[7px] z-10 text-[11px] leading-4 flex items-center justify-center text-white font-semibold bg-green w-[18px] h-[18px] rounded-[9px]">7</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"

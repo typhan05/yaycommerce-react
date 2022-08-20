@@ -1,20 +1,24 @@
 import React, {useState} from "react";
 
-export default function Count({number}) {
+export default function Count({number, style}) {
   let [count, setCount] = useState(0 || number);
 
   function incrementCount() {
-    count = count + 1;
+    count = parseInt(count) + 1;
     setCount(count);
   }
 
   function decrementCount() {
-    if (count > 0) count = count - 1;
+    if(parseInt(count) > 0) count = parseInt(count) - 1;
     setCount(count);
   }
 
+  const handleChange = event => {
+    setCount(event.target.value);
+  };
+
   return (
-    <div className="flex justify-between items-center p-[6px] rounded-lg bg-gray-light8 h-full">
+    <div className="flex justify-between items-center p-[6px] rounded-lg bg-gray-light8 h-full" style={style}>
       <button className="text-gray hover:text-black2" onClick={decrementCount}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +39,14 @@ export default function Count({number}) {
           ></rect>
         </svg>
       </button>
-      <div className="w-12 text-center text-base font-medium">{count}</div>
+      <input
+        type="text"
+        id="count"
+        name="count"
+        onChange={handleChange}
+        value={count}
+        className="w-12 text-center text-base font-medium bg-gray-light8"
+      />
       <button className="text-gray hover:text-black2" onClick={incrementCount}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

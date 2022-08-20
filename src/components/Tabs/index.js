@@ -25,6 +25,12 @@ const customStyles = {
     borderColor: '#D3DCE5',
     padding: '0 5px'
   }),
+  placeholder: (defaultStyles) => {
+    return {
+      ...defaultStyles,
+      color: '#5A6D80',
+    }
+  }
 };
 
 const Tabs = ({data}) => (
@@ -69,13 +75,13 @@ const Tabs = ({data}) => (
           The shop's women's goods are free-size, women's height m65 52kg in weight, it's beautiful. Designed with the
           same color as the photo: Female: height m65, weight 48kg, please wear it well. </p>
         <div className="max-w-[560px] mb-7">
-          <p className="flex"><strong className="font-medium w-40 mr-10">Product ID</strong> #83518358539</p>
-          <p className="flex"><strong className="font-medium w-40 mr-10">Material</strong> 100% Cotton</p>
-          <p className="flex"><strong className="font-medium w-40 mr-10">Color</strong> Pink, white, red, black</p>
-          <p className="flex"><strong className="font-medium w-40 mr-10">Size</strong> Freesize</p>
-          <p className="flex"><strong className="font-medium w-40 mr-10">Jacket length</strong> 114 cm</p>
-          <p className="flex"><strong className="font-medium w-40 mr-10">Weight</strong> 450 gr</p>
-          <p className="flex"><strong className="font-medium w-40 mr-10">Other info</strong> -</p>
+          <p className="flex mb-2"><strong className="font-medium w-40 mr-10">Product ID</strong> #83518358539</p>
+          <p className="flex mb-2"><strong className="font-medium w-40 mr-10">Material</strong> 100% Cotton</p>
+          <p className="flex mb-2"><strong className="font-medium w-40 mr-10">Color</strong> Pink, white, red, black</p>
+          <p className="flex mb-2"><strong className="font-medium w-40 mr-10">Size</strong> Freesize</p>
+          <p className="flex mb-2"><strong className="font-medium w-40 mr-10">Jacket length</strong> 114 cm</p>
+          <p className="flex mb-2"><strong className="font-medium w-40 mr-10">Weight</strong> 450 gr</p>
+          <p className="flex mb-2"><strong className="font-medium w-40 mr-10">Other info</strong> -</p>
         </div>
         <p>Guarantee product as photo, return products in 7 days, fast service, quality is number 1.<br/>
           If you have any questions, don't hesitate to reach out to our team.</p>
@@ -87,8 +93,8 @@ const Tabs = ({data}) => (
           <div>
             <h3 className="text-2xl font-bold mb-5">Customer reviews</h3>
             <div className="grid grid-cols-2 gap-[14px] mb-[47px] max-w-[480px]">
-              <Select options={review_options} styles={customStyles} components={{IndicatorSeparator: () => null}}/>
-              <Select options={star_options} styles={customStyles} components={{IndicatorSeparator: () => null}}/>
+              <Select options={review_options} defaultValue={review_options[0]} styles={customStyles} components={{IndicatorSeparator: () => null}}/>
+              <Select options={star_options} defaultValue={star_options[0]} styles={customStyles} components={{IndicatorSeparator: () => null}}/>
             </div>
             <div className="mb-10">
               <div className="mb-[30px] pb-[18px] border-b border-solid border-gray-light2">

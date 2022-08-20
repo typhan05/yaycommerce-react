@@ -236,7 +236,23 @@ export const data = {
   },
   'product_hot': {
     'title': 'The most searched products',
-    'tags': 'Best seller // On sale // New arrivals',
+    'tags': [
+      {
+        'id':1,
+        'text': 'Best seller',
+        'active': true,
+      },
+      {
+        'id':2,
+        'text': 'On sale',
+        'active': '',
+      },
+      {
+        'id':3,
+        'text': 'New arrivals',
+        'active': '',
+      },
+    ],
     'lists': [
       {
         'id': '1',

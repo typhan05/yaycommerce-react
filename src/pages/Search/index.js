@@ -17,8 +17,14 @@ export default function Search() {
       borderColor: '#D3DCE5',
       padding: '0 5px',
     }),
+    placeholder: (defaultStyles) => {
+      return {
+        ...defaultStyles,
+        color: '#5A6D80',
+      }
+    }
   };
-  
+
   return (
     <>
       <BreadCrumb content={breadcrumbs}/>

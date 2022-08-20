@@ -53,21 +53,21 @@ export default class Countdown extends React.Component {
                 {days && (
                   <div
                     className="flex items-center justify-center flex-col h-[90px] w-[90px] rounded-[10px] bg-orange3 text-gray">
-                    <span className="block text-5xl text-black2">{days}</span> days
+                    <span className="block text-5xl text-black2">{days}</span> Days
                   </div>
                 )}
                 <div className="mx-5 text-[35px] text-gray">:</div>
                 {hours && (
                   <div
                     className="flex items-center justify-center flex-col h-[90px] w-[90px] rounded-[10px] bg-orange3 text-gray">
-                    <span className="block text-5xl text-black2">{hours}</span> hours
+                    <span className="block text-5xl text-black2">{hours}</span> Hours
                   </div>
                 )}
                 <div className="mx-5 text-[35px] text-gray">:</div>
                 {minutes && (
                   <div
                     className="flex items-center justify-center flex-col h-[90px] w-[90px] rounded-[10px] bg-orange3 text-gray">
-                    <span className="block text-5xl text-black2">{minutes}</span> minutes
+                    <span className="block text-5xl text-black2">{minutes}</span> Minutes
                   </div>
                 )}
                 <div className="mx-5 text-[35px] text-gray">:</div>

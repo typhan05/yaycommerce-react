@@ -30,6 +30,12 @@ export default function Products() {
       borderColor: '#D3DCE5',
       padding: '0 5px'
     }),
+    placeholder: (defaultStyles) => {
+      return {
+        ...defaultStyles,
+        color: '#5A6D80',
+      }
+    }
   };
 
   return (
@@ -115,7 +121,7 @@ export default function Products() {
               </div>
               <div className="flex mt-[30px]">
                 <div className="w-[153px] flex-shrink-0">
-                  <Count number={1}/>
+                  <Count number={1} style={{ padding: '6px 12px' }} />
                 </div>
                 <a href="#/"
                    className="ml-7 flex-1 inline-flex justify-center rounded-xl text-lg font-semibold py-[13px] px-6 text-white bg-blue shadow-[0_7px_25px_rgba(47,112,179,0.2)] hover:bg-black2 hover:shadow-[0_7px_35px_rgba(0,0,0,0.1)]">Add
