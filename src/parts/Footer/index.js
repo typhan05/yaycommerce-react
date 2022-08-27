@@ -10,8 +10,22 @@ export default function Footer() {
             <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4">
               <a href="#/" className="inline-flex mb-5"><img src={Logo} alt="logo-footer"/></a>
               <p className="mb-2">102 Washington Square South <br/>New York, NY 10012</p>
-              <p className="mb-2"><a href="tel:+91-80-6156-1999" className="hover:underline">+91-80-6156-1999</a></p>
-              <p><a href="mailto:support@remitstore.com" className="hover:underline">support@remitstore.com</a></p>
+              <p className="mb-2">
+                <a className='group transition-all duration-300 ease-in-out' href="tel:+91-80-6156-1999">
+                    <span
+                      className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
+                      +91-80-6156-1999
+                    </span>
+                </a>
+              </p>
+              <p className="mb-2">
+                <a className='group transition-all duration-300 ease-in-out' href="mailto:support@remitstore.com">
+                    <span
+                      className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
+                      support@remitstore.com
+                    </span>
+                </a>
+              </p>
               <div className="hidden xl:flex items-center w-full space-x-5 mt-[18px]">
                 <a className="max-w-max" target="_blank" href="#/">
                   <title>Facebook icon</title>
@@ -177,7 +191,8 @@ export default function Footer() {
             </div>
             <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4">
               <h3 className="text-[22px] font-semibold mb-4">Newsletter</h3>
-              <p className="mb-5 text-gray">Enter your email below to be the first to know about new collections and product
+              <p className="mb-5 text-gray">Enter your email below to be the first to know about new collections and
+                product
                 launches.</p>
               <form action="#">
                 <div className="flex items-center bg-gray-light6 rounded-xl p-1 pl-5">
@@ -209,8 +224,9 @@ export default function Footer() {
                   <input
                     className="bg-gray-light6 appearance-none w-full py-2 px-[15px] text-gray-700 leading-tight focus:outline-none focus:border-purple-500"
                     id="inline-full-name" type="text" placeholder="Enter your email"/>
-                  <button className="flex-shrink-0 bg-green text-white font-medium py-2 px-4 rounded-[10px] hover:bg-black2"
-                          type="submit">Submit
+                  <button
+                    className="flex-shrink-0 bg-green text-white font-medium py-2 px-4 rounded-[10px] hover:bg-black2"
+                    type="submit">Submit
                   </button>
                 </div>
                 <small className="inline-block mt-3 text-gray italic">We promise not send spam to you!</small>
@@ -218,7 +234,8 @@ export default function Footer() {
             </div>
           </div>
           <div className="flex justify-center py-3 shadow-[0_-1px_0px_#E9EFF5]">
-            <p className="text-gray">Copyright © 2022 <span className="text-black2">RemitStore</span>. All Rights Reserved.</p>
+            <p className="text-gray">Copyright © 2022 <span className="text-black2">RemitStore</span>. All Rights
+              Reserved.</p>
           </div>
         </div>
       </div>

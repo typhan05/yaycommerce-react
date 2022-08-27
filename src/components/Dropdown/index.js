@@ -14,8 +14,8 @@ export default function Dropdown(props) {
         <a
           href="#/"
           className={classNames(
-            active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-            'block px-4 py-2 text-sm'
+            active ? 'bg-gray-light11 text-black2 font-semibold' : 'text-gray',
+            'block px-4 py-2 text-sm hover:bg-gray-light11 hover:text-black2 hover:font-semibold'
           )}
         >
           {option.name}
@@ -41,8 +41,8 @@ export default function Dropdown(props) {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-auto rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
-          <div className="py-1">
+        <Menu.Items className="absolute left-1/2 -translate-x-2/4 top-full mt-2 -ml-2 w-auto rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-20">
+          <div className="py-1 bg-white">
             {renderItem}
           </div>
         </Menu.Items>

@@ -40,7 +40,7 @@ export default class FeaturedCardSlider extends Component {
               <ChevronLeftIcon className="h-7 w-14 text-black2" aria-hidden="true"/>
             </div>
             <div
-              className={`absolute right-[-26px] top-1/4 cursor-pointer flex items-center justify-center z-10 h-[50px] w-[50px] rounded-[25px] shadow-[0_10px_25px_rgba(55,126,98,0.05)] bg-white hover:bg-gray-light2`}
+              className={`absolute right-[-26px] top-1/4 cursor-pointer flex items-center justify-center z-10 h-[50px] w-[50px] rounded-[25px] shadow-[0_10px_25px_rgba(55,126,98,0.05)] bg-white hover:bg-gray-light2 hover:shadow-[0_10px_25px_rgba(18,41,64,0.15)]`}
               onClick={() => this.swiperRef.current.swiper.slideNext()}
             >
               <ChevronRightIcon className="h-7 w-14 text-black2" aria-hidden="true"/>

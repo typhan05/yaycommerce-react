@@ -116,7 +116,12 @@ export default function DrawerCart({isShowing, hide}) {
 
                                 <div className="ml-4 flex flex-1 flex-col">
                                   <h3 className="text-black2">
-                                    <a href={product.href}> {product.name} </a>
+                                    <a className='group transition-all duration-300 ease-in-out' href={product.href}>
+                                      <span
+                                        className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
+                                        {product.name}
+                                      </span>
+                                    </a>
                                   </h3>
                                   <p className="mt-2 text-sm text-gray">Color: {product.color} <span
                                     className="mx-1">{'//'}</span> Size: {product.size}</p>
@@ -128,7 +133,7 @@ export default function DrawerCart({isShowing, hide}) {
                                     <div className="flex">
                                       <button
                                         type="button"
-                                        className="font-medium text-gray opacity-50 hover:hover:opacity-100"
+                                        className="font-medium text-gray opacity-50 hover:text-black2 hover:opacity-100"
                                       >
                                         <svg
                                           xmlns="http://www.w3.org/2000/svg"
