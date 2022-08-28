@@ -10,23 +10,21 @@ function classNames(...classes) {
 export default function Dropdown(props) {
   const renderItem = props.options.map((option) =>
     <Menu.Item key={option.id}>
-      {({ active }) => (
-        <a
-          href="#/"
-          className={classNames(
-            active ? 'bg-gray-light11 text-black2 font-semibold' : 'text-gray',
-            'block px-4 py-2 text-sm hover:bg-gray-light11 hover:text-black2 hover:font-semibold'
-          )}
-        >
-          {option.name}
-        </a>
-      )}
+      <a
+        href="#/"
+        className={classNames(
+          option?.active ? 'bg-gray-light11 text-black2 font-semibold' : 'text-gray',
+          'block px-4 py-2 text-sm duration-300 hover:bg-gray-light11 hover:text-black2'
+        )}
+      >
+        {option.name}
+      </a>
     </Menu.Item>
   );
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu as="div" className="relative inline-flex text-left ml-5">
       <div>
-        <Menu.Button className="inline-flex justify-center w-full text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500">
+        <Menu.Button className="inline-flex text-sm font-medium pl-4 hover:bg-gray-50 focus:outline-0">
           {props.labelName}
           <ChevronDownIcon className="ml-1 h-5 w-5" aria-hidden="true" />
         </Menu.Button>
@@ -41,8 +39,8 @@ export default function Dropdown(props) {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute left-1/2 -translate-x-2/4 top-full mt-2 -ml-2 w-auto rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-20">
-          <div className="py-1 bg-white">
+        <Menu.Items className="absolute left-0 top-full mt-1 rounded-md shadow-lg bg-white focus:outline-none z-20">
+          <div className="py-1 bg-white min-w-[70px]">
             {renderItem}
           </div>
         </Menu.Items>
