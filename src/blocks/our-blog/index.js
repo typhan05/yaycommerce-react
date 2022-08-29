@@ -25,7 +25,7 @@ export default function OurBlog(props) {
     <section className="mb-[150px]">
       <div className="container mx-auto">
         <h2 className="text-4xl text-center font-bold mb-9">{props.content.title}</h2>
-        <div className="grid grid-cols-3 gap-8 mb-10">
+        <div className="grid lg:grid-cols-3 lg:gap-8 md:grid-cols-3 grid-cols-1 gap-5 mb-10">
           {content}
         </div>
         <div className="text-center">

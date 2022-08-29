@@ -18,7 +18,7 @@ const languages = [
 export default function Header(props) {
   return (
     <header className="text-black2">
-      <div className="bg-gray-light4 py-3 text-sm">
+      <div className="bg-gray-light4 py-3 text-sm md:block hidden">
         <div className="container mx-auto flex flex-wrap justify-between items-center">
           <ul className="grid gap-x-3 grid-cols-3">
             <li>
@@ -56,7 +56,7 @@ export default function Header(props) {
       <div className="py-6">
         <div className="container mx-auto flex flex-wrap items-center justify-between">
           <a href="/yaycommerce-react/"><img src={Logo} alt="logo"/></a>
-          <ul className={"flex"}>
+          <ul className="md:flex hidden">
             <li className="px-5">
               <NavLink to='/yaycommerce-react/' className="group transition-all duration-300 ease-in-out">
                 {({isActive}) => (
@@ -98,7 +98,7 @@ export default function Header(props) {
               </NavLink>
             </li>
           </ul>
-          <ul className="grid gap-x-5 grid-cols-4 items-center">
+          <ul className="grid gap-x-5 md:grid-cols-4 grid-cols-2 items-center">
             <li>
               <button className="block text-black2" type="button" onClick={props.buttonSearch}>
                 <svg
@@ -129,7 +129,7 @@ export default function Header(props) {
                 </svg>
               </button>
             </li>
-            <li>
+            <li className="md:block hidden">
               <a href="#/">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -183,7 +183,7 @@ export default function Header(props) {
                 </svg>
               </button>
             </li>
-            <li>
+            <li className="md:block hidden">
               <a href="#/">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

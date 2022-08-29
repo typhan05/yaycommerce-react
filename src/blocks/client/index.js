@@ -22,15 +22,29 @@ export default class Client extends Component {
           <h2 className="text-4xl font-bold mb-10 text-center">Client love us & we love them</h2>
           <div className="relative swiper-custom">
             <Swiper
-              slidesPerView={3}
-              slidesPerGroup={3}
-              spaceBetween={30}
+              slidesPerView={1}
+              slidesPerGroup={1}
+              spaceBetween={20}
               modules={[Pagination]}
               pagination={{
                 clickable: true
               }}
               loop={true}
               ref={this.swiperRef}
+              breakpoints={{
+                // when window width is >= 768px
+                768: {
+                  width: 768,
+                  slidesPerView: 2,
+                },
+                // when window width is >= 1440px
+                1440: {
+                  width: 1440,
+                  slidesPerView: 3,
+                  slidesPerGroup: 3,
+                  spaceBetween: 30
+                },
+              }}
             >
               {Array.from(Array(5), (e, i) => {
                 return (

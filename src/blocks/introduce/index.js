@@ -17,7 +17,7 @@ export default function Introduce(props) {
 
   return (
     <section className="mb-[150px]">
-      <div className="container mx-auto grid gap-x-8 grid-cols-2 items-center">
+      <div className="container mx-auto grid gap-x-8 md:gap-y-0 gap-y-5 md:grid-cols-2 items-center">
         {content}
       </div>
     </section>

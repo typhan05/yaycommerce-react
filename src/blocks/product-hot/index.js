@@ -16,7 +16,7 @@ export default function ProductHot(props) {
               <span className="mx-3 text-gray">{`//`}</span> : ''}</li>
           )}
         </ul>
-        <div className="grid gap-x-8 grid-cols-4">
+        <div className="grid lg:gap-x-8 lg:grid-cols-4 md:grid-cols-3 gap-x-5 grid-cols-2">
           {content}
         </div>
       </div>

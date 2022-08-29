@@ -25,11 +25,26 @@ export default class FeaturedCardSlider extends Component {
           <h2 className="text-4xl font-bold mb-10 text-center">{this.props.content.title}</h2>
           <div className="relative">
             <Swiper
-              slidesPerView={4}
-              spaceBetween={30}
-              slidesPerGroup={4}
+              slidesPerView={2}
+              spaceBetween={20}
+              slidesPerGroup={2}
               loop={true}
               ref={this.swiperRef}
+              breakpoints={{
+                // when window width is >= 768px
+                768: {
+                  width: 768,
+                  slidesPerView: 3,
+                  slidesPerGroup: 3
+                },
+                // when window width is >= 1440px
+                1440: {
+                  width: 1440,
+                  slidesPerView: 4,
+                  slidesPerGroup: 4,
+                  spaceBetween: 30,
+                },
+              }}
             >
               {itemSlider}
             </Swiper>
