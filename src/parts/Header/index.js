@@ -100,7 +100,7 @@ export default function Header(props) {
           </ul>
           <ul className="grid gap-x-5 md:grid-cols-4 grid-cols-2 items-center">
             <li>
-              <button className="block text-black2" type="button" onClick={props.buttonSearch}>
+              <button className="relative group block text-black2" type="button" onClick={props.buttonSearch}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -127,10 +127,12 @@ export default function Header(props) {
                     d="M15.62 15.709L19 19"
                   ></path>
                 </svg>
+                <span
+                  className="absolute top-10 left-2/4 -translate-x-2/4 z-20 invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">Search</span>
               </button>
             </li>
             <li className="md:block hidden">
-              <a href="#/">
+              <a href="#/" className="group relative">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -144,10 +146,12 @@ export default function Header(props) {
                     d="M21.336 3.562l-.864.503.864-.503zm-18.672 0l.864.503-.864-.503zm1.428 6.92l-.733.68.733-.68zm15.816 0l.733.68-.733-.68zM9.803 2.085l-.587.81.587-.81zm4.394 0l.587.81-.587-.81zm-.731 15.338l.732.68-.732-.68zm-2.199-.68l-6.443-6.94-1.465 1.36 6.443 6.94 1.465-1.36zm7.909-6.94l-6.443 6.94 1.465 1.36 6.443-6.94-1.465-1.36zm-14.352 0C3.096 7.94 2.457 5.907 3.528 4.065L1.799 3.059c-1.721 2.96-.43 5.962 1.56 8.104l1.465-1.36zm15.648-5.737c1.071 1.842.432 3.875-1.296 5.737l1.465 1.36c1.99-2.141 3.281-5.143 1.56-8.103l-1.729 1.006zm-16.944 0c.685-1.177 1.603-1.81 2.546-2 .945-.192 2.047.034 3.142.829l1.174-1.62C8.916.206 7.255-.216 5.677.104 4.095.424 2.728 1.463 1.799 3.06l1.729 1.006zm11.256-1.171c1.095-.795 2.197-1.021 3.143-.83.942.191 1.86.824 2.545 2l1.729-1.005C21.272 1.463 19.905.425 18.323.104c-1.578-.32-3.24.102-4.713 1.17l1.174 1.62zm-1.819 1.623a13.28 13.28 0 011.819-1.623l-1.174-1.62a15.268 15.268 0 00-2.107 1.879l1.462 1.364zM9.216 2.894a13.28 13.28 0 011.819 1.623l1.462-1.364a15.269 15.269 0 00-2.107-1.879l-1.174 1.62zm2.287.259c.27-.29.724-.29.994 0l-1.462 1.364c.52.558 1.41.558 1.93 0l-1.462-1.364zM9.802 18.102a3 3 0 004.396 0l-1.465-1.36a1 1 0 01-1.466 0l-1.465 1.36z"
                   ></path>
                 </svg>
+                <span
+                  className="absolute top-10 left-2/4 -translate-x-2/4 z-20 invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">Wishlist</span>
               </a>
             </li>
             <li>
-              <button className="relative block text-black2" type="button" onClick={props.buttonCart}>
+              <button className="group relative block text-black2" type="button" onClick={props.buttonCart}>
                 <span
                   className="absolute -top-[4px] -right-[7px] z-10 text-[11px] leading-4 flex items-center justify-center text-white font-semibold bg-green w-[18px] h-[18px] rounded-[9px]">7</span>
                 <svg
@@ -181,10 +185,12 @@ export default function Header(props) {
                     d="M13.101 9.55h-.044M5.943 9.55H5.9"
                   ></path>
                 </svg>
+                <span
+                  className="absolute top-10 left-2/4 -translate-x-2/4 z-20 invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">My cart</span>
               </button>
             </li>
             <li className="md:block hidden">
-              <a href="#/">
+              <a href="#/" className="group relative">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -198,6 +204,8 @@ export default function Header(props) {
                     d="M14 6a4 4 0 01-4 4v2a6 6 0 006-6h-2zm-4 4a4 4 0 01-4-4H4a6 6 0 006 6v-2zM6 6a4 4 0 014-4V0a6 6 0 00-6 6h2zm4-4a4 4 0 014 4h2a6 6 0 00-6-6v2zM.045 18.703a1 1 0 101.91.594l-1.91-.594zm18 .594a1 1 0 101.91-.594l-1.91.594zm-16.09 0c.399-1.282 1.064-2.041 2.206-2.532C5.394 16.235 7.23 16 10 16v-2c-2.809 0-4.996.226-6.628.928-1.723.74-2.769 1.98-3.327 3.775l1.91.594zM10 16c2.771 0 4.606.235 5.839.765 1.143.491 1.807 1.25 2.206 2.532l1.91-.594c-.558-1.794-1.604-3.035-3.327-3.775C14.996 14.226 12.81 14 10 14v2z"
                   ></path>
                 </svg>
+                <span
+                  className="absolute top-10 left-2/4 -translate-x-2/4 z-20 invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">My account</span>
               </a>
             </li>
           </ul>
