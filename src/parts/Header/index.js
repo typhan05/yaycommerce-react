@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {NavLink} from "react-router-dom";
 import Logo from "../../assets/images/logo.svg"
 import Dropdown from "../../components/Dropdown";
@@ -16,8 +16,16 @@ const languages = [
 ];
 
 export default function Header(props) {
+  const [openMenu, setOpenMenu] = useState(false);
+
+  const openHandler = () => {
+    let root = document.getElementsByTagName('html')[0];
+    root.classList.toggle('overflow-hidden');
+    setOpenMenu(!openMenu);
+  }
+
   return (
-    <header className="text-black2">
+    <header className="relative text-black2 md:shadow-none shadow-[0_1px_3px_rgba(0,0,0,0.05)]">
       <div className="bg-gray-light4 py-3 text-sm md:block hidden">
         <div className="container mx-auto flex flex-wrap justify-between items-center">
           <ul className="grid gap-x-3 grid-cols-3">
@@ -56,7 +64,8 @@ export default function Header(props) {
       <div className="py-6">
         <div className="container mx-auto flex flex-wrap items-center justify-between">
           <a href="/yaycommerce-react/"><img src={Logo} alt="logo"/></a>
-          <ul className="md:flex hidden">
+          <ul
+            className={`md:flex md:relative md:top-0 md:w-auto md:translate-x-0 md:py-0 py-5 z-50 fixed top-[79px] bottom-0 left-0 bg-white transition-all duration-300 ease-in-out w-full ${openMenu ? `translate-x-0` : `translate-x-full`}`}>
             <li className="mx-5">
               <NavLink to='/yaycommerce-react/' className="group transition-all duration-300 ease-in-out">
                 {({isActive}) => (
@@ -66,7 +75,8 @@ export default function Header(props) {
               </NavLink>
             </li>
             <li className="mx-5 group relative">
-              <NavLink to='/yaycommerce-react/shops' className="flex items-center group transition-all duration-300 ease-in-out">
+              <NavLink to='/yaycommerce-react/shops'
+                       className="flex items-center group transition-all duration-300 ease-in-out">
                 {({isActive}) => (
                   <>
                     <span
@@ -90,7 +100,8 @@ export default function Header(props) {
                   </>
                 )}
               </NavLink>
-              <ul className="opacity-0 py-1 px-4 -ml-4 pointer-events-none absolute left-0 invisible top-12 z-1 min-w-[150px] bg-white transition-all duration-300 ease-in-out rounded-md shadow-[0_10px_25px_rgba(55,126,98,0.05)] group-hover:pointer-events-auto group-hover:top-8 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+              <ul
+                className="opacity-0 py-1 px-4 -ml-4 pointer-events-none absolute left-0 invisible top-12 z-1 min-w-[150px] bg-white transition-all duration-300 ease-in-out rounded-md shadow-[0_10px_25px_rgba(55,126,98,0.05)] group-hover:pointer-events-auto group-hover:top-8 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
                 <li className="my-2">
                   <NavLink to='/yaycommerce-react/shops/shop-1' className="transition-all duration-300 ease-in-out">
                     {({isActive}) => (
@@ -134,7 +145,7 @@ export default function Header(props) {
               </NavLink>
             </li>
           </ul>
-          <ul className="grid gap-x-5 md:grid-cols-4 grid-cols-2 items-center">
+          <ul className="grid md:grid-cols-4 gap-x-5 grid-cols-3 items-center">
             <li>
               <button className="relative group block text-black2" type="button" onClick={props.buttonSearch}>
                 <svg
@@ -243,6 +254,30 @@ export default function Header(props) {
                 <span
                   className="absolute top-10 left-2/4 -translate-x-2/4 z-20 invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">My account</span>
               </a>
+            </li>
+            <li className="md:hidden flex ml-1">
+              <button className="relative group" onClick={() => openHandler()}>
+                <div
+                  className="relative flex overflow-hidden items-center justify-center w-[22px] h-[18px] transform transition-all">
+                  <div
+                    className="flex flex-col justify-between w-full h-full transform transition-all duration-300 origin-center overflow-hidden">
+                    <div
+                      className={`bg-black2 h-[2px] w-5 transform transition-all duration-300 origin-left delay-100 ${openMenu && `translate-y-6`}`}></div>
+                    <div
+                      className={`bg-black2 h-[2px] w-5 rounded transform transition-all duration-300 delay-75 ${openMenu && `translate-y-6`}`}></div>
+                    <div
+                      className={`bg-black2 h-[2px] w-5 transform transition-all duration-300 origin-left ${openMenu && `translate-y-6`}`}></div>
+
+                    <div
+                      className={`absolute items-center justify-between transform transition-all duration-500 top-2.5 flex ${openMenu ? `translate-x-0 w-12` : `-translate-x-10 w-0`}`}>
+                      <div
+                        className={`absolute bg-black2 h-[2px] w-5 transform transition-all duration-500 delay-300 ${openMenu ? `rotate-45` : `rotate-0`}`}></div>
+                      <div
+                        className={`absolute bg-black2 h-[2px] w-5 transform transition-all duration-500 delay-300 ${openMenu ? `-rotate-45` : `-rotate-0`}`}></div>
+                    </div>
+                  </div>
+                </div>
+              </button>
             </li>
           </ul>
         </div>

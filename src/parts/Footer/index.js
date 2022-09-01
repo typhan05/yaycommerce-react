@@ -99,7 +99,7 @@ export default function Footer() {
                 </a>
               </div>
             </div>
-            <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 pl-8">
+            <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 lg:pl-8">
               <h3 className="text-[22px] font-semibold mb-4">Account</h3>
               <ul>
                 <li className="mb-2">
