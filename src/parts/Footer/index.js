@@ -225,7 +225,7 @@ export default function Footer() {
                     className="bg-gray-light6 appearance-none w-full py-2 px-[15px] text-gray-700 leading-tight focus:outline-none focus:border-purple-500"
                     id="inline-full-name" type="text" placeholder="Enter your email"/>
                   <button
-                    className="flex-shrink-0 bg-green text-white font-medium py-2 px-4 rounded-[10px] hover:bg-black2"
+                    className="flex-shrink-0 bg-black2 border-2 border-solid border-black2 text-white font-medium py-2 px-4 rounded-[10px] transition-all duration-300 hover:bg-white hover:text-black2"
                     type="submit">Submit
                   </button>
                 </div>

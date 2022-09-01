@@ -57,7 +57,7 @@ export default function Header(props) {
         <div className="container mx-auto flex flex-wrap items-center justify-between">
           <a href="/yaycommerce-react/"><img src={Logo} alt="logo"/></a>
           <ul className="md:flex hidden">
-            <li className="px-5">
+            <li className="mx-5">
               <NavLink to='/yaycommerce-react/' className="group transition-all duration-300 ease-in-out">
                 {({isActive}) => (
                   <span
@@ -65,15 +65,51 @@ export default function Header(props) {
                 )}
               </NavLink>
             </li>
-            <li className="px-5">
-              <NavLink to='/yaycommerce-react/shops' className="group transition-all duration-300 ease-in-out">
+            <li className="mx-5 group relative">
+              <NavLink to='/yaycommerce-react/shops' className="flex items-center group transition-all duration-300 ease-in-out">
                 {({isActive}) => (
-                  <span
-                    className={isActive ? 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-no-repeat bg-[length:100%_2px] pb-2' : 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out pb-2'}>Shops</span>
+                  <>
+                    <span
+                      className={isActive ? 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-no-repeat bg-[length:100%_2px] pb-2' : 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out pb-2'}>Shops</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="10"
+                      height="6"
+                      fill="none"
+                      viewBox="0 0 10 6"
+                      className="-mt-2 ml-[6px]"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="1.5"
+                        d="M9 1L5 5 1 1"
+                      ></path>
+                    </svg>
+                  </>
                 )}
               </NavLink>
+              <ul className="opacity-0 py-1 px-4 -ml-4 pointer-events-none absolute left-0 invisible top-12 z-1 min-w-[150px] bg-white transition-all duration-300 ease-in-out rounded-md shadow-[0_10px_25px_rgba(55,126,98,0.05)] group-hover:pointer-events-auto group-hover:top-8 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+                <li className="my-2">
+                  <NavLink to='/yaycommerce-react/shops/shop-1' className="transition-all duration-300 ease-in-out">
+                    {({isActive}) => (
+                      <span
+                        className={isActive ? 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-no-repeat bg-[length:100%_2px] pb-2' : 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_2px] bg-no-repeat hover:bg-[length:100%_2px] transition-all duration-300 ease-out pb-1'}>Shop child 1</span>
+                    )}
+                  </NavLink>
+                </li>
+                <li className="my-2">
+                  <NavLink to='/yaycommerce-react/shops/shop-2' className="transition-all duration-300 ease-in-out">
+                    {({isActive}) => (
+                      <span
+                        className={isActive ? 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-no-repeat bg-[length:100%_2px] pb-2' : 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_2px] bg-no-repeat hover:bg-[length:100%_2px] transition-all duration-300 ease-out pb-1'}>Shop child 2</span>
+                    )}
+                  </NavLink>
+                </li>
+              </ul>
             </li>
-            <li className="px-5">
+            <li className="mx-5">
               <NavLink to='/yaycommerce-react/products' className="group transition-all duration-300 ease-in-out">
                 {({isActive}) => (
                   <span
@@ -81,7 +117,7 @@ export default function Header(props) {
                 )}
               </NavLink>
             </li>
-            <li className="px-5">
+            <li className="mx-5">
               <NavLink to='/yaycommerce-react/blog' className="group transition-all duration-300 ease-in-out">
                 {({isActive}) => (
                   <span
@@ -89,7 +125,7 @@ export default function Header(props) {
                 )}
               </NavLink>
             </li>
-            <li className="px-5">
+            <li className="mx-5">
               <NavLink to='/yaycommerce-react/pages' className="group transition-all duration-300 ease-in-out">
                 {({isActive}) => (
                   <span
