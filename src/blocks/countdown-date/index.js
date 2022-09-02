@@ -38,7 +38,7 @@ export default class Countdown extends React.Component {
     }
 
     return (
-      <section className="mb-[140px]">
+      <section className="mb-[140px] overflow-hidden">
         <div className="container mx-auto md:px-5 !px-0">
           <div className="relative md:flex items-center justify-between bg-orange2 py-[70px] px-[30px] rounded-[10px]">
             <div className="md:static absolute md:left-0 -left-[79%] top-0">
