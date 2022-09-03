@@ -20,7 +20,7 @@ export default function Header(props) {
   const {openMenu, openHandler, scrollDirection} = useHeader();
 
   return (
-    <header className={`sticky ${ scrollDirection === "down" ? "-top-full" : "top-0"} z-50 translate-z-0 text-black2 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-500 ease-in-out`}>
+    <header className={`sticky ${ scrollDirection === "down" ? "-top-full" : "md:-top-11 top-0"} z-40 left-0 w-full translate-z-0 text-black2 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-500 ease-in-out`}>
       <div className="bg-gray-light4 py-3 text-sm md:block hidden">
         <div className="container mx-auto flex flex-wrap justify-between items-center">
           <ul className="grid gap-x-3 grid-cols-3">

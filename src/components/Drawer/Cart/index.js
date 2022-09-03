@@ -60,7 +60,7 @@ const products = [
 export default function DrawerCart({isShowing, hide}) {
   return (
     <Transition.Root show={isShowing} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={hide}>
+      <Dialog as="div" className="relative z-50" onClose={hide}>
         <Transition.Child
           as={Fragment}
           enter="ease-in-out duration-300"
