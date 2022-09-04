@@ -38,11 +38,10 @@ export default function DrawerSearch({isSearchShowing, hide}) {
     // 👇️ redirect to /search
     navigate('/yaycommerce-react/search');
   };
-  let counter = 0;
 
   useEffect(() => {
     if(isSearchShowing) {
-      counter++;
+      setCountSearch(false)
     }
   }, [isSearchShowing]);
 

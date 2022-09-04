@@ -22,9 +22,9 @@ export default function OurBlog(props) {
     </div>
   )
   return (
-    <section className="mb-[150px]">
+    <section className="md:mb-[150px] mb-[70px]">
       <div className="container mx-auto">
-        <h2 className="text-4xl text-center font-bold mb-9">{props.content.title}</h2>
+        <h2 className="md:text-4xl text-[28px] text-center font-bold mb-9">{props.content.title}</h2>
         <div className="grid lg:grid-cols-3 lg:gap-8 md:grid-cols-3 grid-cols-1 gap-5 mb-10">
           {content}
         </div>

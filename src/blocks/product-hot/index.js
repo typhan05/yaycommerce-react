@@ -6,10 +6,10 @@ export default function ProductHot(props) {
     <Card key={item.id} content={item}/>
   )
   return (
-    <section className="mb-[100px]">
+    <section className="md:mb-[100px] mb-[70px]">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-bold mb-3 text-center">{props.content.title}</h2>
-        <ul className="flex items-center justify-center mb-10 text-lg font-medium text-gray text-center">
+        <h2 className="md:text-4xl text-[28px] font-bold mb-3 text-center">{props.content.title}</h2>
+        <ul className="flex items-center justify-center mb-10 md:text-lg text-base font-medium text-gray text-center">
           {props.content.tags.map((item, i) =>
             <li key={item.id}
                 className={item?.active && `text-black2`}>{item.text} {props.content.tags.length - 1 !== i ?

@@ -56,10 +56,8 @@
 
 body {
     overflow-x: hidden;
-}
-
-body {
     color: #122940;
+    line-height: 1.4;
 }
 
 .container {

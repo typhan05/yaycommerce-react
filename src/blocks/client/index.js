@@ -17,9 +17,9 @@ export default class Client extends Component {
 
   render() {
     return (
-      <section className="mb-[130px]">
+      <section className="md:mb-[130px] mb-[70px]">
         <div className="container mx-auto">
-          <h2 className="text-4xl font-bold mb-10 text-center">Client love us & we love them</h2>
+          <h2 className="md:text-4xl text-[28px] font-bold md:mb-10 mb-5 text-center">Client love us & we love them</h2>
           <div className="relative swiper-custom">
             <Swiper
               slidesPerView={1}
@@ -42,7 +42,7 @@ export default class Client extends Component {
                   width: 1440,
                   slidesPerView: 3,
                   slidesPerGroup: 3,
-                  spaceBetween: 30
+                  spaceBetween: 30,
                 },
               }}
             >
@@ -82,7 +82,7 @@ export default class Client extends Component {
                         <img src={require('../../assets/images/thumb-products.png')} alt="thumb-img"/>
                       </div>
                     </div>
-                    <p className="text-lg text-black2">The standard chunk of Lorem Ipsum used since the 1500s es is
+                    <p className="md:text-lg text-base text-black2">The standard chunk of Lorem Ipsum used since the 1500s es is
                       reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus amet Bonorum
                       et
                       Malorum</p>
@@ -91,13 +91,13 @@ export default class Client extends Component {
               })}
             </Swiper>
             <div
-              className={`absolute left-[-26px] top-1/2 -translate-y-2/4 mt-[-30px] cursor-pointer flex items-center justify-center z-10 h-[50px] w-[50px] rounded-[25px] shadow-[0_10px_25px_rgba(55,126,98,0.05)] bg-white hover:bg-gray-light2`}
+              className={`absolute left-[-26px] top-1/2 -translate-y-2/4 mt-[-30px] cursor-pointer md:flex hidden items-center justify-center z-10 h-[50px] w-[50px] rounded-[25px] shadow-[0_10px_25px_rgba(55,126,98,0.05)] bg-white hover:bg-gray-light2`}
               onClick={() => this.swiperRef.current.swiper.slidePrev()}
             >
               <ChevronLeftIcon className="h-7 w-14 text-black2" aria-hidden="true"/>
             </div>
             <div
-              className={`absolute right-[-26px] top-1/2 -translate-y-2/4 mt-[-30px] cursor-pointer flex items-center justify-center z-10 h-[50px] w-[50px] rounded-[25px] shadow-[0_10px_25px_rgba(55,126,98,0.05)] bg-white hover:bg-gray-light2 hover:shadow-[0_10px_25px_rgba(18,41,64,0.15)]`}
+              className={`absolute right-[-26px] top-1/2 -translate-y-2/4 mt-[-30px] cursor-pointer md:flex hidden items-center justify-center z-10 h-[50px] w-[50px] rounded-[25px] shadow-[0_10px_25px_rgba(55,126,98,0.05)] bg-white hover:bg-gray-light2 hover:shadow-[0_10px_25px_rgba(18,41,64,0.15)]`}
               onClick={() => this.swiperRef.current.swiper.slideNext()}
             >
               <ChevronRightIcon className="h-7 w-14 text-black2" aria-hidden="true"/>

@@ -38,7 +38,7 @@ export default class Countdown extends React.Component {
     }
 
     return (
-      <section className="mb-[140px] overflow-hidden">
+      <section className="md:mb-[140px] mb-[70px] overflow-hidden">
         <div className="container mx-auto md:px-5 !px-0">
           <div className="relative md:flex items-center justify-between bg-orange2 py-[70px] px-[30px] rounded-[10px]">
             <div className="md:static absolute md:left-0 -left-[79%] top-0">
@@ -47,7 +47,7 @@ export default class Countdown extends React.Component {
                    className="object-center"/>
             </div>
             <div>
-              <h2 className="text-4xl font-bold mb-10 text-center">Deal of the day upto<br/>
+              <h2 className="md:text-4xl text-[28px] font-bold md:mb-10 mb-4 text-center">Deal of the day upto<br/>
                 <span className="text-pink">-40%</span> off</h2>
               <div className="flex items-center max-w-lg mx-auto mb-9">
                 {days && (
