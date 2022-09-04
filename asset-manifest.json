@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/yaycommerce-react/static/css/main.a75b3985.css",
-    "main.js": "/yaycommerce-react/static/js/main.8a471555.js",
+    "main.css": "/yaycommerce-react/static/css/main.5c569d09.css",
+    "main.js": "/yaycommerce-react/static/js/main.894c7b29.js",
     "static/js/787.93facbbb.chunk.js": "/yaycommerce-react/static/js/787.93facbbb.chunk.js",
     "static/media/SFUIDisplay-Bold.svg": "/yaycommerce-react/static/media/SFUIDisplay-Bold.51df48b08db7ee250b8b.svg",
     "static/media/SFUIDisplay-Semibold.svg": "/yaycommerce-react/static/media/SFUIDisplay-Semibold.0d0e7fc9d4e823c83126.svg",
@@ -30,6 +30,7 @@
     "static/media/img-our-blog-3.jpg": "/yaycommerce-react/static/media/img-our-blog-3.34a6f8bf489cd8cefa8f.jpg",
     "static/media/SFUIDisplay-Regular.woff2": "/yaycommerce-react/static/media/SFUIDisplay-Regular.ec61a29280ddc3a11408.woff2",
     "static/media/img-banner-shop.png": "/yaycommerce-react/static/media/img-banner-shop.4a1a9b3d753b670fd9e9.png",
+    "static/media/img-banner-mb.png": "/yaycommerce-react/static/media/img-banner-mb.5899e8c6f406a04c6df6.png",
     "static/media/img-introduce-1.png": "/yaycommerce-react/static/media/img-introduce-1.83a4ac9f76c4243fd79f.png",
     "static/media/img-product-03.png": "/yaycommerce-react/static/media/img-product-03.895d749820c09cb29493.png",
     "static/media/img-product-01.png": "/yaycommerce-react/static/media/img-product-01.2c192feb882c5bbf5aea.png",
@@ -48,12 +49,12 @@
     "static/media/support-icon.svg": "/yaycommerce-react/static/media/support-icon.2665259a3250a27852c4.svg",
     "static/media/star.svg": "/yaycommerce-react/static/media/star.d25d8ea5d8fa326432e9.svg",
     "index.html": "/yaycommerce-react/index.html",
-    "main.a75b3985.css.map": "/yaycommerce-react/static/css/main.a75b3985.css.map",
-    "main.8a471555.js.map": "/yaycommerce-react/static/js/main.8a471555.js.map",
+    "main.5c569d09.css.map": "/yaycommerce-react/static/css/main.5c569d09.css.map",
+    "main.894c7b29.js.map": "/yaycommerce-react/static/js/main.894c7b29.js.map",
     "787.93facbbb.chunk.js.map": "/yaycommerce-react/static/js/787.93facbbb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a75b3985.css",
-    "static/js/main.8a471555.js"
+    "static/css/main.5c569d09.css",
+    "static/js/main.894c7b29.js"
   ]
 }
