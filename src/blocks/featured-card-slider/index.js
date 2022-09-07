@@ -4,6 +4,9 @@ import {Swiper, SwiperSlide} from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/pagination";
+// import required modules
+import {Pagination} from "swiper";
 import {ChevronLeftIcon, ChevronRightIcon} from "@heroicons/react/outline";
 import Card from "../../components/Card";
 
@@ -20,14 +23,18 @@ export default class FeaturedCardSlider extends Component {
         </SwiperSlide>
     )
     return (
-      <section className="mb-[100px]">
+      <section className="md:mb-[100px] mb-20">
         <div className="container mx-auto">
-          <h2 className="md:text-4xl text-[28px] font-bold mb-10 text-center">{this.props.content.title}</h2>
-          <div className="relative">
+          <h2 className="md:text-4xl text-[28px] font-bold md:mb-10 mb-5 text-center">{this.props.content.title}</h2>
+          <div className="relative swiper-custom md-hide-dots">
             <Swiper
               slidesPerView={2}
               spaceBetween={20}
               slidesPerGroup={2}
+              modules={[Pagination]}
+              pagination={{
+                clickable: true
+              }}
               loop={true}
               ref={this.swiperRef}
               breakpoints={{
@@ -35,7 +42,7 @@ export default class FeaturedCardSlider extends Component {
                 768: {
                   width: 768,
                   slidesPerView: 3,
-                  slidesPerGroup: 3
+                  slidesPerGroup: 3,
                 },
                 // when window width is >= 1440px
                 1440: {

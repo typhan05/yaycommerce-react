@@ -2,13 +2,13 @@ import React from "react";
 
 export default function Card(props) {
   return (
-    <div className="group relative pb-[50px]">
+    <div className="group relative md:pb-[50px] pb-[30px]">
       <a href="#/"
-         className="relative flex justify-center items-center mb-3 p-5 md:h-80 h-[158px] bg-gray-light5 ease-in-out duration-300 rounded-xl overflow-hidden hover:bg-[rgba(90,109,128,0.1)] sm:aspect-w-2 sm:aspect-h-1 sm:h-80 lg:aspect-w-1 lg:aspect-h-1">
+         className="relative flex justify-center items-center mb-3 p-5 md:h-[337px] h-[158px] bg-gray-light5 ease-in-out duration-300 rounded-xl overflow-hidden hover:bg-[rgba(90,109,128,0.1)] sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1 lg:aspect-h-1">
         <span className={`bg-${props.content.sale.color} absolute top-3.5 left-3.5 rounded-lg text-sm text-white px-2 py-[1px]`}>{props.content.sale.number}</span>
         <img src={require('../../assets/images/' + props.content.image)}
              alt={props.content.title}
-             className="object-center max-h-[120px]"/>
+             className="object-center md:max-h-full max-h-[120px]"/>
       </a>
       <p className="text-gray text-sm mb-[5px]">{props.content.tag}</p>
       <p className="flex items-center text-sm text-gray mb-2">

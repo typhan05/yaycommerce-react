@@ -3,10 +3,10 @@ import Logo from "../../assets/images/logo.svg"
 
 export default function Footer() {
   return (
-    <footer className="pt-[100px]">
+    <footer className="md:pt-[100px] pt-20">
       <div className="flex flex-wrap justify-center">
         <div className="container mx-auto">
-          <div className="flex flex-wrap mb-4 w-full pb-[100px]">
+          <div className="flex flex-wrap md:mb-4 w-full md:pb-[100px] pb-[30px]">
             <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4">
               <a href="#/" className="inline-flex mb-5"><img src={Logo} alt="logo-footer"/></a>
               <p className="mb-2">102 Washington Square South <br/>New York, NY 10012</p>

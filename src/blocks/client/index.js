@@ -49,7 +49,7 @@ export default class Client extends Component {
               {Array.from(Array(5), (e, i) => {
                 return (
                   <SwiperSlide key={i}
-                               className="pt-[45px] pb-[30px] px-[30px] rounded-[10px] border border-solid border-gray-light7">
+                               className="md:pt-[45px] md:pb-[30px] md:px-[30px] py-5 px-5 md:mb-0 mb-[30px] rounded-[10px] border border-solid border-gray-light7">
                     <div className="flex justify-between mb-5">
                       <div className="flex">
                         <img src={require('../../assets/images/slide2-human-1.png')} alt="avatar"

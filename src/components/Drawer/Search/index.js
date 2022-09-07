@@ -1,4 +1,4 @@
-import {Fragment, useEffect, useState} from 'react'
+import {Fragment, useState} from 'react'
 import {Dialog, Transition} from '@headlessui/react'
 import {XIcon} from '@heroicons/react/outline'
 import {useNavigate} from "react-router-dom";
@@ -14,7 +14,7 @@ const trends = [
 export default function DrawerSearch({isSearchShowing, hide}) {
   const [name, setName] = useState('');
   const [itemActive, setItemActive] = useState(null);
-  const [countSearch, setCountSearch] = useState(false);
+  const [searchTrend, setSearchTrend] = useState(false);
 
   const filter = (e) => {
     const keyword = e.target.value;
@@ -39,11 +39,14 @@ export default function DrawerSearch({isSearchShowing, hide}) {
     navigate('/yaycommerce-react/search');
   };
 
-  useEffect(() => {
-    if(isSearchShowing) {
-      setCountSearch(false)
-    }
-  }, [isSearchShowing]);
+  const onCloseSearch = () => {
+    hide()
+
+    //change option search
+    setTimeout(() => {
+      setSearchTrend(!searchTrend)
+    }, "800")
+  }
 
   return (
     <Transition.Root show={isSearchShowing} as={Fragment}>
@@ -72,7 +75,7 @@ export default function DrawerSearch({isSearchShowing, hide}) {
               leaveTo="-translate-y-full"
             >
               <Dialog.Panel className="pointer-events-auto relative w-screen bg-white md:px-0 px-5 py-[15px]">
-                {countSearch ? (
+                {searchTrend ? (
                     <div className="max-w-[950px] mx-auto py-[15px]">
                       <div className="flex items-center justify-between w-full">
                         <div className="flex flex-1 flex-col">
@@ -121,7 +124,7 @@ export default function DrawerSearch({isSearchShowing, hide}) {
                           <button
                             type="button"
                             className="ml-5 rounded-md text-gray hover:text-black2 focus:outline-none focus:ring-2 focus:ring-white"
-                            onClick={hide}
+                            onClick={onCloseSearch}
                           >
                             <span className="sr-only">Close panel</span>
                             <XIcon className="h-6 w-6" aria-hidden="true"/>
@@ -188,7 +191,7 @@ export default function DrawerSearch({isSearchShowing, hide}) {
                           <button
                             type="button"
                             className="ml-5 rounded-md text-gray hover:text-black2 focus:outline-none focus:ring-2 focus:ring-white"
-                            onClick={hide}
+                            onClick={onCloseSearch}
                           >
                             <span className="sr-only">Close panel</span>
                             <XIcon className="h-6 w-6" aria-hidden="true"/>

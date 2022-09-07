@@ -95,11 +95,26 @@ body {
 }
 
 .swiper-custom .swiper {
-    padding-bottom: 60px;
+    padding-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+    .swiper-custom .swiper {
+        padding-bottom: 60px;
+    }
 }
 
 .swiper-custom .swiper-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .swiper-custom.md-hide-dots .swiper-pagination {
+        display: none;
+    }
 }
 
 .swiper-custom .swiper-pagination-bullet {
@@ -112,6 +127,16 @@ body {
 
 .swiper-custom .swiper-pagination-bullet-active {
     background-color: #122940;
+}
+
+@media screen and (max-width: 767px) {
+    .swiper-custom .swiper-pagination-bullet-active {
+        width: 18px;
+        height: 18px;
+    }
+    .swiper-custom .swiper-pagination-bullet {
+        margin: 0 10px !important;
+    }
 }
 
 .swiper-thumbnail .swiper-slide > div {
@@ -152,7 +177,7 @@ input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
-    -webkit-appearance:none;
+    -webkit-appearance: none;
 }
 
 .swiper-container {

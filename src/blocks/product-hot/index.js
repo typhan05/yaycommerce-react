@@ -6,7 +6,7 @@ export default function ProductHot(props) {
     <Card key={item.id} content={item}/>
   )
   return (
-    <section className="md:mb-[100px] mb-[70px]">
+    <section className="md:mb-[100px] mb-[40px]">
       <div className="container mx-auto">
         <h2 className="md:text-4xl text-[28px] font-bold mb-3 text-center">{props.content.title}</h2>
         <ul className="flex items-center justify-center mb-10 md:text-lg text-base font-medium text-gray text-center">
