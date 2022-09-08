@@ -22,9 +22,9 @@ export default function Dropdown(props) {
     </Menu.Item>
   );
   return (
-    <Menu as="div" className="relative inline-flex text-left ml-5">
+    <Menu as="div" className="relative inline-flex justify-center text-left md:ml-5">
       <div>
-        <Menu.Button className="inline-flex text-sm font-medium pl-4 hover:bg-gray-50 focus:outline-0">
+        <Menu.Button className="inline-flex text-sm font-medium md:pl-4 md:ml-0 ml-5 hover:bg-gray-50 focus:outline-0">
           {props.labelName}
           <ChevronDownIcon className="ml-1 h-5 w-5" aria-hidden="true" />
         </Menu.Button>
@@ -39,7 +39,7 @@ export default function Dropdown(props) {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute left-0 top-full mt-1 rounded-md shadow-lg bg-white focus:outline-none z-20">
+        <Menu.Items className="absolute left-0 md:w-auto w-full text-center top-full mt-1 rounded-md shadow-lg bg-white focus:outline-none z-20">
           <div className="py-1 bg-white min-w-[70px]">
             {renderItem}
           </div>
