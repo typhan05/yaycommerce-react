@@ -11,20 +11,14 @@ export default function Footer() {
               <a href="#/" className="inline-flex mb-5"><img src={Logo} alt="logo-footer"/></a>
               <p className="mb-2">102 Washington Square South <br/>New York, NY 10012</p>
               <p className="mb-2">
-                <a className='group transition-all duration-300 ease-in-out' href="tel:+91-80-6156-1999">
-                    <span
-                      className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
-                      +91-80-6156-1999
-                    </span>
-                </a>
+                <a href="tel:+91-80-6156-1999"
+                   className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                  +91-80-6156-1999</a>
               </p>
               <p className="mb-2">
-                <a className='group transition-all duration-300 ease-in-out' href="mailto:support@remitstore.com">
-                    <span
-                      className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
-                      support@remitstore.com
-                    </span>
-                </a>
+                <a href="mailto:support@remitstore.com"
+                   className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                  support@remitstore.com</a>
               </p>
               <div className="hidden xl:flex items-center w-full space-x-5 mt-[18px]">
                 <a className="max-w-max" target="_blank" href="#/">
@@ -103,44 +97,29 @@ export default function Footer() {
               <h3 className="text-[22px] font-semibold mb-4">Account</h3>
               <ul>
                 <li className="mb-2">
-                  <a className='group transition-all duration-300 ease-in-out' href='#/'>
-                    <span
-                      className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
-                      Login/register
-                    </span>
-                  </a>
+                  <a href="#/"
+                     className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                    Login/register</a>
                 </li>
                 <li className="mb-2">
-                  <a className='group transition-all duration-300 ease-in-out' href='#/'>
-                    <span
-                      className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
-                      View cart
-                    </span>
-                  </a>
+                  <a href="#/"
+                     className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                    View cart</a>
                 </li>
                 <li className="mb-2">
-                  <a className='group transition-all duration-300 ease-in-out' href='#/'>
-                    <span
-                      className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
-                      My wishlist
-                    </span>
-                  </a>
+                  <a href="#/"
+                     className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                    My wishlist</a>
                 </li>
                 <li className="mb-2">
-                  <a className='group transition-all duration-300 ease-in-out' href='#/'>
-                    <span
-                      className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
-                      Check out
-                    </span>
-                  </a>
+                  <a href="#/"
+                     className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                    Check out</a>
                 </li>
                 <li className="mb-2">
-                  <a className='group transition-all duration-300 ease-in-out' href='#/'>
-                    <span
-                      className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
-                      Order tracking
-                    </span>
-                  </a>
+                  <a href="#/"
+                     className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                    Order tracking</a>
                 </li>
               </ul>
             </div>
@@ -148,44 +127,29 @@ export default function Footer() {
               <h3 className="text-[22px] font-semibold mb-4">Services</h3>
               <ul>
                 <li className="mb-2">
-                  <a className='group transition-all duration-300 ease-in-out' href='#/'>
-                    <span
-                      className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
-                      About us
-                    </span>
-                  </a>
+                  <a href="#/"
+                     className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                    About us</a>
                 </li>
                 <li className="mb-2">
-                  <a className='group transition-all duration-300 ease-in-out' href='#/'>
-                    <span
-                      className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
-                      FAQ’s
-                    </span>
-                  </a>
+                  <a href="#/"
+                     className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                    FAQ’s</a>
                 </li>
                 <li className="mb-2">
-                  <a className='group transition-all duration-300 ease-in-out' href='#/'>
-                    <span
-                      className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
-                      Returns & refund
-                    </span>
-                  </a>
+                  <a href="#/"
+                     className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                    Returns & refund</a>
                 </li>
                 <li className="mb-2">
-                  <a className='group transition-all duration-300 ease-in-out' href='#/'>
-                    <span
-                      className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
-                      Free shipping
-                    </span>
-                  </a>
+                  <a href="#/"
+                     className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                    Free shipping</a>
                 </li>
                 <li className="mb-2">
-                  <a className='group transition-all duration-300 ease-in-out' href='#/'>
-                    <span
-                      className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
-                      Careers
-                    </span>
-                  </a>
+                  <a href="#/"
+                     className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                    Careers</a>
                 </li>
               </ul>
             </div>

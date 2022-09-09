@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {NavLink} from "react-router-dom";
 import Logo from "../../assets/images/logo.svg"
 import Dropdown from "../../components/Dropdown";
@@ -18,6 +18,15 @@ const languages = [
 
 export default function Header(props) {
   const {openMenu, openHandler, scrollDirection} = useHeader();
+  const [showSubMenu, setShowSubMenu] = useState(false);
+
+  const openSubMenu = () => {
+    setShowSubMenu(!showSubMenu);
+  }
+
+  const onBack = () => {
+    setShowSubMenu(false);
+  }
 
   return (
     <header
@@ -26,28 +35,19 @@ export default function Header(props) {
         <div className="container mx-auto flex flex-wrap justify-between items-center">
           <ul className="grid gap-x-3 grid-cols-3">
             <li>
-              <a className='group transition-all duration-300 ease-in-out md:py-0 py-2' href="#/">
-                  <span
-                    className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
-                    Contact
-                  </span>
-              </a>
+              <a href="#/"
+                 className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                Contact</a>
             </li>
             <li>
-              <a className='group transition-all duration-300 ease-in-out md:py-0 py-2' href="#/">
-                  <span
-                    className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
-                    About us
-                  </span>
-              </a>
+              <a href="#/"
+                 className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                About us</a>
             </li>
             <li>
-              <a className='group transition-all duration-300 ease-in-out md:py-0 py-2' href="#/">
-                  <span
-                    className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
-                    My account
-                  </span>
-              </a>
+              <a href="#/"
+                 className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                My account</a>
             </li>
           </ul>
           <p>Get Free delivery from $100</p>
@@ -63,122 +63,106 @@ export default function Header(props) {
           <div
             className={`md:relative md:top-0 md:w-auto md:translate-x-0 md:py-0 md:px-0 px-5 py-4 z-50 fixed top-[77px] bottom-0 left-0 border-t border-solid border-gray-light2 md:border-0 md:border-none md:border-transparent bg-white transition-all duration-300 ease-in-out w-full md:overflow-visible max-h-full overflow-y-auto ${openMenu ? `translate-x-0` : `translate-x-full`}`}>
             <ul className="md:flex md:mb-0 mb-4">
-              <li className="md:mx-5">
+              <li className="md:mx-5 relative group">
                 <NavLink to='/yaycommerce-react/'
-                         className="inline-flex items-center group transition-all duration-300 ease-in-out md:py-0 py-2">
-                  {({isActive}) => (
-                    <span
-                      className={isActive ? 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-no-repeat md:bg-[length:100%_2px] bg-[length:100%_0] md:pb-2' : 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out md:pb-2'}>Home</span>
-                  )}
-                </NavLink>
+                         className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
+                  Home</NavLink>
               </li>
-              <li className="md:mx-5 group relative">
+              <li className="md:mx-5 relative group">
                 <NavLink to='/yaycommerce-react/shops'
-                         className="inline-flex items-center group transition-all duration-300 ease-in-out md:py-0 py-2">
-                  {({isActive}) => (
-                    <>
-                    <span
-                      className={isActive ? 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-no-repeat md:bg-[length:100%_2px] bg-[length:100%_0] md:pb-2' : 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out md:pb-2'}>Shops</span>
+                         className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 pr-4 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
+                  Shops</NavLink>
+                <button onClick={openSubMenu}
+                        className="absolute right-0 top-2/4 -translate-y-2/4 z-10 md:block md:rotate-0 -rotate-90 flex items-center justify-center md:ml-[6px] md:w-auto w-4 md:h-auto h-4 md:pointer-events-none">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="6"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                      d="M9 1L5 5 1 1"
+                    ></path>
+                  </svg>
+                </button>
+                <ul
+                  className={`opacity-0 py-[5px] md:px-4 md:-ml-4 md:pointer-events-none md:absolute fixed left-0 md:invisible md:top-20 top-0 z-10 min-w-[150px] bg-white transition-all md:duration-300 duration-700 ease-in-out rounded-md shadow-[0_10px_25px_rgba(55,126,98,0.05)] md:h-auto h-full md:w-auto w-full bg-white group-hover:pointer-events-auto group-hover:md:top-[30px] group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 ${showSubMenu ? `visible translate-x-0 opacity-100` : `invisible md:translate-x-0 translate-x-full opacity-0`}`}>
+                  <li className="md:hidden block md:px-0 px-4 shadow-[0px_1px_0px_#EBEBEB] mb-4">
+                    <button onClick={onBack} className="flex items-center py-3">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="10"
-                        height="6"
+                        width="17"
+                        height="14"
                         fill="none"
-                        viewBox="0 0 10 6"
-                        className="md:-mt-2 -mt-[2px] ml-[6px]"
+                        viewBox="0 0 17 14"
+                        className="mr-2"
                       >
                         <path
-                          stroke="currentColor"
+                          stroke="#202124"
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           strokeWidth="1.5"
-                          d="M9 1L5 5 1 1"
+                          d="M.999 7h15M7.049 13L.999 7l6.05-6"
                         ></path>
                       </svg>
-                    </>
-                  )}
-                </NavLink>
-                <ul
-                  className="opacity-0 py-1 px-4 -ml-4 pointer-events-none absolute left-0 invisible top-12 z-1 min-w-[150px] bg-white transition-all duration-300 ease-in-out rounded-md shadow-[0_10px_25px_rgba(55,126,98,0.05)] group-hover:pointer-events-auto group-hover:top-8 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
-                  <li className="my-2">
-                    <NavLink to='/yaycommerce-react/shops/shop-1' className="transition-all duration-300 ease-in-out">
-                      {({isActive}) => (
-                        <span
-                          className={isActive ? 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-no-repeat md:bg-[length:100%_2px] bg-[length:100%_0] md:pb-2' : 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_2px] bg-no-repeat hover:bg-[length:100%_2px] transition-all duration-300 ease-out pb-1'}>Shop child 1</span>
-                      )}
-                    </NavLink>
+                      Shops
+                    </button>
                   </li>
-                  <li className="my-2">
-                    <NavLink to='/yaycommerce-react/shops/shop-2' className="transition-all duration-300 ease-in-out">
-                      {({isActive}) => (
-                        <span
-                          className={isActive ? 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-no-repeat md:bg-[length:100%_2px] bg-[length:100%_0] md:pb-2' : 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_2px] bg-no-repeat hover:bg-[length:100%_2px] transition-all duration-300 ease-out pb-1'}>Shop child 2</span>
-                      )}
-                    </NavLink>
+                  <li className="md:px-0 px-4">
+                    <NavLink to='/yaycommerce-react/'
+                             className={`relative inline-block md:py-1 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                      Shops page 1</NavLink>
+                  </li>
+                  <li className="md:px-0 px-4">
+                    <NavLink to='/yaycommerce-react/'
+                             className={`relative inline-block md:py-1 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                      Shops page 2</NavLink>
                   </li>
                 </ul>
               </li>
-              <li className="md:mx-5">
+              <li className="md:mx-5 relative group">
                 <NavLink to='/yaycommerce-react/products'
-                         className="inline-flex items-center group transition-all duration-300 ease-in-out md:py-0 py-2">
-                  {({isActive}) => (
-                    <span
-                      className={isActive ? 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-no-repeat md:bg-[length:100%_2px] bg-[length:100%_0] md:pb-2' : 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out md:pb-2'}>Products</span>
-                  )}
-                </NavLink>
+                         className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
+                  Products</NavLink>
               </li>
-              <li className="md:mx-5">
+              <li className="md:mx-5 relative group">
                 <NavLink to='/yaycommerce-react/blog'
-                         className="inline-flex items-center group transition-all duration-300 ease-in-out md:py-0 py-2">
-                  {({isActive}) => (
-                    <span
-                      className={isActive ? 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-no-repeat md:bg-[length:100%_2px] bg-[length:100%_0] md:pb-2' : 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out md:pb-2'}>Blog</span>
-                  )}
-                </NavLink>
+                         className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
+                  Blog</NavLink>
               </li>
-              <li className="md:mx-5">
+              <li className="md:mx-5 relative group">
                 <NavLink to='/yaycommerce-react/pages'
-                         className="inline-flex items-center group transition-all duration-300 ease-in-out md:py-0 py-2">
-                  {({isActive}) => (
-                    <span
-                      className={isActive ? 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-no-repeat md:bg-[length:100%_2px] bg-[length:100%_0] md:pb-2' : 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out md:pb-2'}>Pages</span>
-                  )}
-                </NavLink>
+                         className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
+                  Pages</NavLink>
               </li>
             </ul>
             <ul className="md:hidden block py-4 border-t border-b border-solid border-gray-light2">
-              <li className="md:mx-5">
+              <li className="md:mx-5 relative group">
                 <NavLink to='/yaycommerce-react/pages'
-                         className="inline-flex items-center group transition-all duration-300 ease-in-out md:py-0 py-2">
-                  {({isActive}) => (
-                    <span
-                      className={isActive ? 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-no-repeat md:bg-[length:100%_2px] bg-[length:100%_0] md:pb-2' : 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out md:pb-2'}>Contact</span>
-                  )}
-                </NavLink>
+                         className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
+                  Contact</NavLink>
               </li>
-              <li className="md:mx-5">
+              <li className="md:mx-5 relative group">
                 <NavLink to='/yaycommerce-react/pages'
-                         className="inline-flex items-center group transition-all duration-300 ease-in-out md:py-0 py-2">
-                  {({isActive}) => (
-                    <span
-                      className={isActive ? 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-no-repeat md:bg-[length:100%_2px] bg-[length:100%_0] md:pb-2' : 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out md:pb-2'}>About us</span>
-                  )}
-                </NavLink>
+                         className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
+                  About us</NavLink>
               </li>
-              <li className="md:mx-5">
+              <li className="md:mx-5 relative group">
                 <NavLink to='/yaycommerce-react/pages'
-                         className="inline-flex items-center group transition-all duration-300 ease-in-out md:py-0 py-2">
-                  {({isActive}) => (
-                    <span
-                      className={isActive ? 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-no-repeat md:bg-[length:100%_2px] bg-[length:100%_0] md:pb-2' : 'bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-300 ease-out md:pb-2'}>My account</span>
-                  )}
-                </NavLink>
+                         className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
+                  My account</NavLink>
               </li>
             </ul>
             <ul className="md:hidden block pt-[30px]">
               <li className="mb-5">
                 <NavLink to='#/' className="inline-flex items-center">
-                  <span className="flex items-center justify-center h-[30px] w-[30px] rounded-[15px] bg-gray-light2 mr-2">
+                  <span
+                    className="flex items-center justify-center h-[30px] w-[30px] rounded-[15px] bg-gray-light2 mr-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -197,7 +181,8 @@ export default function Header(props) {
               </li>
               <li>
                 <NavLink to='#/' className="inline-flex items-center">
-                  <span className="flex items-center justify-center h-[30px] w-[30px] rounded-[15px] bg-gray-light2 mr-2">
+                  <span
+                    className="flex items-center justify-center h-[30px] w-[30px] rounded-[15px] bg-gray-light2 mr-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="17"

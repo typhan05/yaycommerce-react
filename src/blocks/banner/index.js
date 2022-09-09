@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Banner() {
   return (
-    <section className="bg-gray-light1 md:mb-8 mb-5 text-black2 py-10">
+    <section className="bg-gray-light1 md:mb-8 mb-5 text-black2 py-10 md:py-0">
       <div className="container mx-auto grid gap-x-8 sm:grid-cols-2 items-center">
         <div className="md:text-left text-center md:mb-0 mb-[34px]">
           <h3 className="lg:text-lg text-sm text-black tracking-[6px] uppercase lg:mb-4 mb-1">New Arrivals</h3>
