@@ -126,6 +126,68 @@ export default function Header(props) {
                 </ul>
               </li>
               <li className="md:mx-5 relative group">
+                <NavLink to='/yaycommerce-react/pages'
+                         className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 pr-4 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
+                  Pages</NavLink>
+                <button onClick={openSubMenu}
+                        className="absolute right-0 top-2/4 -translate-y-2/4 z-10 md:block md:rotate-0 -rotate-90 flex items-center justify-center md:ml-[6px] md:w-auto w-4 md:h-auto h-4 md:pointer-events-none">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="6"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="1.5"
+                      d="M9 1L5 5 1 1"
+                    ></path>
+                  </svg>
+                </button>
+                <ul
+                  className={`opacity-0 py-[15px] md:px-4 md:-ml-4 md:pointer-events-none md:absolute fixed left-0 md:invisible md:top-20 top-0 z-10 min-w-[150px] bg-white transition-all md:duration-300 duration-700 ease-in-out rounded-md shadow-[0_10px_25px_rgba(55,126,98,0.05)] md:h-auto h-full md:w-auto w-full bg-white group-hover:pointer-events-auto group-hover:md:top-[30px] group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 ${showSubMenu ? `visible translate-x-0 opacity-100` : `invisible md:translate-x-0 translate-x-full opacity-0`}`}>
+                  <li className="md:hidden block md:px-0 px-4 shadow-[0px_1px_0px_#EBEBEB] mb-4">
+                    <button onClick={onBack} className="flex items-center py-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="17"
+                        height="14"
+                        fill="none"
+                        viewBox="0 0 17 14"
+                        className="mr-2"
+                      >
+                        <path
+                          stroke="#202124"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1.5"
+                          d="M.999 7h15M7.049 13L.999 7l6.05-6"
+                        ></path>
+                      </svg>
+                      Pages
+                    </button>
+                  </li>
+                  <li className="md:px-0 px-4">
+                    <NavLink to='/yaycommerce-react/cart'
+                             className={`relative inline-block md:py-1 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                      Cart</NavLink>
+                  </li>
+                  <li className="md:px-0 px-4">
+                    <NavLink to='/yaycommerce-react/checkout'
+                             className={`relative inline-block md:py-1 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                      Checkout</NavLink>
+                  </li>
+                  <li className="md:px-0 px-4">
+                    <NavLink to='/yaycommerce-react/complete'
+                             className={`relative inline-block md:py-1 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                      Complete</NavLink>
+                  </li>
+                </ul>
+              </li>
+              <li className="md:mx-5 relative group">
                 <NavLink to='/yaycommerce-react/products'
                          className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
                   Products</NavLink>
@@ -134,11 +196,6 @@ export default function Header(props) {
                 <NavLink to='/yaycommerce-react/blog'
                          className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
                   Blog</NavLink>
-              </li>
-              <li className="md:mx-5 relative group">
-                <NavLink to='/yaycommerce-react/pages'
-                         className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
-                  Pages</NavLink>
               </li>
             </ul>
             <ul className="md:hidden block py-4 border-t border-b border-solid border-gray-light2">

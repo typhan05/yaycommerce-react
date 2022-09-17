@@ -85,7 +85,7 @@ export default function Card(props) {
             }
           </span>{`(${props.content.comment})`}
       </p>
-      <h3 className="md:text-md text-sm leading-4 font-medium mb-2">
+      <h3 className="md:text-base text-sm leading-4 font-medium mb-2">
         <a className='group transition-all duration-300 ease-in-out' href='#/'>
           <span
             className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
@@ -93,7 +93,7 @@ export default function Card(props) {
           </span>
         </a>
       </h3>
-      <p className="md:text-md text-sm leading-5 font-semibold"><span className="text-gray line-through">{props.content.price_old}</span> {props.content.price}</p>
+      <p className="md:text-base text-sm leading-5 font-semibold"><span className="text-gray line-through">{props.content.price_old}</span> {props.content.price}</p>
       <div className="mt-4">
         <a href="#/" className="inline-flex justify-center rounded-xl md:text-md text-sm font-semibold py-[10px] md:px-6 px-5 text-white bg-blue shadow-[0_7px_25px_rgba(47,112,179,0.2)] hover:bg-black2 hover:shadow-[0_7px_35px_rgba(0,0,0,0.1)]">{props.content.button.text}</a>
       </div>

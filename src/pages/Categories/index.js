@@ -28,24 +28,24 @@ export default function Categories() {
   return (
     <>
       <BreadCrumb content={breadcrumbs}/>
-      <section className="mb-[150px]">
+      <section className="md:mb-[150px] mb-20">
         <div className="container mx-auto">
-          <h1 className="text-4xl font-bold mb-5">Clothing</h1>
-          <div className="flex justify-between items-center mb-[30px]">
-            <p className="text-gray">Showing 1 - 20 of 89 results</p>
+          <h1 className="md:text-4xl text-[28px] font-bold mb-5">Clothing</h1>
+          <div className="md:flex justify-between items-center mb-[30px]">
+            <p className="md:text-base text-sm text-gray md:mb-0 mb-2">Showing 1 - 20 of 89 results</p>
             <div className="w-[245px]">
               <Select options={options} styles={customStyles} components={{IndicatorSeparator: () => null}} placeholder={'Defaulf sorting'} />
             </div>
           </div>
-          <div className="grid grid-cols-4 gap-8 pb-5 mb-7 border-b border-solid border-gray-light2">
+          <div className="grid lg:gap-x-8 lg:grid-cols-4 md:grid-cols-3 gap-x-5 grid-cols-2 mb-7 border-b border-solid border-gray-light2">
             {
               featuredCard?.lists?.map((item) =>
                 <Card key={item.id} content={item} />
               )
             }
           </div>
-          <div className="flex justify-between items-center">
-            <p className="text-gray">Showing 1 - 20 of 89 results</p>
+          <div className="md:flex justify-between items-center">
+            <p className="md:text-base text-sm text-gray md:mb-0 mb-2">Showing 1 - 20 of 89 results</p>
             <Pagination />
           </div>
         </div>

@@ -6,6 +6,9 @@ import Shops from "./pages/Shops";
 import Products from "./pages/Products";
 import Categories from "./pages/Categories";
 import Search from "./pages/Search";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import Complete from "./pages/Complete";
 
 function App() {
   return (
@@ -17,6 +20,9 @@ function App() {
           <Route exact path="/yaycommerce-react/products" element={<Products/>}/>
           <Route exact path="/yaycommerce-react/categories" element={<Categories/>}/>
           <Route exact path="/yaycommerce-react/search" element={<Search/>}/>
+          <Route exact path="/yaycommerce-react/cart" element={<Cart/>}/>
+          <Route exact path="/yaycommerce-react/checkout" element={<Checkout/>}/>
+          <Route exact path="/yaycommerce-react/complete" element={<Complete/>}/>
         </Routes>
       </Layout>
     </div>

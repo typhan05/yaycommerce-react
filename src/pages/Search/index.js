@@ -26,16 +26,16 @@ export default function Search() {
   return (
     <>
       <BreadCrumb content={breadcrumbs}/>
-      <section className="mb-[100px]">
+      <section className="md:mb-[100px] mb-20">
         <div className="container mx-auto">
-          <h1 className="text-4xl font-bold mb-5">Search results for: "dresses women"</h1>
-          <div className="flex justify-between items-center mb-[30px]">
-            <div className="w-[245px]">
+          <h1 className="md:text-4xl text-[28px] font-bold mb-5">Search results for: "dresses women"</h1>
+          <div className="md:flex justify-between items-center mb-[30px]">
+            <div className="w-[245px] md:mb-0 mb-2">
               <Select options={options} styles={customStyles} components={{IndicatorSeparator: () => null}} placeholder={'Defaulf sorting'} />
             </div>
-            <p className="text-gray">Showing 1 - 20 of 89 results</p>
+            <p className="md:text-base text-sm text-gray md:mb-0 mb-2">Showing 1 - 20 of 89 results</p>
           </div>
-          <div className="grid grid-cols-4 gap-8">
+          <div className="grid lg:gap-x-8 lg:grid-cols-4 md:grid-cols-3 gap-x-5 grid-cols-2">
             {
               featuredCard?.lists?.map((item) =>
                 <Card key={item.id} content={item} />

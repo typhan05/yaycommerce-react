@@ -26,6 +26,7 @@ export default function Count({number, style}) {
           height="28"
           fill="none"
           viewBox="0 0 28 28"
+          className="md:max-w-none max-w-[22px]"
         >
           <circle cx="14" cy="14" r="14" fill="#F2F2F2" fillOpacity="0.01"></circle>
           <rect
@@ -45,7 +46,7 @@ export default function Count({number, style}) {
         name="count"
         onChange={handleChange}
         value={count}
-        className="w-12 text-center text-base font-medium bg-gray-light8"
+        className="md:w-12 w-8 text-center text-base font-medium bg-gray-light8"
       />
       <button className="text-gray hover:text-black2" onClick={incrementCount}>
         <svg
@@ -54,6 +55,7 @@ export default function Count({number, style}) {
           height="28"
           fill="none"
           viewBox="0 0 28 28"
+          className="md:max-w-none max-w-[22px]"
         >
           <circle cx="14" cy="14" r="14" fill="#F2F2F2" fillOpacity="0.01"></circle>
           <path
