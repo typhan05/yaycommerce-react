@@ -3,11 +3,11 @@ import React, {Component} from 'react';
 class BreadCrumb extends Component {
   render() {
     return (
-      <nav className="flex" aria-label="Breadcrumb">
+      <nav className="flex overflow-hidden" aria-label="Breadcrumb">
         <div className={`container mx-auto ${this.props.styleProp}`}>
-          <ol className="inline-flex flex-wrap items-center my-7">
+          <ol className="no-scrollbar inline-flex items-center md:my-7 mt-8 my-5 max-w-full overflow-x-auto pb-2">
             {this.props.content.map((item) => (
-              <li key={item.id} className="inline-flex">
+              <li key={item.id} className="inline-flex whitespace-nowrap">
                 {item.id > 1 && <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="5"

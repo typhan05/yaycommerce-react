@@ -49,7 +49,7 @@ export default function DrawerSearch({isSearchShowing, hide, positon}) {
 
   return (
     <>
-      <div className={`absolute left-0 top-0 py-[15px] md:px-0 px-[15px] w-full bg-white z-[1] transition-all duration-300 ${isSearchShowing ? `translate-y-0 opacity-100` : `-translate-y-full opacity-0`}`}>
+      <div className={`absolute left-0 top-0 py-[15px] md:px-0 px-[15px] w-full bg-white z-[10] transition-all duration-300 ${isSearchShowing ? `translate-y-0 opacity-100` : `-translate-y-full opacity-0`}`}>
         {
           searchTrend ? (
               <div className="max-w-[950px] mx-auto py-[15px]">
@@ -108,7 +108,7 @@ export default function DrawerSearch({isSearchShowing, hide, positon}) {
                   </div>
                 </div>
                 <div className="flex flex-wrap items-center md:justify-center w-full mt-5">
-                  <p className="mr-4 text-gray font-medium">Search trend:</p>
+                  <p className="mr-4 md:mb-0 mb-1 text-gray font-medium">Search trend:</p>
                   <div>
                     {trends.map((user) => (
                       <button key={user.id}
@@ -178,7 +178,7 @@ export default function DrawerSearch({isSearchShowing, hide, positon}) {
             )
         }
       </div>
-      <div onClick={hide} className={`absolute top-full left-0 w-full h-[100vh] bg-[rgba(18,41,64,0.8)] transition-all duration-500 ${isSearchShowing ? `pointer-events-auto opacity-100` : `pointer-events-none opacity-0`}`}></div>
+      <div onClick={hide} className={`absolute top-full left-0 w-full h-[100vh] bg-[rgba(18,41,64,0.8)] z-[9] transition-all duration-500 ${isSearchShowing ? `pointer-events-auto opacity-100` : `pointer-events-none opacity-0`}`}></div>
     </>
   )
 }

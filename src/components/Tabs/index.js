@@ -90,14 +90,14 @@ const Tabs = ({data}) => (
     </TabPanel>
     <TabPanel>
       <div className="pt-5 pb-20 border-b border-solid border-gray-light2">
-        <div className="grid grid-cols-2 gap-20">
+        <div className="grid md:grid-cols-2 grid-cols-1 lg:gap-20 md:gap-10">
           <div>
             <h3 className="text-2xl font-bold mb-5">Customer reviews</h3>
-            <div className="grid grid-cols-2 gap-[14px] mb-[47px] max-w-[480px]">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-[14px] md:mb-[47px] mb-8 max-w-[480px]">
               <Select options={review_options} defaultValue={review_options[0]} styles={customStyles} components={{IndicatorSeparator: () => null}}/>
               <Select options={star_options} defaultValue={star_options[0]} styles={customStyles} components={{IndicatorSeparator: () => null}}/>
             </div>
-            <div className="mb-10">
+            <div className="md:mb-10 mb-7">
               <div className="mb-[30px] pb-[18px] border-b border-solid border-gray-light2">
                 <div className="flex justify-between">
                   <div className="flex">
@@ -329,8 +329,8 @@ const Tabs = ({data}) => (
             </div>
           </div>
           <div>
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-2xl font-bold">Average score</h3>
+            <div className="lg:flex items-center justify-between mb-6">
+              <h3 className="text-2xl font-bold lg:mb-0 mb-2">Average score</h3>
               <div className="flex items-center">
                 <div className="flex items-center mr-2">
                   {Array.from(Array(5), (e, i) => {
@@ -379,34 +379,34 @@ const Tabs = ({data}) => (
               </div>
             </div>
             <form>
-              <div className="grid grid-cols-2 gap-8">
-                <div className="mb-7">
+              <div className="grid md:grid-cols-2 grid-cols-1 md:gap-8">
+                <div className="md:mb-7 mb-5">
                   <label htmlFor="full-name" className="block mb-2 text-sm font-medium">Full Name</label>
                   <input type="text" id="full-name"
                          className="bg-white border border-gray-light9 placeholder:text-gray placeholder:opacity-50 text-sm rounded-xl p-[14px] block w-full"
                          placeholder="Enter your fullname" required />
                 </div>
-                <div className="mb-7">
+                <div className="md:mb-7 mb-5">
                   <label htmlFor="email" className="block mb-2 text-sm font-medium">Email Address</label>
                   <input type="email" id="email"
                          className="bg-white border border-gray-light9 placeholder:text-gray placeholder:opacity-50 text-sm rounded-xl p-[14px] block w-full"
                          placeholder="Enter your email" required />
                 </div>
               </div>
-              <div className="mb-7">
+              <div className="md:mb-7 mb-5">
                 <label htmlFor="message" className="block mb-2 text-sm font-medium">Your Review</label>
                 <textarea id="message" rows="4"
                           className="bg-white border border-gray-light9 placeholder:text-gray placeholder:opacity-50 text-sm rounded-xl p-[14px] block w-full"
                           placeholder="Write your review..."></textarea>
               </div>
-              <div>
+              <div className="md:mt-0 mt-8">
                 <a href="#/"
                    className="inline-flex justify-center rounded-xl text-md font-semibold py-[10px] px-6 text-white bg-black2 border-2 border-solid border-black2 hover:bg-white hover:text-black2">Submit Review</a>
               </div>
             </form>
           </div>
         </div>
-        <div className="pt-5 pb-[50px]">
+        <div className="md:pt-5 pt-14 pb-[50px]">
           <Pagination />
         </div>
       </div>

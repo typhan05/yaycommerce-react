@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 // Import Swiper React components
 import {Swiper, SwiperSlide} from "swiper/react";
 import BreadCrumb from "../../components/Breadcrumb";
@@ -17,6 +17,21 @@ import Select from "react-select";
 import Count from "../../components/Count";
 import PreFooter from "../../blocks/pre-footer";
 import {breadcrumbs, data, featuredCard, optionsColor, optionsSize, sliderProducts} from "./mockApi";
+import Accordion from "../../components/Accordion";
+
+export const useMedia = (query: any) => {
+  const [matches, setMatches] = useState(window.matchMedia(query).matches);
+
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    if (media.matches !== matches) setMatches(media.matches);
+    const listener = () => setMatches(media.matches);
+    media.addListener(listener);
+    return () => media.removeListener(listener);
+  }, [matches, query]);
+
+  return matches;
+};
 
 export default function Products() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -39,12 +54,14 @@ export default function Products() {
     }
   };
 
+  const isLargeScreen = useMedia('(min-width: 768px)');
+
   return (
     <>
       <BreadCrumb content={breadcrumbs}/>
       <div className="container mx-auto">
-        <div className="grid grid-cols-2 gap-4 mb-[90px]">
-          <div className="max-w-[612px]">
+        <div className="grid md:grid-cols-2 grid-cols-1 xl:gap-4 gap-x-10 md:mb-[90px] mb-[50px]">
+          <div className="max-w-[612px] md:mb-0 mb-5">
             <Swiper
               spaceBetween={0}
               thumbs={{swiper: thumbsSwiper}}
@@ -53,7 +70,7 @@ export default function Products() {
             >
               {sliderProducts.map((item) =>
                 <SwiperSlide key={item.id}>
-                  <div className="flex items-center justify-center w-full h-[612px] bg-gray-light5 rounded-[7px]">
+                  <div className="flex items-center justify-center w-full md:h-[612px] h-[410px] bg-gray-light5 rounded-[7px]">
                     <img src={require('../../assets/images/' + item.img)}
                          alt={item.img}
                          className="object-cover object-center"/>
@@ -64,31 +81,50 @@ export default function Products() {
             <Swiper
               onSwiper={setThumbsSwiper}
               spaceBetween={10}
-              slidesPerView={6}
+              slidesPerView={4}
+              slidesPerGroup={4}
               freeMode={true}
               watchSlidesProgress={true}
+              breakpoints={{
+                // when window width is >= 768px
+                768: {
+                  slidesPerView: 3,
+                  slidesPerGroup: 3,
+                },
+                // when window width is >= 1024px
+                1024: {
+                  slidesPerView: 4,
+                  slidesPerGroup: 4,
+                },
+                // when window width is >= 1440px
+                1440: {
+                  slidesPerView: 6,
+                  slidesPerGroup: 6,
+                  spaceBetween: 30,
+                },
+              }}
               modules={[FreeMode, Navigation, Thumbs]}
               className="swiper-thumbnail"
             >
               {sliderProducts.map((item) =>
                 <SwiperSlide key={item.id}>
-                  <div className="flex items-center justify-center cursor-pointer w-24 h-24 bg-gray-light5 rounded-[7px]">
+                  <div className="flex items-center justify-center cursor-pointer md:w-24 md:h-24 bg-gray-light5 rounded-[7px]">
                     <img src={require('../../assets/images/' + item.img)}
                          alt={item.img}
-                         className="max-w-[54px] mx-auto"/>
+                         className="max-w-[54px] mx-auto md:block hidden"/>
                   </div>
                 </SwiperSlide>
               )}
             </Swiper>
           </div>
           <div>
-            <h2 className="text-[30px] font-bold mb-4">ZARA romper dress pink size XS - $12</h2>
-            <div className="flex items-center mb-5">
-              <p className="text-2xl font-medium mr-[14px]"><span
-                className="text-xl text-gray line-through mr-1">$129.50</span>$90.65</p>
-              <p className="bg-orange rounded-lg text-sm text-white px-2 py-[2px]">-30%</p>
-              <p className="h-[18px] w-[1px] bg-gray-light9 mx-5"></p>
-              <p className="mr-[7px]">
+            <h2 className="md:text-[30px] text-[21px] font-bold md:mb-4 mb-1">ZARA romper dress pink size XS - $12</h2>
+            <div className="flex items-center md:mb-5 mb-3">
+              <p className="md:text-2xl text-[21px] font-medium md:mr-[14px] mr-1"><span
+                className="md:text-xl text-base text-gray line-through md:mr-1">$129.50</span>$90.65</p>
+              <p className="bg-orange rounded-lg text-sm text-white px-2 py-[2px] md:block hidden">-30%</p>
+              <p className="h-[18px] w-[1px] bg-gray-light9 md:mx-5 mx-4"></p>
+              <p className="md:mr-[7px] mr-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="17"
@@ -104,14 +140,14 @@ export default function Products() {
               </p>
               <p className="text-base text-gray leading-[25px]">4.7 of 579 reviews</p>
             </div>
-            <div className="mb-10">
+            <div className="md:mb-10 mb-6">
               <p className="text-base text-black2">The short skirt with the round neck has a cotton double-layered, sexy
                 figure, off-shoulder design, and
                 flared long sleeves with pink and white stripes pattern. Committed 100% soft cotton yarn, bring you a
                 comfortable wearing feeling.</p>
             </div>
             <div className="max-w-[490px]">
-              <div className="mb-6">
+              <div className="md:mb-6 mb-5">
                 <label className="inline-block text-base font-medium mb-2">Size</label>
                 <Select options={optionsSize} styles={customStyles} components={{IndicatorSeparator: () => null}} placeholder={'Select your size'} />
               </div>
@@ -120,15 +156,15 @@ export default function Products() {
                 <Select options={optionsColor} styles={customStyles} components={{IndicatorSeparator: () => null}}
                         placeholder={'Select favorite color'}/>
               </div>
-              <div className="flex mt-[30px]">
-                <div className="w-[153px] flex-shrink-0">
+              <div className="md:flex md:mt-[30px] md:mb-0 my-[25px]">
+                <div className="md:w-[153px] flex-shrink-0 md:mb-0 mb-[25px]">
                   <Count number={1} style={{ padding: '6px 12px' }} />
                 </div>
                 <a href="#/"
-                   className="ml-7 flex-1 inline-flex justify-center rounded-xl text-lg font-semibold py-[13px] px-6 text-white bg-blue shadow-[0_7px_25px_rgba(47,112,179,0.2)] hover:bg-black2 hover:shadow-[0_7px_35px_rgba(0,0,0,0.1)]">Add
+                   className="md:ml-7 flex-1 md:inline-flex block justify-center md:text-left text-center rounded-xl text-lg font-semibold py-[13px] px-6 text-white bg-blue shadow-[0_7px_25px_rgba(47,112,179,0.2)] hover:bg-black2 hover:shadow-[0_7px_35px_rgba(0,0,0,0.1)]">Add
                   to Cart</a>
               </div>
-              <div className="text-base my-9">
+              <div className="text-base md:my-9 my-7">
                 <p className="mb-2"><span className="font-medium">SKU:</span> KUMO42568</p>
                 <p><span className="font-medium">Category:</span> <a
                   className='group transition-all duration-300 ease-in-out' href='#/'>
@@ -148,17 +184,17 @@ export default function Products() {
                     </span>
                 </a></p>
               </div>
-              <div className="mb-7">
+              <div className="md:mb-7 mb-5 flex flex-wrap">
                 <a href="#/"
-                   className="font-medium text-gray px-3 py-2 mr-[10px] rounded-[7px] bg-white shadow-[0_5px_12px_rgba(0,0,0,0.05)] hover:bg-gray-light3 hover:shadow-[0_7px_25px_rgba(0,0,0,0.12)] hover:text-black2">Hat</a>
+                   className="font-medium text-gray px-3 py-2 mr-[10px] md:mb-0 mb-[10px] rounded-[7px] bg-white shadow-[0_5px_12px_rgba(0,0,0,0.05)] hover:bg-gray-light3 hover:shadow-[0_7px_25px_rgba(0,0,0,0.12)] hover:text-black2">Hat</a>
                 <a href="#/"
-                   className="font-medium text-gray px-3 py-2 mr-[10px] rounded-[7px] bg-white shadow-[0_5px_12px_rgba(0,0,0,0.05)] hover:bg-gray-light3 hover:shadow-[0_7px_25px_rgba(0,0,0,0.12)] hover:text-black2">Women</a>
+                   className="font-medium text-gray px-3 py-2 mr-[10px] md:mb-0 mb-[10px] rounded-[7px] bg-white shadow-[0_5px_12px_rgba(0,0,0,0.05)] hover:bg-gray-light3 hover:shadow-[0_7px_25px_rgba(0,0,0,0.12)] hover:text-black2">Women</a>
                 <a href="#/"
-                   className="font-medium text-gray px-3 py-2 mr-[10px] rounded-[7px] bg-white shadow-[0_5px_12px_rgba(0,0,0,0.05)] hover:bg-gray-light3 hover:shadow-[0_7px_25px_rgba(0,0,0,0.12)] hover:text-black2">Orange</a>
+                   className="font-medium text-gray px-3 py-2 mr-[10px] md:mb-0 mb-[10px] rounded-[7px] bg-white shadow-[0_5px_12px_rgba(0,0,0,0.05)] hover:bg-gray-light3 hover:shadow-[0_7px_25px_rgba(0,0,0,0.12)] hover:text-black2">Orange</a>
                 <a href="#/"
-                   className="font-medium text-gray px-3 py-2 mr-[10px] rounded-[7px] bg-white shadow-[0_5px_12px_rgba(0,0,0,0.05)] hover:bg-gray-light3 hover:shadow-[0_7px_25px_rgba(0,0,0,0.12)] hover:text-black2">Cotton</a>
+                   className="font-medium text-gray px-3 py-2 mr-[10px] md:mb-0 mb-[10px] rounded-[7px] bg-white shadow-[0_5px_12px_rgba(0,0,0,0.05)] hover:bg-gray-light3 hover:shadow-[0_7px_25px_rgba(0,0,0,0.12)] hover:text-black2">Cotton</a>
                 <a href="#/"
-                   className="font-medium text-gray px-3 py-2 mr-[10px] rounded-[7px] bg-white shadow-[0_5px_12px_rgba(0,0,0,0.05)] hover:bg-gray-light3 hover:shadow-[0_7px_25px_rgba(0,0,0,0.12)] hover:text-black2">Sticker</a>
+                   className="font-medium text-gray px-3 py-2 mr-[10px] md:mb-0 mb-[10px] rounded-[7px] bg-white shadow-[0_5px_12px_rgba(0,0,0,0.05)] hover:bg-gray-light3 hover:shadow-[0_7px_25px_rgba(0,0,0,0.12)] hover:text-black2">Sticker</a>
               </div>
               <p><a href="#/" className="flex items-center text-gray text-base hover:text-black2">
                 <svg
@@ -178,8 +214,10 @@ export default function Products() {
             </div>
           </div>
         </div>
-        <div className="mb-[90px]">
-          <Tabs data={data}/>
+        <div className="md:mb-[90px] mb-[50px]">
+          {
+            isLargeScreen ? <Tabs data={data}/> : <Accordion />
+          }
         </div>
       </div>
       <FeaturedCardSlider content={featuredCard}/>
