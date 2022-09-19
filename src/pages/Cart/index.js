@@ -75,6 +75,7 @@ const customStyles = {
     return {
       ...defaultStyles,
       color: '#5A6D80',
+      opacity: 0.5,
     }
   }
 };
@@ -295,7 +296,7 @@ export default function Cart() {
                     <label htmlFor="city" className="block mb-2 text-sm font-medium">Zip code<span
                       className="text-pink">*</span></label>
                     <input type="text" id="first-name"
-                           className="bg-white border border-gray-light9 placeholder:text-gray text-base rounded-[9px] p-[14px] block w-full"
+                           className="bg-white border border-gray-light9 placeholder:text-gray placeholder:opacity-50 text-base rounded-[9px] p-[14px] block w-full"
                            defaultValue="91214" placeholder="Enter zip code"/>
                   </div>
                   <div>

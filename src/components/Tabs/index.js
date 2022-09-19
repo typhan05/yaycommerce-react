@@ -29,6 +29,7 @@ const customStyles = {
     return {
       ...defaultStyles,
       color: '#5A6D80',
+      opacity: 0.5,
     }
   }
 };
@@ -382,20 +383,20 @@ const Tabs = ({data}) => (
                 <div className="mb-7">
                   <label htmlFor="full-name" className="block mb-2 text-sm font-medium">Full Name</label>
                   <input type="text" id="full-name"
-                         className="bg-white border border-gray-light9 placeholder:text-gray text-sm rounded-xl p-[14px] block w-full"
+                         className="bg-white border border-gray-light9 placeholder:text-gray placeholder:opacity-50 text-sm rounded-xl p-[14px] block w-full"
                          placeholder="Enter your fullname" required />
                 </div>
                 <div className="mb-7">
                   <label htmlFor="email" className="block mb-2 text-sm font-medium">Email Address</label>
                   <input type="email" id="email"
-                         className="bg-white border border-gray-light9 placeholder:text-gray text-sm rounded-xl p-[14px] block w-full"
+                         className="bg-white border border-gray-light9 placeholder:text-gray placeholder:opacity-50 text-sm rounded-xl p-[14px] block w-full"
                          placeholder="Enter your email" required />
                 </div>
               </div>
               <div className="mb-7">
                 <label htmlFor="message" className="block mb-2 text-sm font-medium">Your Review</label>
                 <textarea id="message" rows="4"
-                          className="bg-white border border-gray-light9 placeholder:text-gray text-sm rounded-xl p-[14px] block w-full"
+                          className="bg-white border border-gray-light9 placeholder:text-gray placeholder:opacity-50 text-sm rounded-xl p-[14px] block w-full"
                           placeholder="Write your review..."></textarea>
               </div>
               <div>

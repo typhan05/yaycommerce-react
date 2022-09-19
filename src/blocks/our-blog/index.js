@@ -1,25 +1,9 @@
 import React from 'react';
+import Article from "../../components/Article";
 
 export default function OurBlog(props) {
   const content = props.content.lists.map((item) =>
-    <div key={item.id} className="bg-white">
-      <a href="#/" className="flex rounded-lg mb-4 w-full overflow-hidden">
-        <img src={require('../../assets/images/' + item.image)}
-             alt={item.title}
-             className="object-cover w-full object-center transform transition duration-500 hover:scale-110"/>
-      </a>
-      <div className="text-center">
-        <p className="text-sm text-gray mb-1">{item.date}</p>
-        <h3 className="text-lg font-semibold text-black2">
-          <a className='group transition-all duration-300 ease-in-out' href='#/'>
-            <span
-              className='bg-left-bottom bg-gradient-to-r from-black2 to-black2 bg-[length:0%_1px] bg-no-repeat group-hover:bg-[length:100%_1px] transition-all duration-300 ease-out'>
-              {item.title}
-            </span>
-          </a>
-        </h3>
-      </div>
-    </div>
+    <Article content={item} />
   )
   return (
     <section className="md:mb-[150px] mb-[70px]">

@@ -28,6 +28,7 @@ const customStyles = {
     return {
       ...defaultStyles,
       color: '#5A6D80',
+      opacity: 0.5,
     }
   }
 };
@@ -103,21 +104,21 @@ export default function Checkout() {
                     <label htmlFor="first-name" className="block mb-2 text-sm font-medium">First Name<span
                       className="text-pink">*</span></label>
                     <input type="text" id="first-name"
-                           className="bg-white border border-gray-light9 placeholder:text-gray text-base rounded-[9px] p-[14px] block w-full"
+                           className="bg-white border border-gray-light9 placeholder:text-gray placeholder:opacity-50 text-base rounded-[9px] p-[14px] block w-full"
                            placeholder="Enter first name" required/>
                   </div>
                   <div className="md:mb-7 mb-6">
                     <label htmlFor="last-name" className="block mb-2 text-sm font-medium">Email Address<span
                       className="text-pink">*</span></label>
                     <input type="text" id="last-name"
-                           className="bg-white border border-gray-light9 placeholder:text-gray text-base rounded-[9px] p-[14px] block w-full"
+                           className="bg-white border border-gray-light9 placeholder:text-gray placeholder:opacity-50 text-base rounded-[9px] p-[14px] block w-full"
                            placeholder="Enter last name" required/>
                   </div>
                 </div>
                 <div className="md:mb-7 mb-6">
                   <label htmlFor="company" className="block mb-2 text-sm font-medium">Company (Optional)</label>
                   <input type="text" id="company"
-                         className="bg-white border border-gray-light9 placeholder:text-gray text-base rounded-[9px] p-[14px] block w-full"
+                         className="bg-white border border-gray-light9 placeholder:text-gray placeholder:opacity-50 text-base rounded-[9px] p-[14px] block w-full"
                          placeholder="Enter your company" required/>
                 </div>
                 <div className="md:grid md:grid-cols-2 gap-8">
@@ -152,12 +153,12 @@ export default function Checkout() {
                   <label htmlFor="street" className="block mb-2 text-sm font-medium">Street address<span
                     className="text-pink">*</span></label>
                   <input type="text" id="street"
-                         className="bg-white border border-gray-light9 placeholder:text-gray text-base rounded-[9px] p-[14px] block w-full"
+                         className="bg-white border border-gray-light9 placeholder:text-gray placeholder:opacity-50 text-base rounded-[9px] p-[14px] block w-full"
                          placeholder="House number and street name" required/>
                 </div>
                 <div className="md:mb-7 mb-6">
                   <input type="text" id="apartment"
-                         className="bg-white border border-gray-light9 placeholder:text-gray text-base rounded-[9px] p-[14px] block w-full"
+                         className="bg-white border border-gray-light9 placeholder:text-gray placeholder:opacity-50 text-base rounded-[9px] p-[14px] block w-full"
                          placeholder="Apartment, suite, unit, etc. (optional)" required/>
                 </div>
                 <div className="md:grid md:grid-cols-2 gap-8">
@@ -165,21 +166,21 @@ export default function Checkout() {
                     <label htmlFor="phone" className="block mb-2 text-sm font-medium">Phone number<span
                       className="text-pink">*</span></label>
                     <input type="text" id="phone"
-                           className="bg-white border border-gray-light9 placeholder:text-gray text-base rounded-[9px] p-[14px] block w-full"
+                           className="bg-white border border-gray-light9 placeholder:text-gray placeholder:opacity-50 text-base rounded-[9px] p-[14px] block w-full"
                            placeholder="Enter your fullname" required/>
                   </div>
                   <div className="md:mb-7 mb-6">
                     <label htmlFor="email" className="block mb-2 text-sm font-medium">Email Address<span
                       className="text-pink">*</span></label>
                     <input type="email" id="email"
-                           className="bg-white border border-gray-light9 placeholder:text-gray text-base rounded-[9px] p-[14px] block w-full"
+                           className="bg-white border border-gray-light9 placeholder:text-gray placeholder:opacity-50 text-base rounded-[9px] p-[14px] block w-full"
                            placeholder="Enter your email" required/>
                   </div>
                 </div>
                 <div className="md:mb-7 mb-6">
                   <label htmlFor="message" className="block mb-2 text-sm font-medium">Order notes (Optional)</label>
                   <textarea id="message" rows="4"
-                            className="bg-white border border-gray-light9 placeholder:text-gray text-base rounded-[9px] p-[14px] block w-full"
+                            className="bg-white border border-gray-light9 placeholder:text-gray placeholder:opacity-50 text-base rounded-[9px] p-[14px] block w-full"
                             placeholder="Note about your order, e.g. special notes for delivery..."></textarea>
                 </div>
                 <div className="mb-4">
@@ -322,7 +323,7 @@ export default function Checkout() {
                             <span className="text-pink">*</span>
                           </label>
                           <input type="text" id="card-number"
-                                 className="bg-white border border-gray-light9 placeholder:text-gray text-base rounded-[9px] p-[14px] block w-full"
+                                 className="bg-white border border-gray-light9 placeholder:text-gray placeholder:opacity-50 text-base rounded-[9px] p-[14px] block w-full"
                                  placeholder="Enter card number" required/>
                         </div>
                         <div className="md:mb-6 mb-5">
@@ -330,7 +331,7 @@ export default function Checkout() {
                             <span className="text-pink">*</span>
                           </label>
                           <input type="text" id="name-card"
-                                 className="bg-white border border-gray-light9 placeholder:text-gray text-base rounded-[9px] p-[14px] block w-full"
+                                 className="bg-white border border-gray-light9 placeholder:text-gray placeholder:opacity-50 text-base rounded-[9px] p-[14px] block w-full"
                                  placeholder="Enter name on card" required/>
                         </div>
                         <div className="md:grid md:grid-cols-2 gap-7">
@@ -338,7 +339,7 @@ export default function Checkout() {
                             <label htmlFor="exp-date" className="block mb-2 text-sm font-medium">Phone
                               number<span className="text-pink">*</span>
                             </label><input type="text" id="exp-date"
-                                           className="bg-white border border-gray-light9 placeholder:text-gray text-base rounded-[9px] p-[14px] block w-full"
+                                           className="bg-white border border-gray-light9 placeholder:text-gray placeholder:opacity-50 text-base rounded-[9px] p-[14px] block w-full"
                                            placeholder="MM/YY" required/>
                           </div>
                           <div className="md:mb-0 mb-5">
@@ -346,7 +347,7 @@ export default function Checkout() {
                               Address<span className="text-pink">*</span>
                             </label>
                             <input type="text" id="cvv"
-                                   className="bg-white border border-gray-light9 placeholder:text-gray text-base rounded-[9px] p-[14px] block w-full"
+                                   className="bg-white border border-gray-light9 placeholder:text-gray placeholder:opacity-50 text-base rounded-[9px] p-[14px] block w-full"
                                    placeholder="CVV" required/>
                           </div>
                         </div>

@@ -34,6 +34,7 @@ export default function Products() {
       return {
         ...defaultStyles,
         color: '#5A6D80',
+        opacity: 0.5,
       }
     }
   };

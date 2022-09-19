@@ -70,7 +70,7 @@ const menuLists = [
 export default function Footer() {
   const [activeId, setActiveId] = useState(0);
   const openMenu = (index) => {
-    setActiveId(index)
+    setActiveId(prevState => prevState === index ? -1 : index)
   }
   return (
     <footer className="md:pt-[100px] pt-[75px]">

@@ -26,6 +26,10 @@ module.exports = {
         light10: '#F2F7FF',
         light11: '#F2F5F8',
         light12: '#F9F9F9',
+        light13: '#FAFBFC',
+        light14: '#F4F7FA',
+        light15: '#F2F6FA',
+        light16: '#F9FAFC',
       },
       'green': {
         light: '#7FD59C',
