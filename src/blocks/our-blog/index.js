@@ -3,7 +3,7 @@ import Article from "../../components/Article";
 
 export default function OurBlog(props) {
   const content = props.content.lists.map((item) =>
-    <Article content={item} />
+    <Article key={`blog-item`+item.id} content={item} />
   )
   return (
     <section className="md:mb-[150px] mb-[70px]">

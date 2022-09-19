@@ -18,6 +18,8 @@ const useSearch = () => {
   }, [isSearchShowing]);
 
   function toggleSearch() {
+    let root = document.getElementsByTagName('body')[0];
+    root.classList.toggle('overflow-hidden');
     setIsSearchShowing(!isSearchShowing);
   }
 

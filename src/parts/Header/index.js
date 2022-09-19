@@ -3,6 +3,8 @@ import {NavLink} from "react-router-dom";
 import Logo from "../../assets/images/logo.svg"
 import Dropdown from "../../components/Dropdown";
 import useHeader from "./useHeader";
+import DrawerSearch from "../../components/Drawer/Search";
+import useSearch from "../../components/Drawer/Search/useSearch";
 
 const units = [
   {id: 1, active: true, name: 'USD'},
@@ -18,6 +20,7 @@ const languages = [
 
 export default function Header(props) {
   const {openMenu, openHandler, scrollDirection} = useHeader();
+  const {isSearchShowing, toggleSearch} = useSearch();
   const [showSubMenu, setShowSubMenu] = useState(false);
 
   const openSubMenu = () => {
@@ -30,8 +33,8 @@ export default function Header(props) {
 
   return (
     <header
-      className={`${openMenu ? `fixed` : `sticky`} ${scrollDirection === "down" ? "-top-full" : "md:-top-11 top-0"} z-40 left-0 w-full translate-z-0 text-black2 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-500 ease-in-out`}>
-      <div className="bg-gray-light4 py-3 text-sm md:block hidden">
+      className={`${openMenu ? `fixed` : `sticky`} ${scrollDirection === "down" ? "-top-full" : "md:-top-11 top-0"} z-50 left-0 w-full translate-z-0 text-black2 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-500 ease-in-out`}>
+      <div className="relative bg-gray-light4 py-3 text-sm md:block hidden z-[2]">
         <div className="container mx-auto flex flex-wrap justify-between items-center">
           <ul className="grid gap-x-3 grid-cols-3">
             <li>
@@ -57,11 +60,11 @@ export default function Header(props) {
           </div>
         </div>
       </div>
-      <div className="py-6">
+      <div className="relative py-6">
         <div className="container mx-auto flex flex-wrap items-center justify-between">
           <a href="/yaycommerce-react/"><img src={Logo} alt="logo"/></a>
           <div
-            className={`md:relative md:top-0 md:w-auto md:translate-x-0 md:py-0 md:px-0 px-5 py-4 z-50 fixed top-[77px] bottom-0 left-0 border-t border-solid border-gray-light2 md:border-0 md:border-none md:border-transparent bg-white transition-all duration-300 ease-in-out w-full md:overflow-visible max-h-full overflow-y-auto ${openMenu ? `translate-x-0` : `translate-x-full`}`}>
+            className={`md:relative md:top-0 md:w-auto md:translate-x-0 md:py-0 md:px-0 px-5 py-4 z-[1] fixed top-[77px] bottom-0 left-0 border-t border-solid border-gray-light2 md:border-0 md:border-none md:border-transparent bg-white transition-all duration-300 ease-in-out w-full md:overflow-visible max-h-full overflow-y-auto ${openMenu ? `translate-x-0` : `translate-x-full`}`}>
             <ul className="md:flex md:mb-0 mb-4">
               <li className="md:mx-5 relative group">
                 <NavLink to='/yaycommerce-react/'
@@ -73,7 +76,7 @@ export default function Header(props) {
                          className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 pr-4 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
                   Shops</NavLink>
                 <button onClick={openSubMenu}
-                        className="absolute right-0 top-2/4 -translate-y-2/4 z-10 md:block md:rotate-0 -rotate-90 flex items-center justify-center md:ml-[6px] md:w-auto w-4 md:h-auto h-4 md:pointer-events-none">
+                        className="absolute right-0 top-2/4 -translate-y-2/4 z-[1] md:block md:rotate-0 -rotate-90 flex items-center justify-center md:ml-[6px] md:w-auto w-4 md:h-auto h-4 md:pointer-events-none">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="10"
@@ -91,7 +94,7 @@ export default function Header(props) {
                   </svg>
                 </button>
                 <ul
-                  className={`opacity-0 py-[15px] md:px-4 md:-ml-4 md:pointer-events-none md:absolute fixed left-0 md:invisible md:top-20 top-0 z-10 min-w-max bg-white transition-all md:duration-300 duration-700 ease-in-out rounded-md shadow-[0_9px_40px_rgba(0,0,0,0.08)] md:h-auto h-full md:w-auto w-full bg-white group-hover:pointer-events-auto group-hover:md:top-[30px] group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 ${showSubMenu ? `visible translate-x-0 opacity-100` : `invisible md:translate-x-0 translate-x-full opacity-0`}`}>
+                  className={`opacity-0 py-[15px] md:px-4 md:-ml-4 md:pointer-events-none md:absolute fixed left-0 md:invisible md:top-20 top-0 z-[1] min-w-max bg-white transition-all md:duration-300 duration-700 ease-in-out rounded-md shadow-[0_9px_40px_rgba(0,0,0,0.08)] md:h-auto h-full md:w-auto w-full bg-white group-hover:pointer-events-auto group-hover:md:top-[30px] group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 ${showSubMenu ? `visible translate-x-0 opacity-100` : `invisible md:translate-x-0 translate-x-full opacity-0`}`}>
                   <li className="md:hidden block md:px-0 px-4 shadow-[0px_1px_0px_#EBEBEB] mb-4">
                     <button onClick={onBack} className="flex items-center py-3">
                       <svg
@@ -130,7 +133,7 @@ export default function Header(props) {
                          className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 pr-4 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
                   Pages</NavLink>
                 <button onClick={openSubMenu}
-                        className="absolute right-0 top-2/4 -translate-y-2/4 z-10 md:block md:rotate-0 -rotate-90 flex items-center justify-center md:ml-[6px] md:w-auto w-4 md:h-auto h-4 md:pointer-events-none">
+                        className="absolute right-0 top-2/4 -translate-y-2/4 z-[1] md:block md:rotate-0 -rotate-90 flex items-center justify-center md:ml-[6px] md:w-auto w-4 md:h-auto h-4 md:pointer-events-none">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="10"
@@ -148,7 +151,7 @@ export default function Header(props) {
                   </svg>
                 </button>
                 <ul
-                  className={`opacity-0 py-[15px] md:px-4 md:-ml-4 md:pointer-events-none md:absolute fixed left-0 md:invisible md:top-20 top-0 z-10 min-w-max bg-white transition-all md:duration-300 duration-700 ease-in-out rounded-md shadow-[0_9px_40px_rgba(0,0,0,0.08)] md:h-auto h-full md:w-auto w-full bg-white group-hover:pointer-events-auto group-hover:md:top-[30px] group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 ${showSubMenu ? `visible translate-x-0 opacity-100` : `invisible md:translate-x-0 translate-x-full opacity-0`}`}>
+                  className={`opacity-0 py-[15px] md:px-4 md:-ml-4 md:pointer-events-none md:absolute fixed left-0 md:invisible md:top-20 top-0 z-[1] min-w-max bg-white transition-all md:duration-300 duration-700 ease-in-out rounded-md shadow-[0_9px_40px_rgba(0,0,0,0.08)] md:h-auto h-full md:w-auto w-full bg-white group-hover:pointer-events-auto group-hover:md:top-[30px] group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 ${showSubMenu ? `visible translate-x-0 opacity-100` : `invisible md:translate-x-0 translate-x-full opacity-0`}`}>
                   <li className="md:hidden block md:px-0 px-4 shadow-[0px_1px_0px_#EBEBEB] mb-4">
                     <button onClick={onBack} className="flex items-center py-3">
                       <svg
@@ -315,7 +318,7 @@ export default function Header(props) {
           </div>
           <ul className="grid md:grid-cols-4 gap-x-5 grid-cols-3 items-center">
             <li>
-              <button className="relative group block text-black2" type="button" onClick={props.buttonSearch}>
+              <button className="relative group block text-black2" type="button" onClick={toggleSearch}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -343,7 +346,7 @@ export default function Header(props) {
                   ></path>
                 </svg>
                 <span
-                  className="absolute top-10 left-2/4 -translate-x-2/4 z-20 hidden md:block invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">Search</span>
+                  className="absolute top-10 left-2/4 -translate-x-2/4 z-[1] hidden md:block invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">Search</span>
               </button>
             </li>
             <li className="md:block hidden">
@@ -362,13 +365,13 @@ export default function Header(props) {
                   ></path>
                 </svg>
                 <span
-                  className="absolute top-10 left-2/4 -translate-x-2/4 z-20 hidden md:block invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">Wishlist</span>
+                  className="absolute top-10 left-2/4 -translate-x-2/4 z-[1] hidden md:block invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">Wishlist</span>
               </a>
             </li>
             <li>
               <button className="group relative block text-black2" type="button" onClick={props.buttonCart}>
                 <span
-                  className="absolute -top-[4px] -right-[7px] z-10 text-[11px] leading-4 flex items-center justify-center text-white font-semibold bg-green w-[18px] h-[18px] rounded-[9px]">7</span>
+                  className="absolute -top-[4px] -right-[7px] z-[1] text-[11px] leading-4 flex items-center justify-center text-white font-semibold bg-green w-[18px] h-[18px] rounded-[9px]">7</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -401,7 +404,7 @@ export default function Header(props) {
                   ></path>
                 </svg>
                 <span
-                  className="absolute top-10 left-2/4 -translate-x-2/4 z-20 hidden md:block invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">My cart</span>
+                  className="absolute top-10 left-2/4 -translate-x-2/4 z-[1] hidden md:block invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">My cart</span>
               </button>
             </li>
             <li className="md:block hidden">
@@ -420,7 +423,7 @@ export default function Header(props) {
                   ></path>
                 </svg>
                 <span
-                  className="absolute top-10 left-2/4 -translate-x-2/4 z-20 hidden md:block invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">My account</span>
+                  className="absolute top-10 left-2/4 -translate-x-2/4 z-[1] hidden md:block invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">My account</span>
               </a>
             </li>
             <li className="md:hidden flex ml-1">
@@ -449,6 +452,7 @@ export default function Header(props) {
             </li>
           </ul>
         </div>
+        <DrawerSearch isSearchShowing={isSearchShowing} hide={toggleSearch} />
       </div>
     </header>
   );
