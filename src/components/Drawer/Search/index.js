@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect, useRef, useState} from 'react'
 import {XIcon} from '@heroicons/react/outline'
 import {useNavigate} from "react-router-dom";
 
@@ -10,10 +10,11 @@ const trends = [
   {id: 5, name: 'Activewear'},
 ];
 
-export default function DrawerSearch({isSearchShowing, hide, positon}) {
+export default function DrawerSearch({isSearchShowing, hide}) {
   const [name, setName] = useState('');
   const [itemActive, setItemActive] = useState(null);
   const [searchTrend, setSearchTrend] = useState(false);
+  const inputRef = useRef(isSearchShowing);
 
   const filter = (e) => {
     const keyword = e.target.value;
@@ -47,6 +48,12 @@ export default function DrawerSearch({isSearchShowing, hide, positon}) {
     }, "800")
   }
 
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isSearchShowing]);
+
   return (
     <>
       <div className={`absolute left-0 top-0 py-[15px] md:px-0 px-[15px] w-full bg-white z-[10] transition-all duration-300 ${isSearchShowing ? `translate-y-0 opacity-100` : `-translate-y-full opacity-0`}`}>
@@ -63,6 +70,7 @@ export default function DrawerSearch({isSearchShowing, hide, positon}) {
                             className="pl-5 pr-12 py-3 w-full text-base text-black2 border border-gray-light9 bg-white rounded-[9px] h-[55px] placeholder:text-gray placeholder:opacity-50 focus:outline-none focus:border-black2 focus:shadow-[0_5px_25px_rgba(0,0,0,0.07)]"
                             type="search"
                             value={name}
+                            ref={inputRef}
                             onChange={filter} name="search" placeholder="Search"/>
                           <button type="submit" onClick={hide}
                                   className="absolute right-[4px] top-[17px] text-gray mr-4 hover:text-black2">
@@ -130,6 +138,7 @@ export default function DrawerSearch({isSearchShowing, hide, positon}) {
                             className="pl-5 pr-12 py-3 w-full text-base text-black2 border border-gray-light9 bg-white rounded-[9px] h-[50px] placeholder:text-gray placeholder:opacity-50 focus:outline-none focus:border-black2 focus:shadow-[0_5px_25px_rgba(0,0,0,0.07)]"
                             type="search"
                             value={name}
+                            ref={inputRef}
                             onChange={filter} name="search" placeholder="Search"/>
                           <button type="submit" onClick={hide}
                                   className="absolute right-[4px] top-[14px] text-gray mr-4 hover:text-black2">
