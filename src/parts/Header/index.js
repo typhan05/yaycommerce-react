@@ -64,7 +64,7 @@ export default function Header(props) {
         <div className="container mx-auto flex flex-wrap items-center justify-between">
           <NavLink to='/yaycommerce-react/' onClick={() => closeMenu()}><img src={Logo} alt="logo"/></NavLink>
           <div
-            className={`md:relative md:top-0 md:w-auto md:translate-x-0 md:py-0 md:px-0 px-5 py-4 z-[8] fixed top-[77px] bottom-0 left-0 border-t border-solid border-gray-light2 md:border-0 md:border-none md:border-transparent bg-white transition-all duration-300 ease-in-out w-full md:overflow-visible max-h-full overflow-y-auto ${openMenu ? `translate-x-0` : `translate-x-full`}`}>
+            className={`md:relative md:top-0 md:w-auto md:translate-x-0 md:py-0 md:px-0 px-5 py-4 z-[8] fixed top-[77px] bottom-0 left-0 border-t border-solid border-gray-light2 md:border-0 md:border-none md:border-transparent bg-white transition-all duration-300 ease-in-out w-full md:overflow-visible max-h-full overflow-x-hidden overflow-y-auto ${openMenu ? `translate-x-0` : `translate-x-full`}`}>
             <ul className="md:flex md:mb-0 mb-4">
               <li className="md:mx-5 relative group">
                 <NavLink to='/yaycommerce-react/'

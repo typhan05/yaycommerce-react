@@ -37,13 +37,21 @@ export default function Products() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   const customStyles = {
-    control: (base) => ({
+    control: (base, state) => ({
       ...base,
       height: '54px',
       'min-height': '54px',
       borderRadius: '12px',
-      borderColor: '#D3DCE5',
-      padding: '0 5px'
+      boxShadow: state.isFocused ? '0px 5px 15px rgba(0, 0, 0, 0.07)' : 0,
+      borderColor: state.isFocused
+        ? '#122940'
+        : '#D3DCE5',
+      '&:hover': {
+        borderColor: state.isFocused
+          ? '#122940'
+          : '#D3DCE5',
+      },
+      padding: '0 5px',
     }),
     placeholder: (defaultStyles) => {
       return {
@@ -51,6 +59,13 @@ export default function Products() {
         color: '#5A6D80',
         opacity: 0.5,
       }
+    },
+    option: (base, { isFocused }) => {
+      return {
+        ...base,
+        backgroundColor: isFocused ? '#F2F2F2' : '#FFFFFF',
+        color: '#122940'
+      };
     }
   };
 

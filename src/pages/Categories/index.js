@@ -9,12 +9,20 @@ import Pagination from "../../components/Pagination";
 
 export default function Categories() {
   const customStyles = {
-    control: (base) => ({
+    control: (base, state) => ({
       ...base,
       height: '44px',
       'min-height': '44px',
       borderRadius: '9px',
-      borderColor: '#D3DCE5',
+      boxShadow: state.isFocused ? '0px 5px 15px rgba(0, 0, 0, 0.07)' : 0,
+      borderColor: state.isFocused
+        ? '#122940'
+        : '#D3DCE5',
+      '&:hover': {
+        borderColor: state.isFocused
+          ? '#122940'
+          : '#D3DCE5',
+      },
       padding: '0 5px',
     }),
     placeholder: (defaultStyles) => {
@@ -23,6 +31,13 @@ export default function Categories() {
         color: '#5A6D80',
         opacity: 0.5,
       }
+    },
+    option: (base, { isFocused }) => {
+      return {
+        ...base,
+        backgroundColor: isFocused ? '#F2F2F2' : '#FFFFFF',
+        color: '#122940'
+      };
     }
   };
 

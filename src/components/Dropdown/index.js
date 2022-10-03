@@ -39,7 +39,7 @@ export default function Dropdown(props) {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute left-0 md:w-auto w-full text-center top-full mt-1 rounded-md shadow-lg bg-white focus:outline-none z-20">
+        <Menu.Items className="absolute left-0 md:w-auto w-full text-center md:top-full md:bottom-none md:mb-0 bottom-full mb-5 mt-1 rounded-md shadow-lg bg-white focus:outline-none z-20">
           <div className="py-1 bg-white min-w-[70px]">
             {renderItem}
           </div>
