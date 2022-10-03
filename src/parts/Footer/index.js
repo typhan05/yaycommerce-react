@@ -188,7 +188,7 @@ export default function Footer() {
                     </span>
                   </h3>
                   <ul
-                    className={`md:overflow-visible overflow-hidden transition-all max-h-0 duration-500 ${activeId === index ? `max-h-40` : `max-h-0`}`}>
+                    className={`md:overflow-visible overflow-hidden transition-all duration-500 ${activeId === index ? `max-h-40` : `max-h-0`}`}>
                     {item?.lists?.map((li, idx) => {
                       return (
                         <li key={`li-`+idx} className="mb-2">
@@ -199,7 +199,7 @@ export default function Footer() {
                       )
                     })}
                   </ul>
-                  <div className={`md:overflow-visible overflow-hidden transition-all max-h-0 duration-500 ${activeId === index ? `max-h-40` : `max-h-0`}`}>
+                  <div className={`md:overflow-visible overflow-hidden transition-all duration-500 ${activeId === index ? `max-h-40` : `md:max-h-40 max-h-0`}`}>
                     {item?.description && <p className="mb-5 text-gray">{item?.description}</p>}
                     {item?.form && <form action="#">
                       <div className="flex items-center bg-gray-light6 rounded-xl p-1 pl-5">

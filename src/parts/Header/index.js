@@ -19,7 +19,7 @@ const languages = [
 ];
 
 export default function Header(props) {
-  const {openMenu, openHandler, scrollDirection} = useHeader();
+  const {openMenu, openHandler, scrollDirection, closeMenu} = useHeader();
   const {isSearchShowing, toggleSearch} = useSearch();
   const [showSubMenu, setShowSubMenu] = useState(false);
 
@@ -39,7 +39,7 @@ export default function Header(props) {
           <ul className="grid gap-x-3 grid-cols-3">
             <li>
               <NavLink to='/yaycommerce-react/contact'
-                 className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
+                       className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
                 Contact</NavLink>
             </li>
             <li>
@@ -62,17 +62,19 @@ export default function Header(props) {
       </div>
       <div className="relative py-6">
         <div className="container mx-auto flex flex-wrap items-center justify-between">
-          <a href="/yaycommerce-react/"><img src={Logo} alt="logo"/></a>
+          <NavLink to='/yaycommerce-react/' onClick={() => closeMenu()}><img src={Logo} alt="logo"/></NavLink>
           <div
             className={`md:relative md:top-0 md:w-auto md:translate-x-0 md:py-0 md:px-0 px-5 py-4 z-[8] fixed top-[77px] bottom-0 left-0 border-t border-solid border-gray-light2 md:border-0 md:border-none md:border-transparent bg-white transition-all duration-300 ease-in-out w-full md:overflow-visible max-h-full overflow-y-auto ${openMenu ? `translate-x-0` : `translate-x-full`}`}>
             <ul className="md:flex md:mb-0 mb-4">
               <li className="md:mx-5 relative group">
                 <NavLink to='/yaycommerce-react/'
+                         onClick={() => closeMenu()}
                          className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
                   Home</NavLink>
               </li>
               <li className="md:mx-5 relative group">
                 <NavLink to='/yaycommerce-react/shops'
+                         onClick={() => closeMenu()}
                          className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 pr-4 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
                   Shops</NavLink>
                 <button onClick={openSubMenu}
@@ -118,11 +120,13 @@ export default function Header(props) {
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
                     <NavLink to='/yaycommerce-react/categories'
+                             onClick={() => closeMenu()}
                              className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
                       Categories</NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
                     <NavLink to='/yaycommerce-react/search'
+                             onClick={() => closeMenu()}
                              className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
                       Search</NavLink>
                   </li>
@@ -130,6 +134,7 @@ export default function Header(props) {
               </li>
               <li className="md:mx-5 relative group">
                 <NavLink to='/yaycommerce-react/pages'
+                         onClick={() => closeMenu()}
                          className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 pr-4 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
                   Pages</NavLink>
                 <button onClick={openSubMenu}
@@ -175,66 +180,79 @@ export default function Header(props) {
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
                     <NavLink to='/yaycommerce-react/cart'
+                             onClick={() => closeMenu()}
                              className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
                       Cart</NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
                     <NavLink to='/yaycommerce-react/checkout'
+                             onClick={() => closeMenu()}
                              className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
                       Checkout</NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
                     <NavLink to='/yaycommerce-react/complete'
+                             onClick={() => closeMenu()}
                              className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
                       Complete</NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
                     <NavLink to='/yaycommerce-react/blog-2-column'
+                             onClick={() => closeMenu()}
                              className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
                       Blog grid 2</NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
                     <NavLink to='/yaycommerce-react/blog-3-column'
+                             onClick={() => closeMenu()}
                              className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
                       Blog grid 3</NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
                     <NavLink to='/yaycommerce-react/blog-3-column-no-sidebar'
+                             onClick={() => closeMenu()}
                              className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
                       Blog grid 3 no sidebar</NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
                     <NavLink to='/yaycommerce-react/blog-4-column-no-sidebar'
+                             onClick={() => closeMenu()}
                              className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
                       Blog grid 4 no sidebar</NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
                     <NavLink to='/yaycommerce-react/blog-list'
+                             onClick={() => closeMenu()}
                              className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
                       Blog list</NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
                     <NavLink to='/yaycommerce-react/blog-detail'
+                             onClick={() => closeMenu()}
                              className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
                       Blog detail</NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
                     <NavLink to='/yaycommerce-react/blog-detail-no-sidebar'
+                             onClick={() => closeMenu()}
                              className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
                       Blog detail no sidebar</NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
                     <NavLink to='/yaycommerce-react/about-us'
+                             onClick={() => closeMenu()}
                              className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
                       About us</NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
                     <NavLink to='/yaycommerce-react/contact'
+                             onClick={() => closeMenu()}
                              className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
                       Contact</NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
                     <NavLink to='/yaycommerce-react/faqs'
+                             onClick={() => closeMenu()}
                              className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
                       FAQs</NavLink>
                   </li>
@@ -242,11 +260,13 @@ export default function Header(props) {
               </li>
               <li className="md:mx-5 relative group">
                 <NavLink to='/yaycommerce-react/products'
+                         onClick={() => closeMenu()}
                          className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
                   Products</NavLink>
               </li>
               <li className="md:mx-5 relative group">
                 <NavLink to='/yaycommerce-react/blog-2-column'
+                         onClick={() => closeMenu()}
                          className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
                   Blog</NavLink>
               </li>
@@ -254,23 +274,26 @@ export default function Header(props) {
             <ul className="md:hidden block py-4 border-t border-b border-solid border-gray-light2">
               <li className="md:mx-5 relative group">
                 <NavLink to='/yaycommerce-react/pages'
+                         onClick={() => closeMenu()}
                          className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
                   Contact</NavLink>
               </li>
               <li className="md:mx-5 relative group">
                 <NavLink to='/yaycommerce-react/pages'
+                         onClick={() => closeMenu()}
                          className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
                   About us</NavLink>
               </li>
               <li className="md:mx-5 relative group">
                 <NavLink to='/yaycommerce-react/pages'
+                         onClick={() => closeMenu()}
                          className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
                   My account</NavLink>
               </li>
             </ul>
             <ul className="md:hidden block pt-[30px]">
               <li className="mb-5">
-                <NavLink to='#/' className="inline-flex items-center">
+                <NavLink to='#/' onClick={() => closeMenu()} className="inline-flex items-center">
                   <span
                     className="flex items-center justify-center h-[30px] w-[30px] rounded-[15px] bg-gray-light2 mr-2">
                     <svg
@@ -290,7 +313,7 @@ export default function Header(props) {
                 </NavLink>
               </li>
               <li>
-                <NavLink to='#/' className="inline-flex items-center">
+                <NavLink to='#/' onClick={() => closeMenu()} className="inline-flex items-center">
                   <span
                     className="flex items-center justify-center h-[30px] w-[30px] rounded-[15px] bg-gray-light2 mr-2">
                     <svg
@@ -452,7 +475,7 @@ export default function Header(props) {
             </li>
           </ul>
         </div>
-        <DrawerSearch isSearchShowing={isSearchShowing} hide={toggleSearch} />
+        <DrawerSearch isSearchShowing={isSearchShowing} hide={toggleSearch}/>
       </div>
     </header>
   );

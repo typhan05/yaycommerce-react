@@ -10,6 +10,12 @@ const useHeader = () => {
     setOpenMenu(!openMenu);
   }
 
+  const closeMenu = () => {
+    let root = document.getElementsByTagName('html')[0];
+    root.classList.remove('overflow-hidden');
+    setOpenMenu(false);
+  }
+
   useEffect(() => {
     let lastScrollY = window.pageYOffset;
 
@@ -29,6 +35,7 @@ const useHeader = () => {
 
   return {
     openMenu,
+    closeMenu,
     openHandler,
     scrollDirection,
   }
