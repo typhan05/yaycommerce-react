@@ -1,84 +1,119 @@
-import React, {useState} from 'react';
-import {NavLink} from "react-router-dom";
-import Logo from "../../assets/images/logo.svg"
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import Logo from "../../assets/images/logo.svg";
 import Dropdown from "../../components/Dropdown";
 import useHeader from "./useHeader";
 import DrawerSearch from "../../components/Drawer/Search";
 import useSearch from "../../components/Drawer/Search/useSearch";
 
 const units = [
-  {id: 1, active: true, name: 'USD'},
-  {id: 2, name: 'EUR'},
-  {id: 3, name: 'GBP'},
-  {id: 4, name: 'JPY'},
+  { id: 1, active: true, name: "USD" },
+  { id: 2, name: "EUR" },
+  { id: 3, name: "GBP" },
+  { id: 4, name: "JPY" },
 ];
 const languages = [
-  {id: 1, active: true, name: 'English'},
-  {id: 2, name: 'Français'},
-  {id: 3, name: 'Spanish'},
+  { id: 1, active: true, name: "English" },
+  { id: 2, name: "Français" },
+  { id: 3, name: "Spanish" },
 ];
 
 export default function Header(props) {
-  const {openMenu, openHandler, scrollDirection, closeMenu} = useHeader();
-  const {isSearchShowing, toggleSearch} = useSearch();
+  const { openMenu, openHandler, scrollDirection, closeMenu } = useHeader();
+  const { isSearchShowing, toggleSearch } = useSearch();
   const [showSubMenu, setShowSubMenu] = useState(false);
 
   const openSubMenu = () => {
     setShowSubMenu(!showSubMenu);
-  }
+  };
 
   const onBack = () => {
     setShowSubMenu(false);
-  }
+  };
 
   return (
     <header
-      className={`${openMenu ? `fixed` : `sticky`} ${scrollDirection === "down" ? "-top-full" : "md:-top-11 top-0"} z-50 left-0 w-full translate-z-0 text-black2 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-500 ease-in-out`}>
+      className={`${openMenu ? `fixed` : `sticky`} ${
+        scrollDirection === "down"
+          ? "-translate-y-full"
+          : scrollDirection === "up"
+          ? "translate-y-0 md:-translate-y-11"
+          : "translate-y-0"
+      } z-50  top-0 left-0 w-full translate-z-0 text-black2 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-250 ease-out`}
+    >
       <div className="relative bg-gray-light4 py-3 text-sm md:block hidden z-[12]">
         <div className="container mx-auto flex flex-wrap justify-between items-center">
           <ul className="grid gap-x-3 grid-cols-3">
             <li>
-              <NavLink to='/yaycommerce-react/contact'
-                       className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                Contact</NavLink>
+              <NavLink
+                to="/yaycommerce-react/contact"
+                className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+              >
+                Contact
+              </NavLink>
             </li>
             <li>
-              <NavLink to='/yaycommerce-react/about-us'
-                       className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                About us</NavLink>
+              <NavLink
+                to="/yaycommerce-react/about-us"
+                className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+              >
+                About us
+              </NavLink>
             </li>
             <li>
-              <a href="#/"
-                 className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                My account</a>
+              <a
+                href="#/"
+                className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+              >
+                My account
+              </a>
             </li>
           </ul>
           <p>Get Free delivery from $100</p>
           <div className="flex">
-            <Dropdown labelName={"USD"} options={units}/>
-            <Dropdown labelName={"English"} options={languages}/>
+            <Dropdown labelName={"USD"} options={units} />
+            <Dropdown labelName={"English"} options={languages} />
           </div>
         </div>
       </div>
       <div className="relative py-6">
         <div className="container mx-auto flex flex-wrap items-center justify-between">
-          <NavLink to='/yaycommerce-react/' onClick={() => closeMenu()}><img src={Logo} alt="logo"/></NavLink>
+          <NavLink to="/yaycommerce-react/" onClick={() => closeMenu()}>
+            <img src={Logo} alt="logo" />
+          </NavLink>
           <div
-            className={`md:relative md:top-0 md:w-auto md:translate-x-0 md:py-0 md:px-0 px-5 py-4 z-[8] fixed top-[77px] bottom-0 left-0 border-t border-solid border-gray-light2 md:border-0 md:border-none md:border-transparent bg-white transition-all duration-300 ease-in-out w-full md:overflow-visible max-h-full overflow-x-hidden overflow-y-auto ${openMenu ? `translate-x-0` : `translate-x-full`}`}>
+            className={`md:relative md:top-0 md:w-auto md:translate-x-0 md:py-0 md:px-0 px-5 py-4 z-[8] fixed top-[77px] bottom-0 left-0 border-t border-solid border-gray-light2 md:border-0 md:border-none md:border-transparent bg-white transition-all duration-300 ease-in-out w-full md:overflow-visible max-h-full overflow-x-hidden overflow-y-auto ${
+              openMenu ? `translate-x-0` : `translate-x-full`
+            }`}
+          >
             <ul className="md:flex md:mb-0 mb-4">
               <li className="md:mx-5 relative group">
-                <NavLink to='/yaycommerce-react/'
-                         onClick={() => closeMenu()}
-                         className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
-                  Home</NavLink>
+                <NavLink
+                  to="/yaycommerce-react/"
+                  onClick={() => closeMenu()}
+                  className={({ isActive }) =>
+                    `relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` +
+                    (isActive ? `md:after:right-0` : `after:right-full`)
+                  }
+                >
+                  Home
+                </NavLink>
               </li>
               <li className="md:mx-5 relative group">
-                <NavLink to='/yaycommerce-react/shops'
-                         onClick={() => closeMenu()}
-                         className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 pr-4 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
-                  Shops</NavLink>
-                <button onClick={openSubMenu}
-                        className="absolute right-0 top-2/4 -translate-y-2/4 z-[1] md:block md:rotate-0 -rotate-90 flex items-center justify-center md:ml-[6px] md:w-auto w-4 md:h-auto h-4 md:pointer-events-none">
+                <NavLink
+                  to="/yaycommerce-react/shops"
+                  onClick={() => closeMenu()}
+                  className={({ isActive }) =>
+                    `relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 pr-4 ` +
+                    (isActive ? `md:after:right-0` : `after:right-full`)
+                  }
+                >
+                  Shops
+                </NavLink>
+                <button
+                  onClick={openSubMenu}
+                  className="absolute right-0 top-2/4 -translate-y-2/4 z-[1] md:block md:rotate-0 -rotate-90 flex items-center justify-center md:ml-[6px] md:w-auto w-4 md:h-auto h-4 md:pointer-events-none"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="10"
@@ -96,7 +131,12 @@ export default function Header(props) {
                   </svg>
                 </button>
                 <ul
-                  className={`opacity-0 py-[15px] md:px-4 md:-ml-4 md:pointer-events-none md:absolute fixed left-0 md:invisible md:top-20 top-0 z-[1] min-w-max bg-white transition-all md:duration-300 duration-700 ease-in-out rounded-md shadow-[0_9px_40px_rgba(0,0,0,0.08)] md:h-auto h-full md:w-auto w-full bg-white group-hover:pointer-events-auto group-hover:md:top-[30px] group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 ${showSubMenu ? `visible translate-x-0 opacity-100` : `invisible md:translate-x-0 translate-x-full opacity-0`}`}>
+                  className={`opacity-0 py-[15px] md:px-4 md:-ml-4 md:pointer-events-none md:absolute fixed left-0 md:invisible md:top-20 top-0 z-[1] min-w-max bg-white transition-all md:duration-300 duration-700 ease-in-out rounded-md shadow-[0_9px_40px_rgba(0,0,0,0.08)] md:h-auto h-full md:w-auto w-full bg-white group-hover:pointer-events-auto group-hover:md:top-[30px] group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 ${
+                    showSubMenu
+                      ? `visible translate-x-0 opacity-100`
+                      : `invisible md:translate-x-0 translate-x-full opacity-0`
+                  }`}
+                >
                   <li className="md:hidden block md:px-0 px-4 shadow-[0px_1px_0px_#EBEBEB] mb-4">
                     <button onClick={onBack} className="flex items-center py-3">
                       <svg
@@ -119,26 +159,40 @@ export default function Header(props) {
                     </button>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
-                    <NavLink to='/yaycommerce-react/categories'
-                             onClick={() => closeMenu()}
-                             className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                      Categories</NavLink>
+                    <NavLink
+                      to="/yaycommerce-react/categories"
+                      onClick={() => closeMenu()}
+                      className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+                    >
+                      Categories
+                    </NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
-                    <NavLink to='/yaycommerce-react/search'
-                             onClick={() => closeMenu()}
-                             className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                      Search</NavLink>
+                    <NavLink
+                      to="/yaycommerce-react/search"
+                      onClick={() => closeMenu()}
+                      className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+                    >
+                      Search
+                    </NavLink>
                   </li>
                 </ul>
               </li>
               <li className="md:mx-5 relative group">
-                <NavLink to='/yaycommerce-react/pages'
-                         onClick={() => closeMenu()}
-                         className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 pr-4 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
-                  Pages</NavLink>
-                <button onClick={openSubMenu}
-                        className="absolute right-0 top-2/4 -translate-y-2/4 z-[1] md:block md:rotate-0 -rotate-90 flex items-center justify-center md:ml-[6px] md:w-auto w-4 md:h-auto h-4 md:pointer-events-none">
+                <NavLink
+                  to="/yaycommerce-react/pages"
+                  onClick={() => closeMenu()}
+                  className={({ isActive }) =>
+                    `relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 pr-4 ` +
+                    (isActive ? `md:after:right-0` : `after:right-full`)
+                  }
+                >
+                  Pages
+                </NavLink>
+                <button
+                  onClick={openSubMenu}
+                  className="absolute right-0 top-2/4 -translate-y-2/4 z-[1] md:block md:rotate-0 -rotate-90 flex items-center justify-center md:ml-[6px] md:w-auto w-4 md:h-auto h-4 md:pointer-events-none"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="10"
@@ -156,7 +210,12 @@ export default function Header(props) {
                   </svg>
                 </button>
                 <ul
-                  className={`opacity-0 py-[15px] md:px-4 md:-ml-4 md:pointer-events-none md:absolute fixed left-0 md:invisible md:top-20 top-0 z-[1] min-w-max bg-white transition-all md:duration-300 duration-700 ease-in-out rounded-md shadow-[0_9px_40px_rgba(0,0,0,0.08)] md:h-auto h-full md:w-auto w-full bg-white group-hover:pointer-events-auto group-hover:md:top-[30px] group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 ${showSubMenu ? `visible translate-x-0 opacity-100` : `invisible md:translate-x-0 translate-x-full opacity-0`}`}>
+                  className={`opacity-0 py-[15px] md:px-4 md:-ml-4 md:pointer-events-none md:absolute fixed left-0 md:invisible md:top-20 top-0 z-[1] min-w-max bg-white transition-all md:duration-300 duration-700 ease-in-out rounded-md shadow-[0_9px_40px_rgba(0,0,0,0.08)] md:h-auto h-full md:w-auto w-full bg-white group-hover:pointer-events-auto group-hover:md:top-[30px] group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 ${
+                    showSubMenu
+                      ? `visible translate-x-0 opacity-100`
+                      : `invisible md:translate-x-0 translate-x-full opacity-0`
+                  }`}
+                >
                   <li className="md:hidden block md:px-0 px-4 shadow-[0px_1px_0px_#EBEBEB] mb-4">
                     <button onClick={onBack} className="flex items-center py-3">
                       <svg
@@ -179,123 +238,195 @@ export default function Header(props) {
                     </button>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
-                    <NavLink to='/yaycommerce-react/cart'
-                             onClick={() => closeMenu()}
-                             className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                      Cart</NavLink>
+                    <NavLink
+                      to="/yaycommerce-react/cart"
+                      onClick={() => closeMenu()}
+                      className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+                    >
+                      Cart
+                    </NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
-                    <NavLink to='/yaycommerce-react/checkout'
-                             onClick={() => closeMenu()}
-                             className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                      Checkout</NavLink>
+                    <NavLink
+                      to="/yaycommerce-react/checkout"
+                      onClick={() => closeMenu()}
+                      className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+                    >
+                      Checkout
+                    </NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
-                    <NavLink to='/yaycommerce-react/complete'
-                             onClick={() => closeMenu()}
-                             className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                      Complete</NavLink>
+                    <NavLink
+                      to="/yaycommerce-react/complete"
+                      onClick={() => closeMenu()}
+                      className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+                    >
+                      Complete
+                    </NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
-                    <NavLink to='/yaycommerce-react/blog-2-column'
-                             onClick={() => closeMenu()}
-                             className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                      Blog grid 2</NavLink>
+                    <NavLink
+                      to="/yaycommerce-react/blog-2-column"
+                      onClick={() => closeMenu()}
+                      className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+                    >
+                      Blog grid 2
+                    </NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
-                    <NavLink to='/yaycommerce-react/blog-3-column'
-                             onClick={() => closeMenu()}
-                             className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                      Blog grid 3</NavLink>
+                    <NavLink
+                      to="/yaycommerce-react/blog-3-column"
+                      onClick={() => closeMenu()}
+                      className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+                    >
+                      Blog grid 3
+                    </NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
-                    <NavLink to='/yaycommerce-react/blog-3-column-no-sidebar'
-                             onClick={() => closeMenu()}
-                             className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                      Blog grid 3 no sidebar</NavLink>
+                    <NavLink
+                      to="/yaycommerce-react/blog-3-column-no-sidebar"
+                      onClick={() => closeMenu()}
+                      className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+                    >
+                      Blog grid 3 no sidebar
+                    </NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
-                    <NavLink to='/yaycommerce-react/blog-4-column-no-sidebar'
-                             onClick={() => closeMenu()}
-                             className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                      Blog grid 4 no sidebar</NavLink>
+                    <NavLink
+                      to="/yaycommerce-react/blog-4-column-no-sidebar"
+                      onClick={() => closeMenu()}
+                      className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+                    >
+                      Blog grid 4 no sidebar
+                    </NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
-                    <NavLink to='/yaycommerce-react/blog-list'
-                             onClick={() => closeMenu()}
-                             className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                      Blog list</NavLink>
+                    <NavLink
+                      to="/yaycommerce-react/blog-list"
+                      onClick={() => closeMenu()}
+                      className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+                    >
+                      Blog list
+                    </NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
-                    <NavLink to='/yaycommerce-react/blog-detail'
-                             onClick={() => closeMenu()}
-                             className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                      Blog detail</NavLink>
+                    <NavLink
+                      to="/yaycommerce-react/blog-detail"
+                      onClick={() => closeMenu()}
+                      className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+                    >
+                      Blog detail
+                    </NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
-                    <NavLink to='/yaycommerce-react/blog-detail-no-sidebar'
-                             onClick={() => closeMenu()}
-                             className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                      Blog detail no sidebar</NavLink>
+                    <NavLink
+                      to="/yaycommerce-react/blog-detail-no-sidebar"
+                      onClick={() => closeMenu()}
+                      className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+                    >
+                      Blog detail no sidebar
+                    </NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
-                    <NavLink to='/yaycommerce-react/about-us'
-                             onClick={() => closeMenu()}
-                             className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                      About us</NavLink>
+                    <NavLink
+                      to="/yaycommerce-react/about-us"
+                      onClick={() => closeMenu()}
+                      className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+                    >
+                      About us
+                    </NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
-                    <NavLink to='/yaycommerce-react/contact'
-                             onClick={() => closeMenu()}
-                             className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                      Contact</NavLink>
+                    <NavLink
+                      to="/yaycommerce-react/contact"
+                      onClick={() => closeMenu()}
+                      className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+                    >
+                      Contact
+                    </NavLink>
                   </li>
                   <li className="md:px-0 md:pb-1 px-4">
-                    <NavLink to='/yaycommerce-react/faqs'
-                             onClick={() => closeMenu()}
-                             className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                      FAQs</NavLink>
+                    <NavLink
+                      to="/yaycommerce-react/faqs"
+                      onClick={() => closeMenu()}
+                      className={`relative inline-block md:pt-1 md:pb-0 py-[6px] after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+                    >
+                      FAQs
+                    </NavLink>
                   </li>
                 </ul>
               </li>
               <li className="md:mx-5 relative group">
-                <NavLink to='/yaycommerce-react/products'
-                         onClick={() => closeMenu()}
-                         className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
-                  Products</NavLink>
+                <NavLink
+                  to="/yaycommerce-react/products"
+                  onClick={() => closeMenu()}
+                  className={({ isActive }) =>
+                    `relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` +
+                    (isActive ? `md:after:right-0` : `after:right-full`)
+                  }
+                >
+                  Products
+                </NavLink>
               </li>
               <li className="md:mx-5 relative group">
-                <NavLink to='/yaycommerce-react/blog-2-column'
-                         onClick={() => closeMenu()}
-                         className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
-                  Blog</NavLink>
+                <NavLink
+                  to="/yaycommerce-react/blog-2-column"
+                  onClick={() => closeMenu()}
+                  className={({ isActive }) =>
+                    `relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` +
+                    (isActive ? `md:after:right-0` : `after:right-full`)
+                  }
+                >
+                  Blog
+                </NavLink>
               </li>
             </ul>
             <ul className="md:hidden block py-4 border-t border-b border-solid border-gray-light2">
               <li className="md:mx-5 relative group">
-                <NavLink to='/yaycommerce-react/pages'
-                         onClick={() => closeMenu()}
-                         className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
-                  Contact</NavLink>
+                <NavLink
+                  to="/yaycommerce-react/pages"
+                  onClick={() => closeMenu()}
+                  className={({ isActive }) =>
+                    `relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` +
+                    (isActive ? `md:after:right-0` : `after:right-full`)
+                  }
+                >
+                  Contact
+                </NavLink>
               </li>
               <li className="md:mx-5 relative group">
-                <NavLink to='/yaycommerce-react/pages'
-                         onClick={() => closeMenu()}
-                         className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
-                  About us</NavLink>
+                <NavLink
+                  to="/yaycommerce-react/pages"
+                  onClick={() => closeMenu()}
+                  className={({ isActive }) =>
+                    `relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` +
+                    (isActive ? `md:after:right-0` : `after:right-full`)
+                  }
+                >
+                  About us
+                </NavLink>
               </li>
               <li className="md:mx-5 relative group">
-                <NavLink to='/yaycommerce-react/pages'
-                         onClick={() => closeMenu()}
-                         className={({isActive}) => (`relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` + (isActive ? `md:after:right-0` : `after:right-full`))}>
-                  My account</NavLink>
+                <NavLink
+                  to="/yaycommerce-react/pages"
+                  onClick={() => closeMenu()}
+                  className={({ isActive }) =>
+                    `relative block py-1 after:h-[1px] after:left-0 after:bottom-0 after:absolute md:after:bg-black2 after:transition-all after:duration-300 after:ease-in-out group-hover:after:right-0 ` +
+                    (isActive ? `md:after:right-0` : `after:right-full`)
+                  }
+                >
+                  My account
+                </NavLink>
               </li>
             </ul>
             <ul className="md:hidden block pt-[30px]">
               <li className="mb-5">
-                <NavLink to='#/' onClick={() => closeMenu()} className="inline-flex items-center">
-                  <span
-                    className="flex items-center justify-center h-[30px] w-[30px] rounded-[15px] bg-gray-light2 mr-2">
+                <NavLink
+                  to="#/"
+                  onClick={() => closeMenu()}
+                  className="inline-flex items-center"
+                >
+                  <span className="flex items-center justify-center h-[30px] w-[30px] rounded-[15px] bg-gray-light2 mr-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -313,9 +444,12 @@ export default function Header(props) {
                 </NavLink>
               </li>
               <li>
-                <NavLink to='#/' onClick={() => closeMenu()} className="inline-flex items-center">
-                  <span
-                    className="flex items-center justify-center h-[30px] w-[30px] rounded-[15px] bg-gray-light2 mr-2">
+                <NavLink
+                  to="#/"
+                  onClick={() => closeMenu()}
+                  className="inline-flex items-center"
+                >
+                  <span className="flex items-center justify-center h-[30px] w-[30px] rounded-[15px] bg-gray-light2 mr-2">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="17"
@@ -334,14 +468,18 @@ export default function Header(props) {
               </li>
             </ul>
             <div className="md:hidden relative grid grid-cols-2 -mx-5 mt-20 p-5 shadow-[0_-1px_5px_rgba(0,0,0,0.03)]">
-              <Dropdown labelName={"USD"} options={units}/>
+              <Dropdown labelName={"USD"} options={units} />
               <span className="absolute left-2/4 top-3 bottom-3 w-[1px] h-[35px] bg-gray-light2"></span>
-              <Dropdown labelName={"English"} options={languages}/>
+              <Dropdown labelName={"English"} options={languages} />
             </div>
           </div>
           <ul className="grid md:grid-cols-4 gap-x-5 grid-cols-3 items-center">
             <li>
-              <button className="relative group block text-black2" type="button" onClick={toggleSearch}>
+              <button
+                className="relative group block text-black2"
+                type="button"
+                onClick={toggleSearch}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -368,8 +506,9 @@ export default function Header(props) {
                     d="M15.62 15.709L19 19"
                   ></path>
                 </svg>
-                <span
-                  className="absolute top-10 left-2/4 -translate-x-2/4 z-[1] hidden md:block invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">Search</span>
+                <span className="absolute top-10 left-2/4 -translate-x-2/4 z-[1] hidden md:block invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">
+                  Search
+                </span>
               </button>
             </li>
             <li className="md:block hidden">
@@ -387,14 +526,20 @@ export default function Header(props) {
                     d="M21.336 3.562l-.864.503.864-.503zm-18.672 0l.864.503-.864-.503zm1.428 6.92l-.733.68.733-.68zm15.816 0l.733.68-.733-.68zM9.803 2.085l-.587.81.587-.81zm4.394 0l.587.81-.587-.81zm-.731 15.338l.732.68-.732-.68zm-2.199-.68l-6.443-6.94-1.465 1.36 6.443 6.94 1.465-1.36zm7.909-6.94l-6.443 6.94 1.465 1.36 6.443-6.94-1.465-1.36zm-14.352 0C3.096 7.94 2.457 5.907 3.528 4.065L1.799 3.059c-1.721 2.96-.43 5.962 1.56 8.104l1.465-1.36zm15.648-5.737c1.071 1.842.432 3.875-1.296 5.737l1.465 1.36c1.99-2.141 3.281-5.143 1.56-8.103l-1.729 1.006zm-16.944 0c.685-1.177 1.603-1.81 2.546-2 .945-.192 2.047.034 3.142.829l1.174-1.62C8.916.206 7.255-.216 5.677.104 4.095.424 2.728 1.463 1.799 3.06l1.729 1.006zm11.256-1.171c1.095-.795 2.197-1.021 3.143-.83.942.191 1.86.824 2.545 2l1.729-1.005C21.272 1.463 19.905.425 18.323.104c-1.578-.32-3.24.102-4.713 1.17l1.174 1.62zm-1.819 1.623a13.28 13.28 0 011.819-1.623l-1.174-1.62a15.268 15.268 0 00-2.107 1.879l1.462 1.364zM9.216 2.894a13.28 13.28 0 011.819 1.623l1.462-1.364a15.269 15.269 0 00-2.107-1.879l-1.174 1.62zm2.287.259c.27-.29.724-.29.994 0l-1.462 1.364c.52.558 1.41.558 1.93 0l-1.462-1.364zM9.802 18.102a3 3 0 004.396 0l-1.465-1.36a1 1 0 01-1.466 0l-1.465 1.36z"
                   ></path>
                 </svg>
-                <span
-                  className="absolute top-10 left-2/4 -translate-x-2/4 z-[1] hidden md:block invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">Wishlist</span>
+                <span className="absolute top-10 left-2/4 -translate-x-2/4 z-[1] hidden md:block invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">
+                  Wishlist
+                </span>
               </a>
             </li>
             <li>
-              <button className="group relative block text-black2" type="button" onClick={props.buttonCart}>
-                <span
-                  className="absolute -top-[4px] -right-[7px] z-[1] text-[11px] leading-4 flex items-center justify-center text-white font-semibold bg-green w-[18px] h-[18px] rounded-[9px]">7</span>
+              <button
+                className="group relative block text-black2"
+                type="button"
+                onClick={props.buttonCart}
+              >
+                <span className="absolute -top-[4px] -right-[7px] z-[1] text-[11px] leading-4 flex items-center justify-center text-white font-semibold bg-green w-[18px] h-[18px] rounded-[9px]">
+                  7
+                </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -426,8 +571,9 @@ export default function Header(props) {
                     d="M13.101 9.55h-.044M5.943 9.55H5.9"
                   ></path>
                 </svg>
-                <span
-                  className="absolute top-10 left-2/4 -translate-x-2/4 z-[1] hidden md:block invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">My cart</span>
+                <span className="absolute top-10 left-2/4 -translate-x-2/4 z-[1] hidden md:block invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">
+                  My cart
+                </span>
               </button>
             </li>
             <li className="md:block hidden">
@@ -445,29 +591,46 @@ export default function Header(props) {
                     d="M14 6a4 4 0 01-4 4v2a6 6 0 006-6h-2zm-4 4a4 4 0 01-4-4H4a6 6 0 006 6v-2zM6 6a4 4 0 014-4V0a6 6 0 00-6 6h2zm4-4a4 4 0 014 4h2a6 6 0 00-6-6v2zM.045 18.703a1 1 0 101.91.594l-1.91-.594zm18 .594a1 1 0 101.91-.594l-1.91.594zm-16.09 0c.399-1.282 1.064-2.041 2.206-2.532C5.394 16.235 7.23 16 10 16v-2c-2.809 0-4.996.226-6.628.928-1.723.74-2.769 1.98-3.327 3.775l1.91.594zM10 16c2.771 0 4.606.235 5.839.765 1.143.491 1.807 1.25 2.206 2.532l1.91-.594c-.558-1.794-1.604-3.035-3.327-3.775C14.996 14.226 12.81 14 10 14v2z"
                   ></path>
                 </svg>
-                <span
-                  className="absolute top-10 left-2/4 -translate-x-2/4 z-[1] hidden md:block invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">My account</span>
+                <span className="absolute top-10 left-2/4 -translate-x-2/4 z-[1] hidden md:block invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">
+                  My account
+                </span>
               </a>
             </li>
             <li className="md:hidden flex ml-1">
               <button className="relative group" onClick={() => openHandler()}>
-                <div
-                  className="relative flex overflow-hidden items-center justify-center w-[22px] h-[18px] transform transition-all">
-                  <div
-                    className="flex flex-col justify-between w-full h-full transform transition-all duration-300 origin-center overflow-hidden">
+                <div className="relative flex overflow-hidden items-center justify-center w-[22px] h-[18px] transform transition-all">
+                  <div className="flex flex-col justify-between w-full h-full transform transition-all duration-300 origin-center overflow-hidden">
                     <div
-                      className={`bg-black2 h-[2px] w-5 transform transition-all duration-300 origin-left delay-100 ${openMenu && `translate-y-6`}`}></div>
+                      className={`bg-black2 h-[2px] w-5 transform transition-all duration-300 origin-left delay-100 ${
+                        openMenu && `translate-y-6`
+                      }`}
+                    ></div>
                     <div
-                      className={`bg-black2 h-[2px] w-5 rounded transform transition-all duration-300 delay-75 ${openMenu && `translate-y-6`}`}></div>
+                      className={`bg-black2 h-[2px] w-5 rounded transform transition-all duration-300 delay-75 ${
+                        openMenu && `translate-y-6`
+                      }`}
+                    ></div>
                     <div
-                      className={`bg-black2 h-[2px] w-5 transform transition-all duration-300 origin-left ${openMenu && `translate-y-6`}`}></div>
+                      className={`bg-black2 h-[2px] w-5 transform transition-all duration-300 origin-left ${
+                        openMenu && `translate-y-6`
+                      }`}
+                    ></div>
 
                     <div
-                      className={`absolute items-center justify-between transform transition-all duration-500 top-2.5 flex ${openMenu ? `translate-x-0 w-12` : `-translate-x-10 w-0`}`}>
+                      className={`absolute items-center justify-between transform transition-all duration-500 top-2.5 flex ${
+                        openMenu ? `translate-x-0 w-12` : `-translate-x-10 w-0`
+                      }`}
+                    >
                       <div
-                        className={`absolute bg-black2 h-[2px] w-5 transform transition-all duration-500 delay-300 ${openMenu ? `rotate-45` : `rotate-0`}`}></div>
+                        className={`absolute bg-black2 h-[2px] w-5 transform transition-all duration-500 delay-300 ${
+                          openMenu ? `rotate-45` : `rotate-0`
+                        }`}
+                      ></div>
                       <div
-                        className={`absolute bg-black2 h-[2px] w-5 transform transition-all duration-500 delay-300 ${openMenu ? `-rotate-45` : `-rotate-0`}`}></div>
+                        className={`absolute bg-black2 h-[2px] w-5 transform transition-all duration-500 delay-300 ${
+                          openMenu ? `-rotate-45` : `-rotate-0`
+                        }`}
+                      ></div>
                     </div>
                   </div>
                 </div>
@@ -475,7 +638,7 @@ export default function Header(props) {
             </li>
           </ul>
         </div>
-        <DrawerSearch isSearchShowing={isSearchShowing} hide={toggleSearch}/>
+        <DrawerSearch isSearchShowing={isSearchShowing} hide={toggleSearch} />
       </div>
     </header>
   );
