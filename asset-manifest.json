@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/yaycommerce-react/static/css/main.c3d75b84.css",
-    "main.js": "/yaycommerce-react/static/js/main.d1b52dc8.js",
+    "main.css": "/yaycommerce-react/static/css/main.000c3aa5.css",
+    "main.js": "/yaycommerce-react/static/js/main.b8864ac8.js",
     "static/js/787.93facbbb.chunk.js": "/yaycommerce-react/static/js/787.93facbbb.chunk.js",
-    "static/media/SFUIDisplay-Bold.svg": "/yaycommerce-react/static/media/SFUIDisplay-Bold.c871ba72d1871e6550c4.svg",
-    "static/media/SFUIDisplay-Semibold.svg": "/yaycommerce-react/static/media/SFUIDisplay-Semibold.21bbfcb484b433d3440c.svg",
-    "static/media/SFUIDisplay-Medium.svg": "/yaycommerce-react/static/media/SFUIDisplay-Medium.fb7dc550f97789515977.svg",
-    "static/media/SFUIDisplay-Regular.svg": "/yaycommerce-react/static/media/SFUIDisplay-Regular.76f648545364fbe0953f.svg",
+    "static/media/SFUIDisplay-Bold.svg": "/yaycommerce-react/static/media/SFUIDisplay-Bold.51df48b08db7ee250b8b.svg",
+    "static/media/SFUIDisplay-Semibold.svg": "/yaycommerce-react/static/media/SFUIDisplay-Semibold.0d0e7fc9d4e823c83126.svg",
+    "static/media/SFUIDisplay-Medium.svg": "/yaycommerce-react/static/media/SFUIDisplay-Medium.a35efad934d2fc80b91c.svg",
+    "static/media/SFUIDisplay-Regular.svg": "/yaycommerce-react/static/media/SFUIDisplay-Regular.e544733a9382a4ddab52.svg",
     "static/media/photo-about-lg.png": "/yaycommerce-react/static/media/photo-about-lg.7678c58ff4d4a305ffe4.png",
     "static/media/img-full-about.jpg": "/yaycommerce-react/static/media/img-full-about.3a18d74076385d5b785d.jpg",
     "static/media/img-detail-1.jpg": "/yaycommerce-react/static/media/img-detail-1.4517c32346a4209f939f.jpg",
@@ -64,19 +64,19 @@
     "static/media/img-trending-3.png": "/yaycommerce-react/static/media/img-trending-3.9134b9a112325fad40aa.png",
     "static/media/img-post-next.png": "/yaycommerce-react/static/media/img-post-next.1b740051cfe3d4a8ac1a.png",
     "static/media/img-trending-1.png": "/yaycommerce-react/static/media/img-trending-1.bc224ba1733d81ab37cb.png",
-    "static/media/logo.svg": "/yaycommerce-react/static/media/logo.8d34ed4f01a49268cf00d1424e94ac33.svg",
-    "static/media/tracking-icon.svg": "/yaycommerce-react/static/media/tracking-icon.43b9f921cb96b206e553.svg",
-    "static/media/delivery-icon.svg": "/yaycommerce-react/static/media/delivery-icon.aa1ac6233e5952add5b5.svg",
-    "static/media/refund-icon.svg": "/yaycommerce-react/static/media/refund-icon.561f4941228f9d6bbb64.svg",
-    "static/media/support-icon.svg": "/yaycommerce-react/static/media/support-icon.f41a278f0f5d4de61c5f.svg",
-    "static/media/star.svg": "/yaycommerce-react/static/media/star.8261dc0cf58d8c6efef6.svg",
+    "static/media/logo.svg": "/yaycommerce-react/static/media/logo.ccc2f75a886c3927bad7e3dee0e061b0.svg",
+    "static/media/tracking-icon.svg": "/yaycommerce-react/static/media/tracking-icon.4f0c5cc92a9de32ece55.svg",
+    "static/media/delivery-icon.svg": "/yaycommerce-react/static/media/delivery-icon.15aa4259a713b1662d04.svg",
+    "static/media/refund-icon.svg": "/yaycommerce-react/static/media/refund-icon.7cc2c95bf7308a5d0054.svg",
+    "static/media/support-icon.svg": "/yaycommerce-react/static/media/support-icon.2665259a3250a27852c4.svg",
+    "static/media/star.svg": "/yaycommerce-react/static/media/star.d25d8ea5d8fa326432e9.svg",
     "index.html": "/yaycommerce-react/index.html",
-    "main.c3d75b84.css.map": "/yaycommerce-react/static/css/main.c3d75b84.css.map",
-    "main.d1b52dc8.js.map": "/yaycommerce-react/static/js/main.d1b52dc8.js.map",
+    "main.000c3aa5.css.map": "/yaycommerce-react/static/css/main.000c3aa5.css.map",
+    "main.b8864ac8.js.map": "/yaycommerce-react/static/js/main.b8864ac8.js.map",
     "787.93facbbb.chunk.js.map": "/yaycommerce-react/static/js/787.93facbbb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c3d75b84.css",
-    "static/js/main.d1b52dc8.js"
+    "static/css/main.000c3aa5.css",
+    "static/js/main.b8864ac8.js"
   ]
 }
