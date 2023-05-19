@@ -238,9 +238,9 @@ input[type="checkbox"]:checked + label {
 .bg-gradient-line {
   background-image: linear-gradient(
     to right,
-    #122940 33%,
-    #122940 33% 66%,
-    #122940 66%
+    #000 33%,
+    #0000 33% 66%,
+    #000 66%
   );
   background-position: right bottom;
   background-size: 300% 2px;

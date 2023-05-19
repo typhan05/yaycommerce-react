@@ -35,11 +35,18 @@ const customStyles = {
       opacity: 0.5,
     };
   },
-  option: (base, { isFocused }) => {
+  option: (base, { isFocused, isSelected }) => {
     return {
       ...base,
-      backgroundColor: isFocused ? "#F2F2F2" : "#FFFFFF",
+      backgroundColor: isFocused
+        ? "#F2F2F2"
+        : isSelected
+        ? "#F2F2F2"
+        : "#FFFFFF",
       color: "#122940",
+      margin: "2px 5px",
+      width: "auto",
+      borderRadius: "7px",
     };
   },
 };

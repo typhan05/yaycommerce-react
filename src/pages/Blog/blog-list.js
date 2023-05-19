@@ -148,7 +148,7 @@ export default function BlogList() {
         <div>
           <a
             href="#/"
-            className="relative inline-block pb-1 bg-gradient-line hover:bg-left-bottom"
+            className="inline-block pb-0.5 bg-gradient-line transition-all duration-500 hover:bg-left-bottom"
           >
             Continue Reading
           </a>
