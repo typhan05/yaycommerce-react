@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import BreadCrumb from "../../components/Breadcrumb";
 import Sidebar from "../../components/Sidebar";
 import PreFooter from "../../blocks/pre-footer";
@@ -6,85 +6,84 @@ import Article from "../../components/Article";
 
 const breadcrumbs = [
   {
-    'id': 1,
-    'text': 'Home',
-    'link': '/yaycommerce-react'
+    id: 1,
+    text: "Home",
+    link: "/yaycommerce-react",
   },
   {
-    'id': 2,
-    'text': 'Blog',
-    'link': '/blog-2-column'
+    id: 2,
+    text: "Blog",
+    link: "/blog-2-column",
   },
   {
-    'id': 3,
-    'text': 'Looking for "standard style" for modern women of May, 2022',
-    'link': ''
+    id: 3,
+    text: 'Looking for "standard style" for modern women of May, 2022',
+    link: "",
   },
-]
+];
 
 const tagsLink = [
   {
-    name: 'Fashion Tips'
+    name: "Fashion Tips",
   },
   {
-    name: 'Tutorials'
-  }
-]
+    name: "Tutorials",
+  },
+];
 
 const tags = [
   {
     id: 1,
-    title: 'Life Style'
+    title: "Life Style",
   },
   {
     id: 2,
-    title: 'Office'
+    title: "Office",
   },
   {
     id: 3,
-    title: 'Photography'
+    title: "Photography",
   },
   {
     id: 4,
-    title: 'Accessories'
+    title: "Accessories",
   },
   {
     id: 5,
-    title: 'Fashion Tips'
+    title: "Fashion Tips",
   },
-]
+];
 
 const relatedPosts = [
   {
-    "id": "1",
-    "image": "img-our-blog-1.jpg",
-    "date": "May 10, 2022",
-    "title": "To dress well, modern men need to have the following 8 savings items"
+    id: "1",
+    image: "img-our-blog-1.jpg",
+    date: "May 10, 2022",
+    title:
+      "To dress well, modern men need to have the following 8 savings items",
   },
   {
-    "id": "2",
-    "image": "img-our-blog-2.jpg",
-    "date": "May 8, 2022",
-    "title": "Sneakers that ruled the NBA in season 2022-2023"
+    id: "2",
+    image: "img-our-blog-2.jpg",
+    date: "May 8, 2022",
+    title: "Sneakers that ruled the NBA in season 2022-2023",
   },
   {
-    "id": "3",
-    "image": "img-our-blog-3.jpg",
-    "date": "May 8, 2022",
-    "title": "Looking for \"standard style\" for modern women of May, 2022"
+    id: "3",
+    image: "img-our-blog-3.jpg",
+    date: "May 8, 2022",
+    title: 'Looking for "standard style" for modern women of May, 2022',
   },
   {
-    "id": "4",
-    "image": "img-our-blog-2.jpg",
-    "date": "May 8, 2022",
-    "title": "Sneakers that ruled the NBA in season 2022-2023"
+    id: "4",
+    image: "img-our-blog-2.jpg",
+    date: "May 8, 2022",
+    title: "Sneakers that ruled the NBA in season 2022-2023",
   },
-]
+];
 
 export default function BlogList() {
-  const content = relatedPosts.map((item) =>
-    <Article content={item}/>
-  )
+  const content = relatedPosts.map((item) => <Article content={item} />);
 
   return (
     <>
@@ -95,35 +94,49 @@ export default function BlogList() {
               <div className="mb-[15px]">
                 {tagsLink.map((tag, i) => {
                   return (
-                    <a href="#/"
-                       className="text-sm text-green rounded-[7px] bg-[rgba(55,126,98,0.07)] py-1 px-2 mr-2">{tag.name}</a>
-                  )
+                    <a
+                      href="#/"
+                      className="text-sm text-green rounded-[7px] bg-[rgba(55,126,98,0.07)] py-1 px-2 mr-2"
+                    >
+                      {tag.name}
+                    </a>
+                  );
                 })}
               </div>
-              <h1 className="md:text-4xl text-[28px] font-bold -mb-5">Looking for "standard style" for modern women of
-                May, 2022</h1>
-              <BreadCrumb content={breadcrumbs} styleProp={`!px-0`}/>
-              <div className="mb-[30px] md:pb-10 pb-5 border-b border-gray-light2">
-                <img src={require('../../assets/images/img-detail-1.jpg')} alt="post-img-detail"
-                     className="rounded-xl mb-[30px]"/>
+              <h1 className="md:text-4xl text-[28px] font-bold -mb-5">
+                Looking for "standard style" for modern women of May, 2022
+              </h1>
+              <BreadCrumb content={breadcrumbs} styleProp={`!px-0`} />
+              <div className="mb-[30px] md:pb-10 pb-5 border-b border-gray-light2 leading-[1.875rem]">
+                <img
+                  src={require("../../assets/images/img-detail-1.jpg")}
+                  alt="post-img-detail"
+                  className="rounded-xl mb-[30px]"
+                />
                 <div className="md:flex justify-between items-center lg:mb-10 mb-6">
                   <div className="flex items-center md:mb-0 mb-5">
-                    <div
-                      className="flex w-[50px] h-[50px] flex-shrink-0 mr-3 rounded-[25px] overflow-hidden border border-white drop-shadow-[0_4px_15px_rgba(0,0,0,0.2)]">
-                      <img src={require('../../assets/images/img-avt-2.png')} className="w-full h-full object-cover"
-                           alt="avt-img"/>
+                    <div className="flex w-[50px] h-[50px] flex-shrink-0 mr-3 rounded-[25px] overflow-hidden border border-white drop-shadow-[0_4px_15px_rgba(0,0,0,0.2)]">
+                      <img
+                        src={require("../../assets/images/img-avt-2.png")}
+                        className="w-full h-full object-cover"
+                        alt="avt-img"
+                      />
                     </div>
                     <div>
                       <h3 className="font-semibold">YayCommerce</h3>
-                      <div className="flex items-center text-sm text-gray">Posted on May 10, 2022 <span
-                        className="inline-flex w-[3px] h-[3px] bg-black2 rounded-[3px] mx-[15px]"></span> 9 mins read
+                      <div className="flex items-center text-sm text-gray">
+                        Posted on May 10, 2022{" "}
+                        <span className="inline-flex w-[3px] h-[3px] bg-black2 rounded-[3px] mx-[15px]"></span>{" "}
+                        9 mins read
                       </div>
                     </div>
                   </div>
                   <ul className="flex">
                     <li className="ml-[10px]">
-                      <a href="#/"
-                         className="flex items-center justify-center w-10 h-10 rounded-[20px] text-gray transition-all duration-300 hover:text-green hover:bg-[rgba(55,126,98,0.1)]">
+                      <a
+                        href="#/"
+                        className="flex items-center justify-center w-10 h-10 rounded-[20px] text-gray transition-all duration-300 hover:text-green hover:bg-[rgba(55,126,98,0.1)]"
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="10"
@@ -139,8 +152,10 @@ export default function BlogList() {
                       </a>
                     </li>
                     <li className="ml-[10px]">
-                      <a href="#/"
-                         className="flex items-center justify-center w-10 h-10 rounded-[20px] text-gray transition-all duration-300 hover:text-green hover:bg-[rgba(55,126,98,0.1)]">
+                      <a
+                        href="#/"
+                        className="flex items-center justify-center w-10 h-10 rounded-[20px] text-gray transition-all duration-300 hover:text-green hover:bg-[rgba(55,126,98,0.1)]"
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="18"
@@ -156,191 +171,325 @@ export default function BlogList() {
                       </a>
                     </li>
                     <li className="ml-[10px]">
-                      <a href="#/"
-                         className="flex items-center justify-center w-10 h-10 rounded-[20px] text-gray transition-all duration-300 hover:text-green hover:bg-[rgba(55,126,98,0.1)]">
-                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <a
+                        href="#/"
+                        className="flex items-center justify-center w-10 h-10 rounded-[20px] text-gray transition-all duration-300 hover:text-green hover:bg-[rgba(55,126,98,0.1)]"
+                      >
+                        <svg
+                          width="19"
+                          height="18"
+                          viewBox="0 0 19 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
                           <path
                             d="M15.7875 0.684C15.3495 0.24 14.7675 0 14.1435 0C13.5195 0 12.9375 0.24 12.4995 0.684L8.4495 4.734C7.5435 5.64 7.5435 7.116 8.4495 8.022L8.6055 8.178L8.1735 8.61L8.0175 8.454C7.5795 8.016 6.9915 7.77 6.3735 7.77C5.7555 7.77 5.1675 8.01 4.7295 8.454L0.6795 12.504C-0.2265 13.41 -0.2265 14.886 0.6795 15.792L2.2095 17.322C2.6535 17.76 3.2355 18 3.8595 18C4.4835 18 5.0655 17.76 5.5035 17.316L9.5535 13.266C10.4595 12.36 10.4595 10.884 9.5535 9.978L9.3975 9.822L9.8295 9.39L9.9855 9.546C10.4235 9.984 11.0115 10.224 11.6295 10.224C12.2535 10.224 12.8355 9.984 13.2735 9.54L17.3235 5.49C18.2295 4.584 18.2295 3.108 17.3235 2.202L15.7875 0.684ZM8.3355 12.054L4.2855 16.104C4.0575 16.332 3.6555 16.332 3.4275 16.104L1.8975 14.574C1.6635 14.34 1.6635 13.95 1.8975 13.716L5.9475 9.666C6.0615 9.552 6.2175 9.486 6.3795 9.486C6.5415 9.486 6.6915 9.552 6.8115 9.666L6.9675 9.822L6.1875 10.602L7.3995 11.814L8.1795 11.034L8.3355 11.19C8.5695 11.43 8.5695 11.82 8.3355 12.054ZM16.1055 4.284L12.0555 8.334C11.8275 8.562 11.4255 8.562 11.1975 8.334L11.0415 8.178L12.2415 6.978L11.0235 5.76L9.8235 6.96L9.6675 6.804C9.4335 6.564 9.4335 6.18 9.6675 5.946L13.7175 1.896C13.8315 1.782 13.9875 1.716 14.1495 1.716C14.3115 1.716 14.4675 1.782 14.5815 1.896L16.1115 3.426C16.3395 3.666 16.3395 4.05 16.1055 4.284Z"
-                            fill="currentColor"/>
+                            fill="currentColor"
+                          />
                         </svg>
                       </a>
                     </li>
                   </ul>
                 </div>
-                <p className="mb-5">Curabitur at fermentum purus. Interdum et malesuada fames ac ante ipsum primis in
-                  faucibus. Mauris
-                  non nisl interdum, citudin ne que sed, posuere elit. Vivamus ac tincidunt sapien aenean nec aliquet
-                  enim lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                <p className="mb-5">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
-                  an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
-                  survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
-                  unchanged. <strong>It was popularised in the 1960s with the release</strong> of Letraset sheets
-                  containing Lorem Ipsum passages, and more recently with desktop publishing software.</p>
+                <p className="mb-5">
+                  Curabitur at fermentum purus. Interdum et malesuada fames ac
+                  ante ipsum primis in faucibus. Mauris non nisl interdum,
+                  citudin ne que sed, posuere elit. Vivamus ac tincidunt sapien
+                  aenean nec aliquet enim lorem Ipsum is simply dummy text of
+                  the printing and typesetting industry.{" "}
+                </p>
+                <p className="mb-5">
+                  Lorem Ipsum has been the industry's standard dummy text ever
+                  since the 1500s, when an unknown printer took a galley of type
+                  and scrambled it to make a type specimen book. It has survived
+                  not only five centuries, but also the leap into electronic
+                  typesetting, remaining essentially unchanged.{" "}
+                  <strong>
+                    It was popularised in the 1960s with the release
+                  </strong>{" "}
+                  of Letraset sheets containing Lorem Ipsum passages, and more
+                  recently with desktop publishing software.
+                </p>
                 <ul className="list-disc list-inside mb-5">
                   <li>There are many variations of passages of Lorem</li>
-                  <li>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks</li>
+                  <li>
+                    All the Lorem Ipsum generators on the Internet tend to
+                    repeat predefined chunks
+                  </li>
                   <li> If you are going to use a passage of Lorem Ipsum</li>
                 </ul>
-                <p className="mb-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                  galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                  but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in
-                  the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
-                  desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p className="mb-5">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged. It was popularised in the 1960s with
+                  the release of Letraset sheets containing Lorem Ipsum
+                  passages, and more recently with desktop publishing software
+                  like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
                 <div className="grid grid-cols-2 gap-x-[30px] lg:mt-[30px] lg:mb-[50px] mb-5">
                   <div>
-                    <img src={require('../../assets/images/img-detail-2.jpg')} alt="post-img-detail"
-                         className="rounded-xl mb-3"/>
-                    <p className="text-sm text-gray">The photo are for illustrative purposes only</p>
+                    <img
+                      src={require("../../assets/images/img-detail-2.jpg")}
+                      alt="post-img-detail"
+                      className="rounded-xl mb-3"
+                    />
+                    <p className="text-sm text-gray">
+                      The photo are for illustrative purposes only
+                    </p>
                   </div>
                   <div>
-                    <img src={require('../../assets/images/img-detail-3.jpg')} alt="post-img-detail"
-                         className="rounded-xl mb-3"/>
-                    <p className="text-sm text-gray">The photo are for illustrative purposes only</p>
+                    <img
+                      src={require("../../assets/images/img-detail-3.jpg")}
+                      alt="post-img-detail"
+                      className="rounded-xl mb-3"
+                    />
+                    <p className="text-sm text-gray">
+                      The photo are for illustrative purposes only
+                    </p>
                   </div>
                 </div>
-                <h3 className="text-2xl font-semibold mb-5">Where does it come from?</h3>
-                <p className="mb-5">Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked
-                  up one of the
-                  more obscure Latin words, consectetur, from a Lorem Ipsum passage, going through the cites of the word
-                  in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32
-                  and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in
-                  45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first
-                  line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
-                <p className="mb-5">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
-                  interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also
-                  reproduced in their exact original form, accompanied by English versions from the 1914 translation by
-                  H. Rackham.</p>
-                <br/>
-                <h3 className="text-2xl font-semibold mb-5">Where can I get some?</h3>
-                <p className="mb-5">There are many variations of passages of Lorem Ipsum available, but the majority
-                  have suffered alteration in some form, by injected humour, or randomised words which don't look even
-                  slightly believable. </p>
-                <p className="mb-5">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
-                  anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet
-                  tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
-                  It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to
-                  generate Lorem Ipsum which looks reasonable. </p>
-                <p className="mb-5">The generated Lorem Ipsum is therefore always free from repetition, injected humour,
-                  or non-characteristic words etc.</p>
-                <br/>
-                <h3 className="text-2xl font-semibold mb-5">Why do we use it?</h3>
-                <p className="mb-5">It is a long established fact that a reader will be distracted by the readable
-                  content of a page when looking at its layout.</p>
-                <p className="mb-5">Many desktop publishing packages and web page editors now use Lorem Ipsum as their
-                  default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
-                  Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected
-                  humour and the like).</p>
-                <p className="mb-5"><strong className="text-lg">The point of using Lorem Ipsum is that it has a
-                  more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making
-                  it look like readable English:</strong></p>
-                <p className="mb-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                  Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                  galley of type and scrambled it to make a type specimen book. It has survived not only five
-                  centuries, <a
-                    href="#/" className="underline hover:no-underline">but also the leap into electronic typesetting</a>,
-                  remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
-                  containing Lorem Ipsum passages.</p>
-                <p className="mb-5">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
-                  letters, as opposed to using 'Content here, content here', making it look like readable English. </p>
+                <h3 className="text-2xl font-semibold mb-5">
+                  Where does it come from?
+                </h3>
+                <p className="mb-5">
+                  Richard McClintock, a Latin professor at Hampden-Sydney
+                  College in Virginia, looked up one of the more obscure Latin
+                  words, consectetur, from a Lorem Ipsum passage, going through
+                  the cites of the word in classical literature, discovered the
+                  undoubtable source. Lorem Ipsum comes from sections 1.10.32
+                  and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes
+                  of Good and Evil) by Cicero, written in 45 BC. This book is a
+                  treatise on the theory of ethics, very popular during the
+                  Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor
+                  sit amet..", comes from a line in section 1.10.32.
+                </p>
+                <p className="mb-5">
+                  The standard chunk of Lorem Ipsum used since the 1500s is
+                  reproduced below for those interested. Sections 1.10.32 and
+                  1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are
+                  also reproduced in their exact original form, accompanied by
+                  English versions from the 1914 translation by H. Rackham.
+                </p>
+                <br />
+                <h3 className="text-2xl font-semibold mb-5">
+                  Where can I get some?
+                </h3>
+                <p className="mb-5">
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered alteration in some
+                  form, by injected humour, or randomised words which don't look
+                  even slightly believable.{" "}
+                </p>
+                <p className="mb-5">
+                  If you are going to use a passage of Lorem Ipsum, you need to
+                  be sure there isn't anything embarrassing hidden in the middle
+                  of text. All the Lorem Ipsum generators on the Internet tend
+                  to repeat predefined chunks as necessary, making this the
+                  first true generator on the Internet. It uses a dictionary of
+                  over 200 Latin words, combined with a handful of model
+                  sentence structures, to generate Lorem Ipsum which looks
+                  reasonable.{" "}
+                </p>
+                <p className="mb-5">
+                  The generated Lorem Ipsum is therefore always free from
+                  repetition, injected humour, or non-characteristic words etc.
+                </p>
+                <br />
+                <h3 className="text-2xl font-semibold mb-5">
+                  Why do we use it?
+                </h3>
+                <p className="mb-5">
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+                </p>
+                <p className="mb-5">
+                  Many desktop publishing packages and web page editors now use
+                  Lorem Ipsum as their default model text, and a search for
+                  'lorem ipsum' will uncover many web sites still in their
+                  infancy. Various versions have evolved over the years,
+                  sometimes by accident, sometimes on purpose (injected humour
+                  and the like).
+                </p>
+                <p className="mb-5">
+                  <strong className="text-lg">
+                    The point of using Lorem Ipsum is that it has a more-or-less
+                    normal distribution of letters, as opposed to using 'Content
+                    here, content here', making it look like readable English:
+                  </strong>
+                </p>
+                <p className="mb-5">
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries,{" "}
+                  <a href="#/" className="underline hover:no-underline">
+                    but also the leap into electronic typesetting
+                  </a>
+                  , remaining essentially unchanged. It was popularised in the
+                  1960s with the release of Letraset sheets containing Lorem
+                  Ipsum passages.
+                </p>
+                <p className="mb-5">
+                  The point of using Lorem Ipsum is that it has a more-or-less
+                  normal distribution of letters, as opposed to using 'Content
+                  here, content here', making it look like readable English.{" "}
+                </p>
                 <div className="mb-[30px]">
-                  <img src={require('../../assets/images/img-detail-4.jpg')} alt="post-img-detail"
-                       className="rounded-xl mb-3"/>
-                  <p className="text-sm text-gray">The photo are for illustrative purposes only</p>
+                  <img
+                    src={require("../../assets/images/img-detail-4.jpg")}
+                    alt="post-img-detail"
+                    className="rounded-xl mb-3"
+                  />
+                  <p className="text-sm text-gray">
+                    The photo are for illustrative purposes only
+                  </p>
                 </div>
-                <p className="mb-5"><strong className="text-lg">Letraset sheets containing lorem ipsum quis passages
-                  text ever since the 1500s.</strong></p>
                 <p className="mb-5">
-                  It is a long established fact that a reader will be distracted by the readable content of a page when
-                  looking at its layout. It has survived not only five centuries, but also the leap into electronic
-                  typesetting...
+                  <strong className="text-lg">
+                    Letraset sheets containing lorem ipsum quis passages text
+                    ever since the 1500s.
+                  </strong>
                 </p>
                 <p className="mb-5">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                  scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-                  into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                  release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-                  software like Aldus PageMaker including versions of Lorem Ipsum.
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+                  It has survived not only five centuries, but also the leap
+                  into electronic typesetting...
                 </p>
                 <p className="mb-5">
-                  But also the leap into electronic typesetting, remaining essentially unchange. It was popular in the
-                  1960s with the release. More recently with desktop publishing software like Aldus est ut PageMaker
-                  including versions of Lorem Ipsum. Letraset sheets containing Lorem Ipsum quis passages text ever
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged. It was popularised in the 1960s with
+                  the release of Letraset sheets containing Lorem Ipsum
+                  passages, and more recently with desktop publishing software
+                  like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+                <p className="mb-5">
+                  But also the leap into electronic typesetting, remaining
+                  essentially unchange. It was popular in the 1960s with the
+                  release. More recently with desktop publishing software like
+                  Aldus est ut PageMaker including versions of Lorem Ipsum.
+                  Letraset sheets containing Lorem Ipsum quis passages text ever
                   since the 1500s.
                 </p>
                 <div className="mb-[30px]">
-                  <img src={require('../../assets/images/img-detail-5.jpg')} alt="post-img-detail"
-                       className="rounded-xl mb-3"/>
-                  <p className="text-sm text-gray">The photo are for illustrative purposes only</p>
+                  <img
+                    src={require("../../assets/images/img-detail-5.jpg")}
+                    alt="post-img-detail"
+                    className="rounded-xl mb-3"
+                  />
+                  <p className="text-sm text-gray">
+                    The photo are for illustrative purposes only
+                  </p>
                 </div>
-                <h3 className="text-2xl font-semibold mb-5">What is Lorem Ipsum?</h3>
-                <p>Ac turpis egestas integer eget aliquet nibh praesent tristique. Tempor orci dapibus ultrices in
-                  iaculis nunc sed augue lacus. Pellentesque pulvinar pellentesque habitant morbi tristique senectus.
-                  Auctor urna nunc id cursus metus aliquam eleifend. Diam maecenas ultricies mi eget mauris pharetra et
-                  ultrices neque. Id consectetur purus ut faucibus. Lacus sed turpis tincidunt id aliquet. Et tortor
-                  consequat id porta nibh. Nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum. Lorem ipsum
-                  dolor sit amet consectetur. Duis ut diam quam nulla. Commodo viverra maecenas accumsan lacus. Urna
-                  porttitor rhoncus dolor purus non enim praesent elementum facilisis. Lacus vestibulum sed arcu non
-                  odio euismod lacinia at. Auctor elit sed vulputate mi sit amet. Eu turpis egestas pretium aenean
-                  pharetra magna ac placerat.</p>
+                <h3 className="text-2xl font-semibold mb-5">
+                  What is Lorem Ipsum?
+                </h3>
+                <p>
+                  Ac turpis egestas integer eget aliquet nibh praesent
+                  tristique. Tempor orci dapibus ultrices in iaculis nunc sed
+                  augue lacus. Pellentesque pulvinar pellentesque habitant morbi
+                  tristique senectus. Auctor urna nunc id cursus metus aliquam
+                  eleifend. Diam maecenas ultricies mi eget mauris pharetra et
+                  ultrices neque. Id consectetur purus ut faucibus. Lacus sed
+                  turpis tincidunt id aliquet. Et tortor consequat id porta
+                  nibh. Nulla facilisi cras fermentum odio eu feugiat pretium
+                  nibh ipsum. Lorem ipsum dolor sit amet consectetur. Duis ut
+                  diam quam nulla. Commodo viverra maecenas accumsan lacus. Urna
+                  porttitor rhoncus dolor purus non enim praesent elementum
+                  facilisis. Lacus vestibulum sed arcu non odio euismod lacinia
+                  at. Auctor elit sed vulputate mi sit amet. Eu turpis egestas
+                  pretium aenean pharetra magna ac placerat.
+                </p>
                 <ul className="list-disc list-inside mb-5">
-                  <li>Sed libero enim sed faucibus omarens nuos anet sumis ae nut.</li>
+                  <li>
+                    Sed libero enim sed faucibus omarens nuos anet sumis ae nut.
+                  </li>
                   <li>Elit duis tristique sollicitin nibh sit amet commodo.</li>
-                  <li> Diam sollicitudin tempor id eu nisl ornare arcu odio ut sem nulla pharetra.</li>
-                  <li>Netus et malesuada fames ac turpisegest asuis anet dolores umea.</li>
-                  <li>Elit duis nibh maecenas suis diam nisl omarens nuos anet sumis ae nut.</li>
+                  <li>
+                    {" "}
+                    Diam sollicitudin tempor id eu nisl ornare arcu odio ut sem
+                    nulla pharetra.
+                  </li>
+                  <li>
+                    Netus et malesuada fames ac turpisegest asuis anet dolores
+                    umea.
+                  </li>
+                  <li>
+                    Elit duis nibh maecenas suis diam nisl omarens nuos anet
+                    sumis ae nut.
+                  </li>
                 </ul>
-                <p className="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore
-                  et dolore magna aliqua. Amet purus gravida quis blandit turpis cursus in. Sapien pellentesque habitant
-                  morbi tristique senectus et. Fames ac turpis egestas integer eget aliquet nibh praesent. </p>
-                <p className="mb-5">In ante metus dictum at tempor commodo ullamcorper a lacus. Dis parturient montes
-                  nascetur ridiculus mus. In ornare quam viverra orci sagittis. Nisl tincidunt eget nullam non nisi est
-                  sit. Tempor commodo ullamcorper a lacus. Facilisi nullam vehicula ipsum a arcu. Arcu non sodales neque
-                  sodales ut etiam sit. Sem fringilla ut morbi tincidunt augue interdum velit. Mauris vitae ultricies
-                  leo integer malesuada nunc vel risus commodo. Eget nunc scelerisque viverra mauris in aliquam sem
-                  fringilla ut. Etiam non quam lacus suspendisse faucibus interdum.</p>
+                <p className="mb-5">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Amet purus gravida quis blandit turpis cursus in. Sapien
+                  pellentesque habitant morbi tristique senectus et. Fames ac
+                  turpis egestas integer eget aliquet nibh praesent.{" "}
+                </p>
+                <p className="mb-5">
+                  In ante metus dictum at tempor commodo ullamcorper a lacus.
+                  Dis parturient montes nascetur ridiculus mus. In ornare quam
+                  viverra orci sagittis. Nisl tincidunt eget nullam non nisi est
+                  sit. Tempor commodo ullamcorper a lacus. Facilisi nullam
+                  vehicula ipsum a arcu. Arcu non sodales neque sodales ut etiam
+                  sit. Sem fringilla ut morbi tincidunt augue interdum velit.
+                  Mauris vitae ultricies leo integer malesuada nunc vel risus
+                  commodo. Eget nunc scelerisque viverra mauris in aliquam sem
+                  fringilla ut. Etiam non quam lacus suspendisse faucibus
+                  interdum.
+                </p>
               </div>
               <div className="flex justify-between items-center lg:mb-[70px] mb-10">
                 <div>
-                  {
-                    tags.map((item) => {
-                      return (
-                        <a key={`tag-` + item.id} href="#/"
-                           className="relative inline-flex mr-[10px] my-[5px] py-2 px-3 bg-white rounded-[7px] shadow-[0_5px_12px_rgba(0,0,0,0.05)] text-gray text-sm font-medium transition-all duration-300 ease-in-out translate-y-0 hover:text-black2 hover:shadow-[0_7px_25px_rgba(0,0,0,0.12)] hover:-translate-y-[2px] hover:bg-gray-light3">{item.title}</a>
-                      )
-                    })
-                  }
+                  {tags.map((item) => {
+                    return (
+                      <a
+                        key={`tag-` + item.id}
+                        href="#/"
+                        className="relative inline-flex mr-[10px] my-[5px] py-2 px-3 bg-white rounded-[7px] shadow-[0_5px_12px_rgba(0,0,0,0.05)] text-gray text-sm font-medium transition-all duration-300 ease-in-out translate-y-0 hover:text-black2 hover:shadow-[0_7px_25px_rgba(0,0,0,0.12)] hover:-translate-y-[2px] hover:bg-gray-light3"
+                      >
+                        {item.title}
+                      </a>
+                    );
+                  })}
                 </div>
                 <ul>
                   <li className="group relative">
-                  <span
-                    className="flex items-center justify-center cursor-pointer h-10 w-10 rounded-[20px] bg-white group-hover:shadow-[0_10px_25px_rgba(0,0,0,0.07)]">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      fill="none"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeMiterlimit="10"
-                        strokeWidth="1.5"
-                        d="M6.057 8.806l7.89-3.944m0 10.274l-7.89-3.944m.285-1.193a2.671 2.671 0 11-5.342 0 2.671 2.671 0 015.342 0zM19.005 3.67a2.671 2.671 0 11-5.343 0 2.671 2.671 0 015.343 0zm0 12.658a2.671 2.671 0 11-5.343 0 2.671 2.671 0 015.343 0z"
-                      ></path>
-                    </svg>
-                  </span>
-                    <div
-                      className="absolute lg:left-full lg:right-[auto] right-0 lg:top-0 top-full text-gray lg:pl-[15px] pt-[15px] pointer-events-none group-hover:pointer-events-auto">
-                      <div
-                        className="min-w-[225px] shadow-[0_4px_20px_rgba(0,0,0,0.1)] overflow-hidden rounded-[10px] bg-white opacity-0 translate-y-5 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                    <span className="flex items-center justify-center cursor-pointer h-10 w-10 rounded-[20px] bg-white group-hover:shadow-[0_10px_25px_rgba(0,0,0,0.07)]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="none"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeMiterlimit="10"
+                          strokeWidth="1.5"
+                          d="M6.057 8.806l7.89-3.944m0 10.274l-7.89-3.944m.285-1.193a2.671 2.671 0 11-5.342 0 2.671 2.671 0 015.342 0zM19.005 3.67a2.671 2.671 0 11-5.343 0 2.671 2.671 0 015.343 0zm0 12.658a2.671 2.671 0 11-5.343 0 2.671 2.671 0 015.343 0z"
+                        ></path>
+                      </svg>
+                    </span>
+                    <div className="absolute lg:left-full lg:right-[auto] right-0 lg:top-0 top-full text-gray lg:pl-[15px] pt-[15px] pointer-events-none group-hover:pointer-events-auto">
+                      <div className="min-w-[225px] shadow-[0_4px_20px_rgba(0,0,0,0.1)] overflow-hidden rounded-[10px] bg-white opacity-0 translate-y-5 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                         <div className="py-[5px] border-b border-gray-light9">
-                          <a href="#/"
-                             className="flex items-center transition-all duration-300 hover:text-black2 hover:bg-gray-light11 px-[14px] py-3">
+                          <a
+                            href="#/"
+                            className="flex items-center transition-all duration-300 hover:text-black2 hover:bg-gray-light11 px-[14px] py-3"
+                          >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="19"
@@ -359,8 +508,10 @@ export default function BlogList() {
                         </div>
                         <ul className="py-[5px]">
                           <li>
-                            <a href="#/"
-                               className="flex items-center transition-all duration-300 hover:text-black2 hover:bg-gray-light11 px-[14px] py-3">
+                            <a
+                              href="#/"
+                              className="flex items-center transition-all duration-300 hover:text-black2 hover:bg-gray-light11 px-[14px] py-3"
+                            >
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="18"
@@ -378,8 +529,10 @@ export default function BlogList() {
                             </a>
                           </li>
                           <li>
-                            <a href="#/"
-                               className="flex items-center transition-all duration-300 hover:text-black2 hover:bg-gray-light11 px-[14px] py-3">
+                            <a
+                              href="#/"
+                              className="flex items-center transition-all duration-300 hover:text-black2 hover:bg-gray-light11 px-[14px] py-3"
+                            >
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="18"
@@ -404,8 +557,10 @@ export default function BlogList() {
                             </a>
                           </li>
                           <li>
-                            <a href="#/"
-                               className="flex items-center transition-all duration-300 hover:text-black2 hover:bg-gray-light11 px-[14px] py-3">
+                            <a
+                              href="#/"
+                              className="flex items-center transition-all duration-300 hover:text-black2 hover:bg-gray-light11 px-[14px] py-3"
+                            >
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="18"
@@ -437,17 +592,22 @@ export default function BlogList() {
               </div>
               <div className="rounded-xl bg-gray-light16 lg:p-10 px-5 py-6">
                 <div className="md:flex md:items-center">
-                  <div
-                    className="flex lg:w-[72px] lg:h-[72px] w-[50px] h-[50px] md:mb-0 mb-2 flex-shrink-0 lg:mr-5 mr-3 lg:rounded-[36px] rounded-[25px] overflow-hidden border border-white drop-shadow-[0_4px_15px_rgba(0,0,0,0.2)]">
-                    <img src={require('../../assets/images/img-avt-2.png')} className="w-full h-full object-cover"
-                         alt="avt-img"/>
+                  <div className="flex lg:w-[72px] lg:h-[72px] w-[50px] h-[50px] md:mb-0 mb-2 flex-shrink-0 lg:mr-5 mr-3 lg:rounded-[36px] rounded-[25px] overflow-hidden border border-white drop-shadow-[0_4px_15px_rgba(0,0,0,0.2)]">
+                    <img
+                      src={require("../../assets/images/img-avt-2.png")}
+                      className="w-full h-full object-cover"
+                      alt="avt-img"
+                    />
                   </div>
                   <div>
                     <p className="text-xs text-gray mb-1">WRITTEN BY</p>
                     <h3 className="text-lg font-semibold mb-2">YayCommerce</h3>
-                    <div>Thuy Nguyen is an online marketeer and
-                      professional blogger. When not creating content for YayCommerce, she can most often be found at
-                      some cafés in town, reading Graphic Guides, or enjoying a good laugh with The Big Bang Theory.
+                    <div>
+                      Thuy Nguyen is an online marketeer and professional
+                      blogger. When not creating content for YayCommerce, she
+                      can most often be found at some cafés in town, reading
+                      Graphic Guides, or enjoying a good laugh with The Big Bang
+                      Theory.
                     </div>
                   </div>
                 </div>
@@ -455,7 +615,11 @@ export default function BlogList() {
               <div className="flex justify-between lg:mt-[70px] mt-10">
                 <a href="#/" className="group inline-flex items-center">
                   <div className="relative flex-shrink-0 md:w-[95px] md:h-[auto] w-10 h-10 mr-[15px] md:rounded-[9px] rounded-[20px] md:bg-transparent bg-gray-light2 overflow-hidden before:absolute before:inset-0 before:z-20 before:bg-[rgba(0,0,0,0.2)] group-hover:before:bg-[rgba(0,0,0,0.5)]">
-                    <img src={require('../../assets/images/img-post-prev.png')} alt="post-img-prev" className="md:block hidden" />
+                    <img
+                      src={require("../../assets/images/img-post-prev.png")}
+                      alt="post-img-prev"
+                      className="md:block hidden"
+                    />
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="28"
@@ -480,7 +644,10 @@ export default function BlogList() {
                           colorInterpolationFilters="sRGB"
                           filterUnits="userSpaceOnUse"
                         >
-                          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+                          <feFlood
+                            floodOpacity="0"
+                            result="BackgroundImageFix"
+                          ></feFlood>
                           <feColorMatrix
                             in="SourceAlpha"
                             result="hardAlpha"
@@ -488,7 +655,10 @@ export default function BlogList() {
                           ></feColorMatrix>
                           <feOffset dy="1"></feOffset>
                           <feGaussianBlur stdDeviation="1"></feGaussianBlur>
-                          <feComposite in2="hardAlpha" operator="out"></feComposite>
+                          <feComposite
+                            in2="hardAlpha"
+                            operator="out"
+                          ></feComposite>
                           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"></feColorMatrix>
                           <feBlend
                             in2="BackgroundImageFix"
@@ -505,16 +675,28 @@ export default function BlogList() {
                   </div>
                   <div className="text-sm md:max-w-[240px] md:block hidden">
                     <p className="mb-1 text-gray">Previous post</p>
-                    <h3 className="font-semibold"><a href="#/">Given Set was without from god divide rule Hath</a></h3>
+                    <h3 className="font-semibold">
+                      <a href="#/">
+                        Given Set was without from god divide rule Hath
+                      </a>
+                    </h3>
                   </div>
                 </a>
                 <a href="#/" className="group inline-flex items-center">
                   <div className="text-sm max-w-[240px] md:block hidden text-right">
                     <p className="mb-1 text-gray">Next post</p>
-                    <h3 className="font-semibold"><a href="#/">Given Set was without from god divide rule Hath</a></h3>
+                    <h3 className="font-semibold">
+                      <a href="#/">
+                        Given Set was without from god divide rule Hath
+                      </a>
+                    </h3>
                   </div>
                   <div className="relative flex-shrink-0 md:w-[95px] md:h-[auto] w-10 h-10 ml-[15px] md:rounded-[9px] rounded-[20px] md:bg-transparent bg-gray-light2 overflow-hidden before:absolute before:inset-0 before:z-20 before:bg-[rgba(0,0,0,0.2)] group-hover:before:bg-[rgba(0,0,0,0.5)]">
-                    <img src={require('../../assets/images/img-post-next.png')} alt="post-img-next" className="md:block hidden" />
+                    <img
+                      src={require("../../assets/images/img-post-next.png")}
+                      alt="post-img-next"
+                      className="md:block hidden"
+                    />
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="28"
@@ -539,7 +721,10 @@ export default function BlogList() {
                           colorInterpolationFilters="sRGB"
                           filterUnits="userSpaceOnUse"
                         >
-                          <feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood>
+                          <feFlood
+                            floodOpacity="0"
+                            result="BackgroundImageFix"
+                          ></feFlood>
                           <feColorMatrix
                             in="SourceAlpha"
                             result="hardAlpha"
@@ -547,7 +732,10 @@ export default function BlogList() {
                           ></feColorMatrix>
                           <feOffset dy="1"></feOffset>
                           <feGaussianBlur stdDeviation="1"></feGaussianBlur>
-                          <feComposite in2="hardAlpha" operator="out"></feComposite>
+                          <feComposite
+                            in2="hardAlpha"
+                            operator="out"
+                          ></feComposite>
                           <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"></feColorMatrix>
                           <feBlend
                             in2="BackgroundImageFix"
@@ -566,18 +754,20 @@ export default function BlogList() {
               </div>
             </div>
             <div className="lg:col-span-3 lg:mb-0 mb-5">
-              <Sidebar/>
+              <Sidebar />
             </div>
           </div>
           <div>
-            <h2 className="md:text-4xl text-[28px] font-bold lg:mb-8 mb-5">Related posts</h2>
+            <h2 className="md:text-4xl text-[28px] font-bold lg:mb-8 mb-5">
+              Related posts
+            </h2>
             <div className="grid lg:grid-cols-4 md:grid-cols-3 md:gap-6 grid-cols-1 gap-4 md:mb-20 mb-10">
               {content}
             </div>
           </div>
         </div>
       </section>
-      <PreFooter/>
+      <PreFooter />
     </>
-  )
+  );
 }

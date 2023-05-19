@@ -70,8 +70,9 @@ export default function Header(props) {
             </li>
           </ul>
           <p>Get Free delivery from $100</p>
-          <div className="flex">
+          <div className="flex items-center">
             <Dropdown labelName={"USD"} options={units} />
+            <span className="w-[1px] h-4 bg-[#D3DCE5] mx-5"></span>
             <Dropdown labelName={"English"} options={languages} />
           </div>
         </div>

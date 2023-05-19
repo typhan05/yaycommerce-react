@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-export default function Count({number, style}) {
+export default function Count({ number, style }) {
   let [count, setCount] = useState(0 || number);
 
   function incrementCount() {
@@ -9,16 +9,19 @@ export default function Count({number, style}) {
   }
 
   function decrementCount() {
-    if(parseInt(count) > 0) count = parseInt(count) - 1;
+    if (parseInt(count) > 0) count = parseInt(count) - 1;
     setCount(count);
   }
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     setCount(event.target.value);
   };
 
   return (
-    <div className="flex justify-between items-center p-[6px] rounded-lg bg-gray-light8 h-full" style={style}>
+    <div
+      className="flex justify-between items-center p-[6px] rounded-lg bg-gray-light8 h-full"
+      style={style}
+    >
       <button className="text-gray hover:text-black2" onClick={decrementCount}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +31,13 @@ export default function Count({number, style}) {
           viewBox="0 0 28 28"
           className="md:max-w-none max-w-[22px]"
         >
-          <circle cx="14" cy="14" r="14" fill="#F2F2F2" fillOpacity="0.01"></circle>
+          <circle
+            cx="14"
+            cy="14"
+            r="14"
+            fill="#F2F2F2"
+            fillOpacity="0.01"
+          ></circle>
           <rect
             width="2"
             height="14"
@@ -46,7 +55,7 @@ export default function Count({number, style}) {
         name="count"
         onChange={handleChange}
         value={count}
-        className="md:w-12 w-8 text-center text-base font-medium bg-gray-light8"
+        className="md:w-12 w-8 text-center text-base font-medium bg-gray-light8 outline-none"
       />
       <button className="text-gray hover:text-black2" onClick={incrementCount}>
         <svg
@@ -57,7 +66,13 @@ export default function Count({number, style}) {
           viewBox="0 0 28 28"
           className="md:max-w-none max-w-[22px]"
         >
-          <circle cx="14" cy="14" r="14" fill="#F2F2F2" fillOpacity="0.01"></circle>
+          <circle
+            cx="14"
+            cy="14"
+            r="14"
+            fill="#F2F2F2"
+            fillOpacity="0.01"
+          ></circle>
           <path
             fill="currentColor"
             fillRule="evenodd"
