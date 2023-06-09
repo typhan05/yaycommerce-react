@@ -52,6 +52,8 @@ export default function Search() {
           <div className="md:flex justify-between items-center mb-[30px]">
             <div className="w-[245px] md:mb-0 mb-2">
               <Select
+                className="react-select-container"
+                classNamePrefix="react-select"
                 options={options}
                 styles={customStyles}
                 components={{ IndicatorSeparator: () => null }}

@@ -382,6 +382,8 @@ export default function Cart() {
                       Town/City<span className="text-pink">*</span>
                     </label>
                     <Select
+                      className="react-select-container"
+                      classNamePrefix="react-select"
                       options={review_options}
                       defaultValue={review_options[0]}
                       styles={customStyles}
@@ -396,6 +398,8 @@ export default function Cart() {
                       State/Province<span className="text-pink">*</span>
                     </label>
                     <Select
+                      className="react-select-container"
+                      classNamePrefix="react-select"
                       options={review_options}
                       defaultValue={review_options[0]}
                       styles={customStyles}

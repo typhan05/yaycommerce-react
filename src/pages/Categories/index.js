@@ -56,6 +56,8 @@ export default function Categories() {
             </p>
             <div className="w-[245px]">
               <Select
+                className="react-select-container"
+                classNamePrefix="react-select"
                 options={options}
                 styles={customStyles}
                 components={{ IndicatorSeparator: () => null }}

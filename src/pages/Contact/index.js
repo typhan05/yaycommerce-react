@@ -147,6 +147,8 @@ export default function Contact() {
                       Subject<span className="text-pink">*</span>
                     </label>
                     <Select
+                      className="react-select-container"
+                      classNamePrefix="react-select"
                       options={review_options}
                       placeholder={"Select yours season"}
                       styles={customStyles}

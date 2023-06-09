@@ -162,12 +162,16 @@ const Tabs = ({ data }) => (
             <h3 className="text-2xl font-bold mb-5">Customer reviews</h3>
             <div className="grid md:grid-cols-2 grid-cols-1 gap-[14px] md:mb-[47px] mb-8 max-w-[480px]">
               <Select
+                className="react-select-container"
+                classNamePrefix="react-select"
                 options={review_options}
                 defaultValue={review_options[0]}
                 styles={customStyles}
                 components={{ IndicatorSeparator: () => null }}
               />
               <Select
+                className="react-select-container"
+                classNamePrefix="react-select"
                 options={star_options}
                 defaultValue={star_options[0]}
                 styles={customStyles}

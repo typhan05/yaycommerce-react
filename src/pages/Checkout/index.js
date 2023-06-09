@@ -187,6 +187,8 @@ export default function Checkout() {
                       Country/Region<span className="text-pink">*</span>
                     </label>
                     <Select
+                      className="react-select-container"
+                      classNamePrefix="react-select"
                       options={review_options}
                       defaultValue={review_options[0]}
                       styles={customStyles}
@@ -201,6 +203,8 @@ export default function Checkout() {
                       State/Province<span className="text-pink">*</span>
                     </label>
                     <Select
+                      className="react-select-container"
+                      classNamePrefix="react-select"
                       options={review_options}
                       defaultValue={review_options[0]}
                       styles={customStyles}
@@ -217,6 +221,8 @@ export default function Checkout() {
                       Town/City<span className="text-pink">*</span>
                     </label>
                     <Select
+                      className="react-select-container"
+                      classNamePrefix="react-select"
                       options={review_options}
                       defaultValue={review_options[0]}
                       styles={customStyles}
@@ -231,6 +237,8 @@ export default function Checkout() {
                       Zip/Postal code<span className="text-pink">*</span>
                     </label>
                     <Select
+                      className="react-select-container"
+                      classNamePrefix="react-select"
                       options={review_options}
                       defaultValue={review_options[0]}
                       styles={customStyles}

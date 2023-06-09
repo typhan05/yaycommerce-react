@@ -193,6 +193,8 @@ export default function Products() {
                   Size
                 </label>
                 <Select
+                  className="react-select-container"
+                  classNamePrefix="react-select"
                   options={optionsSize}
                   styles={customStyles}
                   components={{ IndicatorSeparator: () => null }}
@@ -204,6 +206,8 @@ export default function Products() {
                   Color
                 </label>
                 <Select
+                  className="react-select-container"
+                  classNamePrefix="react-select"
                   options={optionsColor}
                   styles={customStyles}
                   components={{ IndicatorSeparator: () => null }}

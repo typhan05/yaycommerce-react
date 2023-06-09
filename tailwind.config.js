@@ -2,6 +2,7 @@
 
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  safelist: ["bg-pink", "bg-green-light", "bg-orange"],
   theme: {
     colors: {
       transparent: "transparent",
