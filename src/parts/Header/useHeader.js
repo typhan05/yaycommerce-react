@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const useHeader = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [scrollDirection, setScrollDirection] = useState(null);
+  const { width } = useWindowDimensions();
 
   const openHandler = () => {
     let root = document.getElementsByTagName("html")[0];
@@ -38,6 +40,13 @@ const useHeader = () => {
       window.removeEventListener("scroll", updateScrollDirection); // clean up
     };
   }, [scrollDirection]);
+
+  useEffect(() => {
+    if (width > 768) {
+      let root = document.getElementsByTagName("html")[0];
+      root.classList.remove("overflow-hidden");
+    }
+  }, [width]);
 
   return {
     openMenu,

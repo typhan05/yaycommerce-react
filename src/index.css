@@ -63,10 +63,24 @@
   font-display: swap;
 }
 
+html,
 body {
   overflow-x: hidden;
+}
+
+body {
   color: #122940;
   line-height: 1.625;
+}
+
+.main-content {
+  padding-top: 77px;
+}
+
+@media screen and (min-width: 768px) {
+  .main-content {
+    padding-top: 126px;
+  }
 }
 
 .container {
@@ -274,4 +288,8 @@ textarea:focus {
   background-image: url("./assets/images/check-icon.svg");
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.h-menu {
+  height: calc(100vh - 77px);
 }

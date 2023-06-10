@@ -33,13 +33,13 @@ export default function Header(props) {
 
   return (
     <header
-      className={`${openMenu ? `fixed` : `sticky`} ${
+      className={`${
         scrollDirection === "down"
           ? "-translate-y-full"
           : scrollDirection === "up"
           ? "translate-y-0 md:-translate-y-11"
           : "translate-y-0"
-      } z-50  top-0 left-0 w-full translate-z-0 text-black2 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-250 ease-out`}
+      } z-50 fixed top-0 left-0 w-full translate-z-0 text-black2 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-250 ease-out`}
     >
       <div className="relative bg-gray-light4 py-3 text-sm md:block hidden z-[12]">
         <div className="container mx-auto flex flex-wrap justify-between items-center">
@@ -83,7 +83,7 @@ export default function Header(props) {
             <img src={Logo} alt="logo" />
           </NavLink>
           <div
-            className={`md:relative md:top-0 md:w-auto md:translate-x-0 md:py-0 md:px-0 px-5 py-4 z-[8] fixed top-[77px] bottom-0 left-0 border-t border-solid border-gray-light2 md:border-0 md:border-none md:border-transparent bg-white transition-all duration-300 ease-in-out w-full md:overflow-visible md:max-h-full h-[100vh] md:h-auto overflow-x-hidden overflow-y-auto ${
+            className={`md:relative md:top-0 md:w-auto md:translate-x-0 md:py-0 md:px-0 px-5 py-4 z-[8] fixed top-[77px] bottom-0 left-0 border-t border-solid border-gray-light2 md:border-0 md:border-none md:border-transparent bg-white transition-all duration-300 ease-in-out w-full md:overflow-visible md:max-h-full h-menu md:h-auto overflow-x-hidden overflow-y-auto ${
               openMenu ? `translate-x-0` : `translate-x-full`
             }`}
           >
