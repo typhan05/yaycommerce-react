@@ -2,7 +2,6 @@
   "homepage": "http://typhan05.github.io/yaycommerce-react",
   "name": "yaycommerce-theme",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@headlessui/react": "^1.6.6",
     "@heroicons/react": "^1.0.6",
