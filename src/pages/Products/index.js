@@ -299,8 +299,8 @@ export default function Products() {
               <p>
                 <button
                   onClick={() => addWishList()}
-                  className={`flex items-center  text-base ${
-                    wished ? "text-red-200" : "text-gray"
+                  className={`flex items-center relative text-base hover:scale-105 duration-75 ${
+                    wished ? "text-green" : "text-gray"
                   }`}
                 >
                   <svg
