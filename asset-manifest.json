@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/yaycommerce-react/static/css/main.27620f95.css",
-    "main.js": "/yaycommerce-react/static/js/main.75cb6e7b.js",
+    "main.js": "/yaycommerce-react/static/js/main.0d4c63fb.js",
     "static/js/787.93facbbb.chunk.js": "/yaycommerce-react/static/js/787.93facbbb.chunk.js",
     "static/media/SFUIDisplay-Bold.svg": "/yaycommerce-react/static/media/SFUIDisplay-Bold.51df48b08db7ee250b8b.svg",
     "static/media/SFUIDisplay-Semibold.svg": "/yaycommerce-react/static/media/SFUIDisplay-Semibold.0d0e7fc9d4e823c83126.svg",
@@ -73,11 +73,11 @@
     "index.html": "/yaycommerce-react/index.html",
     "static/media/check-icon.svg": "/yaycommerce-react/static/media/check-icon.45ee31dccd461cb263cf.svg",
     "main.27620f95.css.map": "/yaycommerce-react/static/css/main.27620f95.css.map",
-    "main.75cb6e7b.js.map": "/yaycommerce-react/static/js/main.75cb6e7b.js.map",
+    "main.0d4c63fb.js.map": "/yaycommerce-react/static/js/main.0d4c63fb.js.map",
     "787.93facbbb.chunk.js.map": "/yaycommerce-react/static/js/787.93facbbb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.27620f95.css",
-    "static/js/main.75cb6e7b.js"
+    "static/js/main.0d4c63fb.js"
   ]
 }
