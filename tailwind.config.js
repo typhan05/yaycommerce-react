@@ -29,6 +29,7 @@ module.exports = {
         light14: "#F4F7FA",
         light15: "#F2F6FA",
         light16: "#F9FAFC",
+        400: "#D3DCE5",
       },
       green: {
         light: "#7FD59C",
