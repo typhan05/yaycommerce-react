@@ -513,7 +513,11 @@ export default function Header(props) {
               </button>
             </li>
             <li className="md:block hidden">
-              <a href="#/" className="group relative">
+              <button
+                className="group relative block text-black2"
+                type="button"
+                onClick={props.buttonWishList}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -530,7 +534,7 @@ export default function Header(props) {
                 <span className="absolute top-10 left-2/4 -translate-x-2/4 z-[1] hidden md:block invisible opacity-0 transition-all ease-in-out duration-300 px-[6px] py-1 min-w-max text-xs text-white bg-black2 rounded-sm after:absolute after:w-0 after:h-0 after:-top-[5px] after:left-2/4 after:-translate-x-2/4 after:border-x-[6px] after:border-b-[6px] after:border-solid after:border-x-transparent after:border-b-black2 group-hover:top-7 group-hover:opacity-100 group-hover:visible">
                   Wishlist
                 </span>
-              </a>
+              </button>
             </li>
             <li>
               <button

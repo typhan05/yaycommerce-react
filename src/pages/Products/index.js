@@ -342,7 +342,7 @@ export default function Products() {
                     </button>
                   )}
                 </span>
-                <Loader />
+                {loadingWished && <Loader />}
               </p>
             </div>
           </div>
