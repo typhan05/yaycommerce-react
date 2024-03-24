@@ -79,7 +79,7 @@ export default function DrawerWishList({ isShowing, hide }) {
                         <div className="flow-root">
                           <ul className="divide-y divide-gray-light2 border-y border-gray-light2">
                             {products.map((product) => (
-                              <li key={product.id} className="flex py-5">
+                              <li key={product.id} className="flex gap-2 py-5">
                                 <div className="h-[100px] w-[75px] bg-gray-light5 flex-shrink-0 overflow-hidden rounded-lg">
                                   <img
                                     src={require("../../../assets/images/" +
@@ -88,7 +88,6 @@ export default function DrawerWishList({ isShowing, hide }) {
                                     className="h-full w-full object-cover object-center"
                                   />
                                 </div>
-
                                 <div className="ml-4 flex flex-1 flex-col">
                                   <h3 className="text-black2">
                                     <a
@@ -135,6 +134,14 @@ export default function DrawerWishList({ isShowing, hide }) {
                                         </svg>
                                       </button>
                                     </div>
+                                  </div>
+                                  <div className="flex mt-3">
+                                    <button
+                                      type="button"
+                                      className="inline-flex justify-center rounded-xl md:text-md text-sm font-semibold py-[10px] md:px-6 px-5 text-white bg-blue shadow-[0_7px_25px_rgba(47,112,179,0.2)] hover:bg-black2 hover:shadow-[0_7px_35px_rgba(0,0,0,0.1)]"
+                                    >
+                                      Add to cart
+                                    </button>
                                   </div>
                                 </div>
                               </li>

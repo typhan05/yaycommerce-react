@@ -26,6 +26,8 @@ import {
   sliderProducts,
 } from "./mockApi";
 import Accordion from "../../components/Accordion";
+import DrawerWishList from "../../components/Drawer/Wishlist";
+import useWishList from "../../components/Drawer/Wishlist/useWishList";
 
 export const useMedia = (query) => {
   const [matches, setMatches] = useState(window.matchMedia(query).matches);
@@ -45,6 +47,7 @@ export default function Products() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const [wished, setWished] = useState(false);
   const [loadingWished, setLoadingWished] = useState(false);
+  const { isShowingWishList, toggleWishList } = useWishList();
 
   const addWishList = () => {
     setLoadingWished(true);
@@ -332,7 +335,10 @@ export default function Products() {
                   {wished ? (
                     <span>
                       Product added!{" "}
-                      <button class="relative text-black2 leading-5 cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-black2 before:origin-center before:h-[1px] hover:before:w-0 before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-black2 after:origin-center after:h-[1px] hover:after:w-0 after:w-[50%] after:bottom-0 after:right-[50%]">
+                      <button
+                        onClick={toggleWishList}
+                        className="relative text-black2 leading-5 cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-black2 before:origin-center before:h-[1px] hover:before:w-0 before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-black2 after:origin-center after:h-[1px] hover:after:w-0 after:w-[50%] after:bottom-0 after:right-[50%]"
+                      >
                         Browse wishlist
                       </button>
                     </span>
@@ -353,6 +359,7 @@ export default function Products() {
       </div>
       <FeaturedCardSlider content={featuredCard} />
       <PreFooter />
+      <DrawerWishList isShowing={isShowingWishList} hide={toggleWishList} />
     </>
   );
 }
