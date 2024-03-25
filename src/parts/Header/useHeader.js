@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const useHeader = () => {
@@ -23,7 +23,7 @@ const useHeader = () => {
 
     const updateScrollDirection = () => {
       const scrollY = window.pageYOffset;
-      const header = document.querySelector("header");
+      // const header = document.querySelector("header");
       //const headerHeight = header.offsetHeight;
       let direction = "top";
       if (scrollY > 50) {

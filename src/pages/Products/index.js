@@ -335,10 +335,7 @@ export default function Products() {
                   {wished ? (
                     <span>
                       Product added!{" "}
-                      <button
-                        onClick={toggleWishList}
-                        className="relative text-black2 leading-5 cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-black2 before:origin-center before:h-[1px] hover:before:w-0 before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-black2 after:origin-center after:h-[1px] hover:after:w-0 after:w-[50%] after:bottom-0 after:right-[50%]"
-                      >
+                      <button onClick={toggleWishList} className="link-anim">
                         Browse wishlist
                       </button>
                     </span>

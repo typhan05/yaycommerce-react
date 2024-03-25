@@ -1,11 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/images/logo.svg";
-import Dropdown from "../../components/Dropdown";
-import useHeader from "./useHeader";
 import DrawerSearch from "../../components/Drawer/Search";
 import useSearch from "../../components/Drawer/Search/useSearch";
+import Dropdown from "../../components/Dropdown";
 import { DrawerCartContext } from "../../contexts/drawerCartContext";
+import useHeader from "./useHeader";
 
 const units = [
   { id: 1, active: true, name: "USD" },
@@ -46,7 +46,7 @@ export default function Header(props) {
           ? "absolute -translate-y-full"
           : scrollDirection === "up"
           ? "fixed translate-y-0 md:-translate-y-11"
-          : "translate-y-0"
+          : "absolute translate-y-0"
       } z-50 top-0 left-0 right-0 translate-z-0 text-black2 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-300 ease-out`}
     >
       <div className="relative bg-gray-light4 py-3 text-sm md:block hidden z-[12]">

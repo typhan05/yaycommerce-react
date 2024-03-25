@@ -295,3 +295,35 @@ textarea:focus {
 .h-menu {
   height: calc(100vh - 77px);
 }
+
+.link-anim {
+  position: relative;
+}
+.link-anim::before,
+.link-anim::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(1) translateZ(0);
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s,
+    -webkit-transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
+}
+.link-anim::before {
+  transform-origin: right;
+}
+.link-anim::after {
+  transform-origin: left;
+}
+.link-anim:hover::before {
+  transform: scaleX(0) translateZ(0);
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.link-anim:hover::after {
+  transform: scaleX(1) translateZ(0);
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s,
+    -webkit-transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s;
+}
