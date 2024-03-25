@@ -1,10 +1,9 @@
 /* This example requires Tailwind CSS v2.0+ */
-import React, { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
-import Count from "../../Count";
+import React, { Fragment, useState } from "react";
 
-const products = [
+const listProducts = [
   {
     id: 1,
     name: "Wide Strap Seamless Sports Bra",
@@ -28,6 +27,21 @@ const products = [
 ];
 
 export default function DrawerWishList({ isShowing, hide }) {
+  const [products, setProducts] = useState(listProducts);
+  const [activeItem, setActiveItem] = useState(-1);
+  const [loading, setLoading] = useState(false);
+
+  const removeWishList = (index) => {
+    const productNew = products.filter(function (_, id) {
+      return index !== id;
+    });
+    setActiveItem(index);
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setProducts(productNew);
+    }, 1000);
+  };
   return (
     <Transition.Root show={isShowing} as={Fragment}>
       <Dialog as="div" className="relative z-50" onClose={hide}>
@@ -61,7 +75,7 @@ export default function DrawerWishList({ isShowing, hide }) {
                       <div className="flex items-start justify-between">
                         <Dialog.Title className="text-2xl font-semibold text-black2">
                           {" "}
-                          Your Wishlist (2){" "}
+                          Your Wishlist ({products.length}){" "}
                         </Dialog.Title>
                         <div className="ml-3 flex h-7 items-center">
                           <button
@@ -78,8 +92,15 @@ export default function DrawerWishList({ isShowing, hide }) {
                       <div className="mt-8">
                         <div className="flow-root">
                           <ul className="divide-y divide-gray-light2 border-y border-gray-light2">
-                            {products.map((product) => (
-                              <li key={product.id} className="flex gap-2 py-5">
+                            {products.map((product, index) => (
+                              <li
+                                key={product.id}
+                                className={`flex gap-2 py-5 ${
+                                  activeItem === index && loading
+                                    ? "opacity-40"
+                                    : ""
+                                }`}
+                              >
                                 <div className="h-[100px] w-[75px] bg-gray-light5 flex-shrink-0 overflow-hidden rounded-lg">
                                   <img
                                     src={require("../../../assets/images/" +
@@ -99,15 +120,9 @@ export default function DrawerWishList({ isShowing, hide }) {
                                       </span>
                                     </a>
                                   </h3>
-                                  <p className="mt-2 text-sm text-gray">
-                                    Color: {product.color}{" "}
-                                    <span className="mx-1">{"//"}</span> Size:{" "}
-                                    {product.size}
-                                  </p>
                                   <div className="mt-3 flex flex-1 items-center justify-between text-sm">
                                     <div className="flex items-center">
-                                      <Count number={product.quantity} />
-                                      <p className="ml-5 text-base text-black2">
+                                      <p className="text-base font-semibold text-black2">
                                         {product.price}
                                       </p>
                                     </div>
@@ -115,6 +130,7 @@ export default function DrawerWishList({ isShowing, hide }) {
                                       <button
                                         type="button"
                                         className="font-medium text-gray opacity-50 hover:text-black2 hover:opacity-100"
+                                        onClick={() => removeWishList(index)}
                                       >
                                         <svg
                                           xmlns="http://www.w3.org/2000/svg"

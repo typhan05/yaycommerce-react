@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { DrawerCartContext } from "../../contexts/drawerCartContext";
+import Loader from "../Loader";
 
 export default function Card(props) {
+  const { toggleDrawerCart } = useContext(DrawerCartContext);
+  const [loadingAddToCart, setLoadingAddToCart] = useState(false);
+
+  const handleAddToCart = () => {
+    setLoadingAddToCart(true);
+    setTimeout(function () {
+      setLoadingAddToCart(false);
+      toggleDrawerCart();
+    }, 2000);
+  };
   return (
     <div className="group relative md:pb-[50px] pb-[30px]">
       <a
@@ -112,12 +124,16 @@ export default function Card(props) {
         {props.content.price}
       </p>
       <div className="mt-4">
-        <a
-          href="#/"
-          className="inline-flex justify-center rounded-xl md:text-md text-sm font-semibold py-[10px] md:px-6 px-5 text-white bg-blue shadow-[0_7px_25px_rgba(47,112,179,0.2)] hover:bg-black2 hover:shadow-[0_7px_35px_rgba(0,0,0,0.1)]"
+        <button
+          onClick={handleAddToCart}
+          className="inline-flex justify-center rounded-xl md:text-md text-sm font-semibold py-[10px] md:px-6 px-5 text-white bg-blue shadow-[0_7px_25px_rgba(47,112,179,0.2)] hover:bg-black2 hover:shadow-[0_7px_35px_rgba(0,0,0,0.1)] min-w-[7.5rem]"
         >
-          {props.content.button.text}
-        </a>
+          {loadingAddToCart ? (
+            <Loader color="white" />
+          ) : (
+            props.content.button.text
+          )}
+        </button>
       </div>
     </div>
   );

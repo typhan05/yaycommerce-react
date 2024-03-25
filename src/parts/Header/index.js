@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/images/logo.svg";
 import Dropdown from "../../components/Dropdown";
 import useHeader from "./useHeader";
 import DrawerSearch from "../../components/Drawer/Search";
 import useSearch from "../../components/Drawer/Search/useSearch";
+import { DrawerCartContext } from "../../contexts/drawerCartContext";
 
 const units = [
   { id: 1, active: true, name: "USD" },
@@ -22,6 +23,8 @@ export default function Header(props) {
   const { openMenu, openHandler, scrollDirection, closeMenu } = useHeader();
   const { isSearchShowing, toggleSearch } = useSearch();
   const [showSubMenu, setShowSubMenu] = useState(false);
+
+  const { toggleDrawerCart } = useContext(DrawerCartContext);
 
   const openSubMenu = () => {
     setShowSubMenu(!showSubMenu);
@@ -540,7 +543,7 @@ export default function Header(props) {
               <button
                 className="group relative block text-black2"
                 type="button"
-                onClick={props.buttonCart}
+                onClick={toggleDrawerCart}
               >
                 <span className="absolute -top-[4px] -right-[7px] z-[1] text-[11px] leading-4 flex items-center justify-center text-white font-semibold bg-green w-[18px] h-[18px] rounded-[9px]">
                   7

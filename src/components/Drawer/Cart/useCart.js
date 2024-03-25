@@ -1,12 +1,12 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from "react";
 
 const useCart = () => {
-  const [isShowing, setIsShowing] = useState(false);
+  const [isShowingCart, setIsShowing] = useState(false);
 
   // Allow to use the `esc` key
   useEffect(() => {
     function handleEscape(event) {
-      if (!isShowing) return;
+      if (!isShowingCart) return;
 
       if (event.key === "Escape") {
         setIsShowing(false);
@@ -15,16 +15,16 @@ const useCart = () => {
 
     document.addEventListener("keyup", handleEscape);
     return () => document.removeEventListener("keyup", handleEscape);
-  }, [isShowing]);
+  }, [isShowingCart]);
 
-  function toggle() {
-    setIsShowing(!isShowing);
+  function toggleDrawerCart() {
+    setIsShowing(!isShowingCart);
   }
 
   return {
-    isShowing,
-    toggle
-  }
+    isShowingCart,
+    toggleDrawerCart,
+  };
 };
 
 export default useCart;

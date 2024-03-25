@@ -3,20 +3,21 @@ import DrawerCart from "../components/Drawer/Cart";
 import useCart from "../components/Drawer/Cart/useCart";
 import DrawerWishList from "../components/Drawer/Wishlist";
 import useWishList from "../components/Drawer/Wishlist/useWishList";
+import { DrawerCartContext } from "../contexts/drawerCartContext";
 import Footer from "../parts/Footer";
 import Header from "../parts/Header";
 
 const Layout = ({ children }) => {
-  const { isShowing, toggle } = useCart();
+  const { isShowingCart, toggleDrawerCart } = useCart();
   const { isShowingWishList, toggleWishList } = useWishList();
   return (
-    <>
-      <Header buttonCart={toggle} buttonWishList={toggleWishList} />
+    <DrawerCartContext.Provider value={{ isShowingCart, toggleDrawerCart }}>
+      <Header buttonWishList={toggleWishList} />
       <main className="main-content">{children}</main>
       <Footer />
-      <DrawerCart isShowing={isShowing} hide={toggle} />
+      <DrawerCart isShowing={isShowingCart} hide={toggleDrawerCart} />
       <DrawerWishList isShowing={isShowingWishList} hide={toggleWishList} />
-    </>
+    </DrawerCartContext.Provider>
   );
 };
 
