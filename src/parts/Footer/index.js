@@ -1,94 +1,117 @@
-import React, {useState} from 'react';
-import Logo from "../../assets/images/logo.svg"
+import React, { useState } from "react";
+import Logo from "../../assets/images/logo.svg";
 
 const menuLists = [
   {
-    'title': 'Account',
-    'lists': [
+    title: "Account",
+    lists: [
       {
-        'href': '#/',
-        'text': 'Login/register',
+        href: "#/",
+        text: "Login/register",
       },
       {
-        'href': '#/',
-        'text': 'View cart',
+        href: "#/",
+        text: "View cart",
       },
       {
-        'href': '#/',
-        'text': 'My wishlist',
+        href: "#/",
+        text: "My wishlist",
       },
       {
-        'href': '#/',
-        'text': 'Check out',
+        href: "#/",
+        text: "Check out",
       },
       {
-        'href': '#/',
-        'text': 'Order tracking',
+        href: "#/",
+        text: "Order tracking",
       },
-    ]
+    ],
   },
   {
-    'title': 'Services',
-    'lists': [
+    title: "Services",
+    lists: [
       {
-        'href': '#/',
-        'text': 'About us',
+        href: "#/",
+        text: "About us",
       },
       {
-        'href': '#/',
-        'text': 'FAQ’s',
+        href: "#/",
+        text: "FAQ’s",
       },
       {
-        'href': '#/',
-        'text': 'Returns & refund',
+        href: "#/",
+        text: "Returns & refund",
       },
       {
-        'href': '#/',
-        'text': 'Free shipping',
+        href: "#/",
+        text: "Free shipping",
       },
       {
-        'href': '#/',
-        'text': 'Careers',
+        href: "#/",
+        text: "Careers",
       },
-    ]
+    ],
   },
   {
-    'title': 'Newsletter',
-    'description': 'Enter your email below to be the first to know about new collections and product launches.',
-    'form': {
-      'input': {
-        'placeholder': 'Enter your email',
+    title: "Newsletter",
+    description:
+      "Enter your email below to be the first to know about new collections and product launches.",
+    form: {
+      input: {
+        placeholder: "Enter your email",
       },
-      'button': {
-        'text': 'Submit'
-      }
+      button: {
+        text: "Submit",
+      },
     },
-    'info': 'We promise not send spam to you!'
-  }
-]
+    info: "We promise not send spam to you!",
+  },
+];
 
 export default function Footer() {
   const [activeId, setActiveId] = useState(0);
   const openMenu = (index) => {
-    setActiveId(prevState => prevState === index ? -1 : index)
-  }
+    setActiveId((prevState) => (prevState === index ? -1 : index));
+  };
+
+  const [focused, setFocused] = useState(false);
+
+  const handleFocus = () => {
+    setFocused(true);
+  };
+
+  const handleBlur = () => {
+    setFocused(false);
+  };
+
   return (
     <footer className="md:pt-[100px] pt-[75px]">
       <div className="flex flex-wrap justify-center">
         <div className="container mx-auto">
           <div className="flex flex-wrap md:mb-4 w-full md:pb-[100px] pb-[10px]">
             <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4">
-              <a href="#/" className="inline-flex mb-5"><img src={Logo} alt="logo-footer"/></a>
-              <p className="mb-2">102 Washington Square South <br/>New York, NY 10012</p>
+              <a href="#/" className="inline-flex mb-5">
+                <img src={Logo} alt="logo-footer" />
+              </a>
               <p className="mb-2">
-                <a href="tel:+91-80-6156-1999"
-                   className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                  +91-80-6156-1999</a>
+                102 Washington Square South <br />
+                New York, NY 10012
               </p>
               <p className="mb-2">
-                <a href="mailto:support@remitstore.com"
-                   className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                  support@remitstore.com</a>
+                <a
+                  href="tel:+91-80-6156-1999"
+                  className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+                >
+                  +91-80-6156-1999
+                </a>
+              </p>
+              <p className="mb-2">
+                <a
+                  href="mailto:support@remitstore.com"
+                  className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+                >
+                  support@remitstore.com
+                </a>
               </p>
               <div className="hidden xl:flex items-center w-full space-x-5 mt-[18px]">
                 <a className="max-w-max" target="_blank" href="#/">
@@ -165,11 +188,20 @@ export default function Footer() {
             </div>
             {menuLists.map((item, index) => {
               return (
-                <div key={`menu-item` + index}
-                     className="w-full md:pt-0 pt-[30px] md:mb-0 md:mt-0 mt-[10px] md:border-0 border-t border-solid border-gray-light2 sm:w-1/2 md:w-1/2 lg:w-1/4">
-                  <h3 onClick={() => openMenu(index)}
-                      className={`md:text-[22px] flex justify-between items-center text-lg font-semibold mb-4`}>{item.title}
-                    <span className={`md:hidden block transition-all duration-300 ${activeId === index ? `-rotate-180` : `rotate-0`}`}>
+                <div
+                  key={`menu-item` + index}
+                  className="w-full md:pt-0 pt-[30px] md:mb-0 md:mt-0 mt-[10px] md:border-0 border-t border-solid border-gray-light2 sm:w-1/2 md:w-1/2 lg:w-1/4"
+                >
+                  <h3
+                    onClick={() => openMenu(index)}
+                    className={`md:text-[22px] flex justify-between items-center text-lg font-semibold mb-4`}
+                  >
+                    {item.title}
+                    <span
+                      className={`md:hidden block transition-all duration-300 ${
+                        activeId === index ? `-rotate-180` : `rotate-0`
+                      }`}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="12"
@@ -188,64 +220,95 @@ export default function Footer() {
                     </span>
                   </h3>
                   <ul
-                    className={`md:overflow-visible overflow-hidden transition-all duration-500 ${activeId === index ? `max-h-40` : `max-h-0`}`}>
+                    className={`md:overflow-visible overflow-hidden transition-all duration-500 ${
+                      activeId === index ? `max-h-40` : `max-h-0`
+                    }`}
+                  >
                     {item?.lists?.map((li, idx) => {
                       return (
-                        <li key={`li-`+idx} className="mb-2">
-                          <a href={li.href}
-                             className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}>
-                            {li.text}</a>
+                        <li key={`li-` + idx} className="mb-2">
+                          <a
+                            href={li.href}
+                            className={`relative inline-block after:h-[1px] after:left-0 after:right-full after:bottom-0 after:absolute after:bg-black2 after:transition-all after:duration-300 after:ease-in-out hover:after:right-0`}
+                          >
+                            {li.text}
+                          </a>
                         </li>
-                      )
+                      );
                     })}
                   </ul>
-                  <div className={`md:overflow-visible overflow-hidden transition-all duration-500 ${activeId === index ? `max-h-40` : `md:max-h-40 max-h-0`}`}>
-                    {item?.description && <p className="mb-5 text-gray">{item?.description}</p>}
-                    {item?.form && <form action="#">
-                      <div className="flex items-center bg-gray-light6 rounded-xl p-1 pl-5">
-                        <label htmlFor="inline-full-name">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="22"
-                            height="20"
-                            fill="none"
-                            viewBox="0 0 22 20"
+                  <div
+                    className={`md:overflow-visible overflow-hidden transition-all duration-500 ${
+                      activeId === index ? `max-h-40` : `md:max-h-40 max-h-0`
+                    }`}
+                  >
+                    {item?.description && (
+                      <p className="mb-5 text-gray">{item?.description}</p>
+                    )}
+                    {item?.form && (
+                      <form action="#">
+                        <div
+                          className={`flex items-center bg-gray-light6 rounded-xl border p-1 pl-5 ${
+                            focused
+                              ? "shadow-[0_5px_25px_rgba(0,0,0,0.07)] border-black2"
+                              : "border-transparent"
+                          }`}
+                        >
+                          <label htmlFor="inline-full-name">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="22"
+                              height="20"
+                              fill="none"
+                              viewBox="0 0 22 20"
+                            >
+                              <path
+                                stroke="#5A6D80"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M16.902 6.851l-4.443 3.613c-.84.666-2.02.666-2.86 0l-4.48-3.613"
+                              ></path>
+                              <path
+                                stroke="#5A6D80"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M15.909 19C18.95 19.008 21 16.51 21 13.438V6.57C21 3.499 18.95 1 15.909 1H6.09C3.05 1 1 3.499 1 6.57v6.868C1 16.51 3.05 19.008 6.091 19h9.818z"
+                                clipRule="evenodd"
+                              ></path>
+                            </svg>
+                          </label>
+                          <input
+                            className="bg-gray-light6 appearance-none w-full py-2 px-[15px] text-gray-700 leading-tight focus:outline-none focus:border-purple-500"
+                            id="inline-full-name"
+                            type="text"
+                            onFocus={handleFocus}
+                            onBlur={handleBlur}
+                            placeholder={item?.form?.input?.placeholder}
+                          />
+                          <button
+                            className="flex-shrink-0 bg-black2 border-2 border-solid border-black2 text-white font-medium py-2 px-4 rounded-[10px] transition-all duration-300 hover:bg-white hover:text-black2"
+                            type="submit"
                           >
-                            <path
-                              stroke="#5A6D80"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M16.902 6.851l-4.443 3.613c-.84.666-2.02.666-2.86 0l-4.48-3.613"
-                            ></path>
-                            <path
-                              stroke="#5A6D80"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M15.909 19C18.95 19.008 21 16.51 21 13.438V6.57C21 3.499 18.95 1 15.909 1H6.09C3.05 1 1 3.499 1 6.57v6.868C1 16.51 3.05 19.008 6.091 19h9.818z"
-                              clipRule="evenodd"
-                            ></path>
-                          </svg>
-                        </label>
-                        <input
-                          className="bg-gray-light6 appearance-none w-full py-2 px-[15px] text-gray-700 leading-tight focus:outline-none focus:border-purple-500"
-                          id="inline-full-name" type="text" placeholder={item?.form?.input?.placeholder}/>
-                        <button
-                          className="flex-shrink-0 bg-black2 border-2 border-solid border-black2 text-white font-medium py-2 px-4 rounded-[10px] transition-all duration-300 hover:bg-white hover:text-black2"
-                          type="submit">{item?.form?.button?.text}
-                        </button>
-                      </div>
-                      <small className="inline-block my-3 text-gray italic">We promise not send spam to you!</small>
-                    </form>}
+                            {item?.form?.button?.text}
+                          </button>
+                        </div>
+                        <small className="inline-block my-3 text-gray italic">
+                          We promise not send spam to you!
+                        </small>
+                      </form>
+                    )}
                   </div>
                 </div>
-              )
+              );
             })}
           </div>
           <div className="flex justify-center py-[30px] shadow-[0_-1px_0px_#E9EFF5]">
-            <p className="text-gray text-center md:text-base text-sm">Copyright © 2022 <span className="text-black2">RemitStore</span>. All Rights
-              Reserved.</p>
+            <p className="text-gray text-center md:text-base text-sm">
+              Copyright © 2022 <span className="text-black2">RemitStore</span>.
+              All Rights Reserved.
+            </p>
           </div>
         </div>
       </div>
