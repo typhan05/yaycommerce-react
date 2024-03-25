@@ -17,7 +17,7 @@ export default function Card(props) {
     <div className="group relative md:pb-[50px] pb-[30px]">
       <a
         href="#/"
-        className="relative flex justify-center items-center mb-3 p-5 md:h-[337px] h-[158px] bg-gray-light5 ease-in-out duration-300 rounded-xl overflow-hidden hover:bg-[rgba(90,109,128,0.1)] sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1 lg:aspect-h-1"
+        className="relative flex justify-center items-center mb-3 p-5 md:h-[337px] h-[158px] bg-gray-light5 ease-in-out duration-300 rounded-xl overflow-hidden hover:opacity-80 sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1 lg:aspect-h-1"
       >
         <span
           className={`bg-${props.content.sale.color} absolute top-3.5 left-3.5 rounded-lg text-sm text-white px-2 py-[1px]`}
