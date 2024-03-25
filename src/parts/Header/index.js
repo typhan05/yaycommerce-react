@@ -43,11 +43,11 @@ export default function Header(props) {
     <header
       className={`${
         scrollDirection === "down"
-          ? "-translate-y-full"
+          ? "absolute -translate-y-full"
           : scrollDirection === "up"
-          ? "translate-y-0 md:-translate-y-11"
+          ? "fixed translate-y-0 md:-translate-y-11"
           : "translate-y-0"
-      } z-50 fixed top-0 left-0 w-full translate-z-0 text-black2 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-250 ease-out`}
+      } z-50 top-0 left-0 right-0 translate-z-0 text-black2 bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05)] transition-all duration-300 ease-out`}
     >
       <div className="relative bg-gray-light4 py-3 text-sm md:block hidden z-[12]">
         <div className="container mx-auto flex flex-wrap justify-between items-center">

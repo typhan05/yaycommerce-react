@@ -24,9 +24,9 @@ const useHeader = () => {
     const updateScrollDirection = () => {
       const scrollY = window.pageYOffset;
       const header = document.querySelector("header");
-      const headerHeight = header.offsetHeight;
+      //const headerHeight = header.offsetHeight;
       let direction = "top";
-      if (scrollY > headerHeight) {
+      if (scrollY > 50) {
         direction = scrollY > lastScrollY ? "down" : "up";
       } else {
         direction = "top";

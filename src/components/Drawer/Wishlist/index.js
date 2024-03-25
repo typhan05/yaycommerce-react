@@ -71,7 +71,7 @@ export default function DrawerWishList({ isShowing, hide }) {
               >
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
                   <div className="flex h-full flex-col bg-white">
-                    <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
+                    <div className="flex-1 overflow-y-auto no-scrollbar py-6 px-4 sm:px-6">
                       <div className="flex items-start justify-between">
                         <Dialog.Title className="text-2xl font-semibold text-black2">
                           {" "}

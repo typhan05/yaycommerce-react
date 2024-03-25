@@ -21,7 +21,7 @@ import BlogDetailNoSidebar from "./pages/Blog/blog-detail-no-sidebar";
 
 function App() {
   return (
-    <div className="App">
+    <div className="relative">
       <Layout>
         <Routes>
           <Route exact path="/yaycommerce-react/" element={<Home />} />
