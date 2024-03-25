@@ -34,6 +34,11 @@ export default function Header(props) {
     setShowSubMenu(false);
   };
 
+  const openWishList = () => {
+    props.buttonWishList();
+    closeMenu();
+  };
+
   return (
     <header
       className={`${
@@ -450,7 +455,7 @@ export default function Header(props) {
               <li>
                 <NavLink
                   to="#/"
-                  onClick={() => closeMenu()}
+                  onClick={() => openWishList()}
                   className="inline-flex items-center"
                 >
                   <span className="flex items-center justify-center h-[30px] w-[30px] rounded-[15px] bg-gray-light2 mr-2">
